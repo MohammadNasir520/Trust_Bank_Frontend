@@ -6,6 +6,7 @@ interface CustomOptions {
   };
 }
 
+//example
 export async function getAllCategories() {
   const customOptions: CustomOptions = {
     next: { tags: ['categories'] },
