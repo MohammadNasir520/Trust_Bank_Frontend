@@ -44,7 +44,6 @@ const DebitCreditCard = () => {
         <div className="flex items-center gap-4 cursor-pointer">
           <button
             className="text-base border border-white hover:bg-white hover:text-blue-950 font-bold text-center uppercase rounded-full px-5 py-1"
-            type="button"
           >
             Apply Now
           </button>

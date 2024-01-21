@@ -4,7 +4,7 @@ import LoanCalculatorPage from './LoanCalculatorPage';
 const index = () => {
     return (
         <div>
-           hello
+            hello
         </div>
     );
 };

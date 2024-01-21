@@ -1,4 +1,8 @@
+'use client'
+
 import React from 'react';
+
+//@ts-ignore
 import Marquee from "react-fast-marquee";
 
 const ForeignExchange = () => {
