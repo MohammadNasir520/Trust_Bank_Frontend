@@ -1,16 +1,13 @@
 
-import Banner from '@/components/pages/Banner';
-import BankingFooter from '@/components/pages/Footer';
-import ForeignExchange from '@/components/pages/Foreign-Exchange';
-import {Button} from '@nextui-org/button'; 
+import PageLayout from "@/components/layout/PageLayout";
+import LoanCalculatorPage from "@/components/pages/LoanCalculatorPage";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <div>
-      <ForeignExchange/>
-     {/* <Banner/> */}
-     <BankingFooter/> 
-      
-    </div>
+    <PageLayout>
+      <LoanCalculatorPage/>
+    </PageLayout>
   )
+
 }
