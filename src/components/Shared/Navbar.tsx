@@ -4,17 +4,18 @@ import { BiNotification } from "react-icons/bi";
 import { FaSearch, FaWhatsapp } from "react-icons/fa";
 import { IoMdNotificationsOutline } from "react-icons/io";
 
+
 export default function Navbar() {
     return (
         <div className="sticky top-0 z-[99] h-[105px] 	bg-white  ">
             <div className=" ">
                 <div className="grid grid-cols-8 overflow-hidden ">
-                    <div className="bg-[#1F305E] py-3 col-span-2  pl-20  rounded-br-2xl ml-[-30px]" style={{ transform: 'skew(-30deg)' }}>
-                        <Image src={'/logo-no-background.png'} height={170} width={200} alt="logo" className=" " style={{ transform: 'skew(30deg)' }} />
+                    <div className="bg-[#012169] py-3 col-span-2  pl-20  rounded-br-2xl ml-[-30px]" style={{ transform: 'skew(-30deg)' }}>
+                        <Image src={'/assets/logo/logo-no-background.png'} height={170} width={200} alt="logo" className=" " style={{ transform: 'skew(30deg)' }} />
                     </div>
                     <div className=" col-span-6 h-full  ">
                         <div className="flex flex-col justify-between w-full      ">
-                            <div className="bg-[#1F305E] text-white py-2 flex justify-between h-1/2  w-full pr-16">
+                            <div className="bg-[#012169] text-white py-2 flex justify-between h-1/2  w-full pr-16">
                                 <div className="flex gap-5 ml-6">
                                     <p>Dashboard</p>
                                     <span>About</span>

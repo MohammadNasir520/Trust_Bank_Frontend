@@ -165,13 +165,13 @@ const DebitCreditCardTab = () => {
   ];
 
   return (
-    <div className=" min-h-screen ">
+    <div className=" ">
       <Tabs size="md" variant="enclosed" className="px-[150px] py-3">
         <TabList className=" backdrop-blur-md bg-white/85 text-white rounded-t-xl ">
           {tabData?.map((tab) => (
             <Tab
               className="flex items-center rounded  justify-center h-16 w-32 relative text-blue-950  hover:bg-white/50 "
-              _selected={{ color: "white", bg: "blue", font: "bold" }}
+              _selected={{ color: "white", bg: "#012169", font: "bold" }}
             >
               <h1> {tab?.name}</h1>
               <div
