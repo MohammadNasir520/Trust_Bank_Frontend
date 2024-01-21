@@ -3,7 +3,12 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center h-screen grid lg:grid-cols-3 ">
+      <DebitCreditCard></DebitCreditCard>
+      <DebitCreditCard></DebitCreditCard>
+      <DebitCreditCard></DebitCreditCard>
+      <DebitCreditCard></DebitCreditCard>
+      <DebitCreditCard></DebitCreditCard>
       <DebitCreditCard></DebitCreditCard>
     </div>
   );
