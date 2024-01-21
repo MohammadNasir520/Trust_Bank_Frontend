@@ -28,6 +28,11 @@ export const correctAnswerOptions = [
     },
   
 ]
+
+// export const loanCalculate = (loanAmount, loanTerm, loanRate) => {
+//   const calculate = loanAmount * (loanRate / 100) * (loanTerm / 12);
+//   return calculate.toFixed(2);
+// };
 // export const roleOptions = [
 //     {
 //         label: "Admin",
