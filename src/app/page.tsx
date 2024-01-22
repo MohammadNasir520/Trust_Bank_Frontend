@@ -3,14 +3,23 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import SliderCarousel from "../components/UI/slider/Slider";
-import AuthUI from "@/components/UI/AuthUI/page";
+import DebitCreditCardTab from "@/components/UI/Debit-Credit-card/DebitCreditCardTab";
+import SliderCarousel from "@/components/UI/slider/Slider";
+import PageLayout from "@/components/layout/PageLayout";
+import Banner from "@/components/pages/home_page/Banner";
+import ForeignExchange from "@/components/pages/home_page/Foreign-Exchange";
+import LoanCalculatorPage from "@/components/pages/home_page/LoanCalculatorPage";
 
 export default function Home() {
   return (
-    <>
-      {/* <SliderCarousel></SliderCarousel> */}
-      <AuthUI />
-    </>
+    <PageLayout>
+      <>
+        <SliderCarousel />
+        {/* <Banner /> */}
+        <DebitCreditCardTab />
+        <LoanCalculatorPage />
+        <ForeignExchange />
+      </>
+    </PageLayout>
   );
 }

@@ -1,3 +1,5 @@
+"use client";
+
 // Inside SliderCarousel component
 import { useEffect, useState } from "react";
 import Slider from "react-slick";
