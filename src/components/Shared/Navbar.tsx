@@ -45,7 +45,7 @@ export default function Navbar() {
                             </div>
                             <div className="lg:flex hidden justify-between my-auto p-5 text-black h-1/2  w-full  ">
                                 <div className="flex   gap-5">
-                                    <span>Loan</span>
+                                    <span>Loan </span>
                                     <span>Investment</span>
                                     <span>Insurance</span>
                                     <span>Card</span>
