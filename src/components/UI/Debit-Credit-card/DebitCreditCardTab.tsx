@@ -165,7 +165,7 @@ const DebitCreditCardTab = () => {
   ];
 
   return (
-    <div className=" ">
+    <div className="-mt-20">
       <Tabs size="md" variant="enclosed" className="px-[150px] py-3">
         <TabList className=" backdrop-blur-md bg-white/85 text-white rounded-t-xl ">
           {tabData?.map((tab) => (
