@@ -1,3 +1,5 @@
+'use client'
+
 import Image from "next/image";
 import Link from "next/link";
 import { BiMenu, BiNotification } from "react-icons/bi";
@@ -5,8 +7,32 @@ import { FaSearch, FaWhatsapp } from "react-icons/fa";
 import { IoMdNotificationsOutline } from "react-icons/io";
 
 
-export default function Navbar() {
+import {
+    Menu,
+    MenuButton,
+    MenuList,
+    //@ts-ignore
+} from '@chakra-ui/react'
+// import { CloseSubMenuOverlay, InnerMenu, MenuItems, MenuItemsSubMenu } from "../UI/nav-menu";
+import { useState } from "react";
+import { RxButton } from "react-icons/rx";
+import { IoChevronDownCircleOutline } from "react-icons/io5";
+import CloseSubMenuOverlay from "../UI/nav-menu/CloseSubMenuOverlay";
 
+import InnerMenu from "../UI/nav-menu/InnerMenu";
+import MenuItems from "../UI/nav-menu/MenuItems";
+import MenuItemSubMenu from "../UI/nav-menu/MenuItemSubMenu";
+import NavMenu from "../UI/nav-menu/NavMenu";
+import { loanNavMenuOptions } from "@/constants/navData";
+
+
+
+export default function Navbar() {
+    const [innerMenusActive, setInnerMenusActive] = useState<boolean>(true);
+
+    const closeSubMenus = () => {
+        setInnerMenusActive(false);
+    };
     const infoItems = <div className="flex  justify-end gap-4 lg:mt-0 mt-3 lg:pr-0 pr-2 text-xl lg:text-white text-black">
         <button>
             <FaWhatsapp />
@@ -45,12 +71,12 @@ export default function Navbar() {
                             </div>
                             <div className="lg:flex hidden justify-between my-auto p-5 text-black h-1/2  w-full  ">
                                 <div className="flex   gap-5">
-                                    <span>Loan </span>
-                                    <span>Investment</span>
-                                    <span>Insurance</span>
-                                    <span>Card</span>
-                                    <span>Deposit</span>
-                                    <span>NRI Services</span>
+                                    <NavMenu items={loanNavMenuOptions} title="Loan" />
+                                    <NavMenu items={loanNavMenuOptions} title="Investment" />
+                                    <NavMenu items={loanNavMenuOptions} title="Insurance" />
+                                    <NavMenu items={loanNavMenuOptions} title="Card" />
+                                    <NavMenu items={loanNavMenuOptions} title="Deposit" />
+                                    <NavMenu items={loanNavMenuOptions} title="NRI services" />
                                 </div>
                                 <div className="flex px-5 gap-5">
                                     <p>Profile</p>
