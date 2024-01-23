@@ -9,16 +9,18 @@ import PageLayout from "@/components/layout/PageLayout";
 import Banner from "@/components/pages/home_page/Banner";
 import ForeignExchange from "@/components/pages/home_page/Foreign-Exchange";
 import LoanCalculatorPage from "@/components/pages/home_page/LoanCalculatorPage";
+import BankProfile from "@/components/pages/BankProfile/BankProfile";
 
 export default function Home() {
   return (
     <PageLayout>
       <>
-        <SliderCarousel />
+        {/* <SliderCarousel /> */}
         {/* <Banner /> */}
-        <DebitCreditCardTab />
+        {/* <DebitCreditCardTab />
         <LoanCalculatorPage />
-        <ForeignExchange />
+        <ForeignExchange /> */}
+        <BankProfile />
       </>
     </PageLayout>
   );
