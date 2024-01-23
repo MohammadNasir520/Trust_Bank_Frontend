@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import Image from 'next/image';
 import banner from "../../../public/assets/images/ezgif-2-a79a0f4570-removebg-preview.png";
