@@ -1,22 +1,25 @@
+"use client";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import DebitCreditCardTab from "@/components/UI/Debit-Credit-card/DebitCreditCardTab";
+import SliderCarousel from "@/components/UI/slider/Slider";
 import PageLayout from "@/components/layout/PageLayout";
 import Banner from "@/components/pages/home_page/Banner";
-import Footer from "@/components/pages/home_page/Footer";
 import ForeignExchange from "@/components/pages/home_page/Foreign-Exchange";
 import LoanCalculatorPage from "@/components/pages/home_page/LoanCalculatorPage";
-
 
 export default function Home() {
   return (
     <PageLayout>
       <>
-        <Banner />
+        <SliderCarousel />
+        {/* <Banner /> */}
         <DebitCreditCardTab />
         <LoanCalculatorPage />
         <ForeignExchange />
       </>
     </PageLayout>
-  )
-
+  );
 }
