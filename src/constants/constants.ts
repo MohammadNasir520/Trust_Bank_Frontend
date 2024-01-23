@@ -1,11 +1,24 @@
-export const roleOptions = [
+export const accountOptions = [
     {
-        label: "Admin",
-        value:"admin"
+        label: "Merchant",
+        value:"merchant"
     },
     {
-        label: "Performer",
-        value:"performer"
+        label: "Invest Account",
+        value:"invest-account"
+    },
+  
+    {
+        label: "Deposit Account",
+        value:"deposit-account"
+    },
+    {
+        label: "Saving Account",
+        value:"saving-account"
+    },
+    {
+        label: "Student",
+        value:"student"
     },
   
 ]
