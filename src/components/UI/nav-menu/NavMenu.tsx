@@ -1,11 +1,8 @@
 import { MenuButton } from "@chakra-ui/react";
 import { Menu, MenuList } from "@chakra-ui/menu";
-import { IoChevronDownCircleOutline } from "react-icons/io5";
-import CloseSubMenuOverlay from "./CloseSubMenuOverlay";
+
 import { useState } from "react";
-import MenuItems from "./MenuItems";
-import MenuItemSubMenu from "./MenuItemSubMenu";
-import InnerMenu from "./InnerMenu";
+import { CloseSubMenuOverlay, InnerMenu, MenuItemSubMenu, MenuItems } from ".";
 
 export default function NavMenu({ title, items }: { title: string, items: any[] }) {
   const [innerMenusActive, setInnerMenusActive] = useState<boolean>(true);
@@ -21,7 +18,15 @@ export default function NavMenu({ title, items }: { title: string, items: any[] 
           isActive={innerMenusActive}
           closeSubMenu={closeSubMenus}
         />
-        <MenuButton zIndex={999} >
+        <MenuButton _expanded={{
+
+          color: "#012169"
+        }}
+          _focus={{
+            fontWeight: 500,
+            color: "#012169"
+          }}
+        >
           {title}
         </MenuButton>
         <MenuList transition="all 0.1s" zIndex={999}
@@ -40,11 +45,6 @@ export default function NavMenu({ title, items }: { title: string, items: any[] 
 
         </MenuList>
       </Menu>
-
-
-
-
-
     </>
   )
 }

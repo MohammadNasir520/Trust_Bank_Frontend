@@ -13,7 +13,8 @@ export const loanNavMenuOptions = [
                 children: [
                     {
                         label: 'Terms and Condition',
-                        link: ''
+                        link: '',
+
                     },
                     {
                         label: 'Apply for loan',

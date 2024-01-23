@@ -1,21 +1,22 @@
+'use client'
+
 //@ts-nocheck
 
 
 import {
-    Button,
     Menu,
     MenuButton,
     MenuList,
     useDisclosure
 } from "@chakra-ui/react";
-import React, { useRef, useEffect, useCallback } from "react";
+import React, { useRef, useEffect, useCallback, useState } from "react";
 
 
 import { IoChevronDownCircleOutline } from "react-icons/io5";
-import MenuItemSubMenu from "./MenuItemSubMenu";
-import MenuItems from "./MenuItems";
-import { BiDownArrowAlt } from "react-icons/bi";
+
+
 import { FaAngleDown } from "react-icons/fa";
+import { MenuItemSubMenu, MenuItems } from ".";
 
 function addEL(ref: any, event: any, handler: any) {
     if (ref) ref.addEventListener(event, handler);
@@ -32,15 +33,14 @@ export default function InnerMenu({ title, childrenItems }: any) {
 
     const subMenuButtonEnterHandle = useCallback(() => {
         onOpen();
-        // fix bug with list animation
+
         refSubMenuList.current.style.pointerEvents = "auto";
     }, [onOpen]);
     const subMenuButtonLeaveHandle = useCallback(() => {
         onClose();
     }, [onClose]);
 
-    // fix bug with list animation,
-    // hide it when menu closed and open only if button menu is hovered
+
     useEffect(() => {
         if (!isOpen) {
             refSubMenuList.current.style.pointerEvents = "none";
@@ -62,21 +62,40 @@ export default function InnerMenu({ title, childrenItems }: any) {
         };
     }, [subMenuButtonEnterHandle, subMenuButtonLeaveHandle]);
 
+
+    const isBrowser = typeof window !== 'undefined';
+
+
+    const [screenSize, setScreenSize] = useState<any>(isBrowser ? window.innerWidth : null);
+    const [placement, setPlacement] = useState<string>()
+    const handleResize = () => {
+        setScreenSize(window.innerWidth);
+    };
+
+    useEffect(() => {
+
+        if (isBrowser) {
+            window.addEventListener('resize', handleResize);
+
+            return () => {
+                window.removeEventListener('resize', handleResize);
+            };
+        }
+
+    }, [isBrowser]);
+    useEffect(() => {
+        if (screenSize <= 800) {
+            setPlacement('bottom-start')
+        } else {
+            setPlacement('right')
+        }
+    }, [screenSize])
+
     return (
-        <Menu autoSelect={false} offset={[0, 0]} isOpen={isOpen} placement="right">
+        <Menu autoSelect={false} offset={[0, 0]} isOpen={isOpen} placement={placement as 'bottom-start' | 'right'}>
             <MenuButton
                 ref={refSubMenuButton}
                 rightIcon={<IoChevronDownCircleOutline />}
-                // as={Button}
-                // w="full"
-                // textAlign="left"
-                // borderRadius="none"
-                // bg="white"
-                // zIndex={999}
-                // _hover={{
-                //     // color: "red"
-                // }}
-
                 _expanded={{
                     bg: "#e6eef7",
                     color: "#012169"
@@ -94,9 +113,9 @@ export default function InnerMenu({ title, childrenItems }: any) {
                 ref={refSubMenuList}
                 zIndex={999}
                 _hover={{ zIndex: 1000 }}
-                className='bg-white p-4 absolute w-[300px] rounded-lg border'
+                className='bg-white z-[99] p-4 absolute w-[300px] rounded-lg border'
             >
-                {childrenItems.map((item, i) => <>
+                {childrenItems.map((item: any, i: number) => <>
                     {!item?.children && <MenuItems key={item?.label}>{item?.label}</MenuItems>}
                     {item?.children && <MenuItemSubMenu>
                         <InnerMenu
