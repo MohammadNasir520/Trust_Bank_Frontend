@@ -15,12 +15,12 @@ export default function Home() {
   return (
     <PageLayout>
       <>
-        {/* <SliderCarousel /> */}
+        <SliderCarousel /> 
         {/* <Banner /> */}
-        {/* <DebitCreditCardTab />
+         <DebitCreditCardTab />
         <LoanCalculatorPage />
-        <ForeignExchange /> */}
         <BankProfile />
+        <ForeignExchange />
       </>
     </PageLayout>
   );
