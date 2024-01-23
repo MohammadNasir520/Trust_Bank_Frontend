@@ -17,11 +17,15 @@ const ForeignExchange = () => {
   ];
 
   return (
+  <>
+   <h1 className="text-center mb-4 text-3xl">
+      Rely on us - whatever the currency
+        </h1>
     <Marquee direction="left" speed={30} style={{ overflow: 'hidden', width: '100%' }}>
       <div className="flex flex-no-wrap">
         {exchangeData.map((exchange) => (
           <div key={exchange.id} className="w-1/3 p-2">
-            <div className="h-25 w-32 bg-gray-100 rounded p-2 flex justify-center items-center">
+            <div className="h-25 w-32 bg-gray-200 rounded p-2 flex justify-center items-center">
               {/* Left Div with Country Flag */}
               <div className="flex items-center flex-col">
                 <img
@@ -54,6 +58,7 @@ const ForeignExchange = () => {
         ))}
       </div>
     </Marquee>
+  </>
   );
 };
 

@@ -6,15 +6,6 @@ body {
   @apply bg-gray-100;
 }
 
-.hero {
-	background-image: url("../../public/assets/images/wealth_offer_banner.webp");
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	height: 90vh;
-	width: 100%;
-  }
-
 /* input-range */
 
 input[type="range"] {
