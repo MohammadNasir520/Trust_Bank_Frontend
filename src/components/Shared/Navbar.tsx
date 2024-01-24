@@ -24,6 +24,7 @@ import { useRef } from "react";
 import { loanNavMenuOptions } from "@/constants/navData";
 import NavMenu from "../UI/nav-menu/NavMenu";
 import ResponsiveNavMenu from "../UI/nav-menu/ResponsiveNavMenu";
+import Link from "next/link";
 
 
 
@@ -88,7 +89,7 @@ export default function Navbar() {
                                     </div>
                                     <div className="flex px-5 gap-5">
                                         <p>Profile</p>
-                                        <p>Open An Account</p>
+                                       <Link href="/account"> <p>Open An Account</p></Link>
                                     </div>
                                 </div>
                                 <div className="lg:hidden   flex justify-end"> {infoItems}</div>
