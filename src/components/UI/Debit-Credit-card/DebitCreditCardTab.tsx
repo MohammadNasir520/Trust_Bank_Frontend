@@ -81,13 +81,11 @@ const DebitCreditCardTab = () => {
         },
       ],
     },
-   
   
    
   
   ];
 
-  return (
     <div className="-mt-20">
       {/* Use responsive styles for padding */}
       <Tabs size="sm" variant="enclosed" className="px-4 md:px-8 lg:px-16 py-3 " >
