@@ -34,11 +34,11 @@
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
 
-    "swiper": "^11.0.5"
+    "swiper": "^11.0.5",
 
-    "react-marquee": "^1.0.0",
-    "react-redux": "^9.1.0",
-    "react-slick": "^0.29.0",
+    
+ 
+    
     "webpack": "^5.89.0"
 
   },

@@ -14,14 +14,16 @@ import BankProfile from "@/components/pages/BankProfile/BankProfile";
 export default function Home() {
   return (
     <PageLayout>
-      <>
-        {/* <SliderCarousel /> */}
-        {/* <Banner /> */}
-        {/* <DebitCreditCardTab />
+      <div>
+        <SliderCarousel /> 
+        <Banner /> 
+        <DebitCreditCardTab />
+        <div className="my-44 lg:my-8 md:my-20">
         <LoanCalculatorPage />
-        <ForeignExchange /> */}
+        </div>
+        <ForeignExchange />
         <BankProfile />
-      </>
+      </div>
     </PageLayout>
   );
 }
