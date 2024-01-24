@@ -40,10 +40,13 @@ const CustomFileInput: React.FC<CustomFileInputProps> = ({
   return (
     <div>
       {label && (
-        <label htmlFor={id} className="text-sm font-medium text-gray-600 block">
-          {label}
-        </label>
-      )}
+  <label
+    htmlFor={id}
+    className="text-sm font-semibold text-black rounded-md px-4 py-2 block"
+  >
+    {label}
+  </label>
+)}
       <div className="relative">
         <input
           type="file"
@@ -66,7 +69,7 @@ const CustomFileInput: React.FC<CustomFileInputProps> = ({
           ) : (
             <label
             htmlFor={id || ''}
-            className="cursor-pointer text-black py-2 px-4 rounded-lg inline-flex items-center"
+            className="cursor-pointer text-sm font-sm text-black py-2 px-4 rounded-lg inline-flex items-center"
           >
             <FaFile className="text-[#012169] mr-2" />
             Choose a file

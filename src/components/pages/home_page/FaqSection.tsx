@@ -36,6 +36,7 @@ export default function FaqSection() {
                     </h2>
                     <AccordionPanel className="mt-2">
                         {faq?.answer}
+
                     </AccordionPanel>
                 </AccordionItem>)}
             </Accordion>
