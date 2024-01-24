@@ -1,3 +1,5 @@
+'use client'
+
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box } from "@chakra-ui/react";
 const faqsData: any = [
     {
