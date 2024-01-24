@@ -34,7 +34,7 @@ export default function NavMenu({ title, items }: { title: string, items: any[] 
         >
           {items?.map((item: any) => <>
 
-            {!item?.children && <MenuItems closeSubMenu={closeSubMenus}>{item?.label}</MenuItems>}
+            {!item?.children && <MenuItems>{item?.label}</MenuItems>}
             {item?.children && <MenuItemSubMenu>
               <InnerMenu
                 title={item?.label}
