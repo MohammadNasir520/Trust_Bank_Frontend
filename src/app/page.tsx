@@ -9,19 +9,27 @@ import PageLayout from "@/components/layout/PageLayout";
 // import Banner from "@/components/pages/home_page/Banner";
 import ForeignExchange from "@/components/pages/home_page/Foreign-Exchange";
 import LoanCalculatorPage from "@/components/pages/home_page/LoanCalculatorPage";
-import AgricultureCard from "@/components/UI/Agriculture/AgricultureCard";
-import Agriculture from "@/components/pages/Agriculture/Agriculture";
+
+
+import BankProfile from "@/components/pages/BankProfile/BankProfile";
+import Navbar from "@/components/Shared/Navbar";
+import Footer from "@/components/pages/home_page/Footer";
 
 export default function Home() {
   return (
-    <PageLayout>
+   
       <>
-        <SliderCarousel />
+       <Navbar />
+        <SliderCarousel /> 
         {/* <Banner /> */}
-        <DebitCreditCardTab />
-        <LoanCalculatorPage />
+         <DebitCreditCardTab />
+      <div className="my-44 lg:my-8 md:my-20">
+      <LoanCalculatorPage />
+      </div>
+        <BankProfile />
         <ForeignExchange />
+        <Footer />
       </>
-    </PageLayout>
+    
   );
 }
