@@ -10,26 +10,23 @@ import PageLayout from "@/components/layout/PageLayout";
 import ForeignExchange from "@/components/pages/home_page/Foreign-Exchange";
 import LoanCalculatorPage from "@/components/pages/home_page/LoanCalculatorPage";
 
-
 import BankProfile from "@/components/pages/BankProfile/BankProfile";
 import Navbar from "@/components/Shared/Navbar";
 import Footer from "@/components/pages/home_page/Footer";
 
 export default function Home() {
   return (
-   
-      <>
-       <Navbar />
-        <SliderCarousel /> 
-        {/* <Banner /> */}
-         <DebitCreditCardTab />
+    <>
+      <Navbar />
+      <SliderCarousel />
+      {/* <Banner /> */}
+      <DebitCreditCardTab />
       <div className="my-44 lg:my-8 md:my-20">
-      <LoanCalculatorPage />
+        <LoanCalculatorPage />
       </div>
-        <BankProfile />
-        <ForeignExchange />
-        <Footer />
-      </>
-    
+      <BankProfile />
+      <ForeignExchange />
+      <Footer />
+    </>
   );
 }
