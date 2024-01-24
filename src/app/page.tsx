@@ -21,7 +21,6 @@ export default function Home() {
         <DebitCreditCardTab />
         <LoanCalculatorPage />
         <ForeignExchange />
-        <Agriculture />
       </>
     </PageLayout>
   );
