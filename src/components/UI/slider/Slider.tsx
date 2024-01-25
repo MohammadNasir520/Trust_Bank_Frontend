@@ -3,8 +3,9 @@
 // Inside SliderCarousel component
 import { useEffect, useState } from "react";
 import Slider from "react-slick";
-import NextArrow from "./NextArrow";
-import PrevArrow from "./PrevArrow";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const data = [
   { img: "/assets/slide-v1-1.jpg" },
@@ -22,15 +23,13 @@ const SliderCarousel = () => {
   const settings = {
     dots: false,
     autoplay: true,
-    speed: 4000,
+    speed: 2000,
     autoplaySpeed: 3000,
     pauseOnHover: true,
-    arrows: true,
+    arrows: false,
     slidesToShow: 1,
     slidesToScroll: 1,
     infinite: true,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
   };
 
   return (
@@ -38,7 +37,7 @@ const SliderCarousel = () => {
       {isMounted && (
         <Slider {...settings}>
           {data.map((el, index) => (
-            <div key={index} className="relative">
+            <div key={index} className="relative hidden">
               <div
                 style={{
                   backgroundImage: `url(${el.img})`,
