@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import NextArrow from "./NextArrow";
 import PrevArrow from "./PrevArrow";
 
-const cardBanner = () => {
+const CardBanner = () => {
   const settings = {
     dots: false,
     autoplay: true,
@@ -111,4 +111,4 @@ const cardBanner = () => {
   );
 };
 
-export default cardBanner;
+export default CardBanner;

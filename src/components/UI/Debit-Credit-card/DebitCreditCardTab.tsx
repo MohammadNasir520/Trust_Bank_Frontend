@@ -1,4 +1,5 @@
 "use client";
+
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import DebitCreditCard from "./DebitCreditCard";
 
@@ -81,24 +82,24 @@ const DebitCreditCardTab = () => {
         },
       ],
     },
-   
-  
-   
-  
   ];
 
   return (
     <div className="-mt-20">
       {/* Use responsive styles for padding */}
-      <Tabs size="sm" variant="enclosed" className="px-4 md:px-8 lg:px-16 py-3 " >
+      <Tabs
+        size="sm"
+        variant="enclosed"
+        className="px-4 md:px-8 lg:px-16 py-3 "
+      >
         <TabList className="backdrop-blur-md bg-white/85 text-white rounded-t-xl overflow-x-auto">
           {tabData?.map((tab, tabIndex) => (
             <Tab
               key={tabIndex}
-              className="flex items-center rounded justify-center h-16 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 relative text-blue-950 hover:bg-white/50 sm:w-2/4"
+              className="flex items-center rounded justify-center h-16 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 relative text-blue-950 hover:bg-white/50"
               _selected={{ color: "white", bg: "#012169", font: "bold" }}
             >
-              <h1 >{tab?.name}</h1>
+              <h1>{tab?.name}</h1>
               <div
                 style={{
                   borderRight: "1px",
@@ -116,7 +117,7 @@ const DebitCreditCardTab = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 {tab?.panelData.map((data, dataIndex) => (
                   <div key={dataIndex}>
-                    <DebitCreditCard data={data} />
+                    <DebitCreditCard />
                   </div>
                 ))}
               </div>

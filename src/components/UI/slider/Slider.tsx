@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import NextArrow from "./NextArrow";
 import PrevArrow from "./PrevArrow";
 
+
 const data = [
   { img: "/assets/slide-v1-1.jpg" },
   { img: "/assets/slide-v1-2.jpg" },
