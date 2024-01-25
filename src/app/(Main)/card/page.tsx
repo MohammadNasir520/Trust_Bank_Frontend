@@ -15,6 +15,7 @@ const page = () => {
             Pick Your Best debit & credit card
           </h1>
         </div>
+        <div className="max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-[80%] mx-auto my-4">
           <Card />
           <Card />
@@ -22,6 +23,7 @@ const page = () => {
           <Card />
           <Card />
           <Card />
+        </div>
         </div>
      
     </>

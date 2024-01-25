@@ -4,6 +4,7 @@ import SliderCarousel from "@/components/UI/slider/Slider";
 import FaqSection from "@/components/pages/home_page/FaqSection";
 import ForeignExchange from "@/components/pages/home_page/Foreign-Exchange";
 import LoanCalculatorPage from "@/components/pages/home_page/LoanCalculatorPage";
+import Offer from "@/components/pages/home_page/Offer";
 import TotalCount from "@/components/pages/home_page/TotalCount";
 //@ts-ignore
 import CardBanner from "@/components/ui/slider/CardBanner";
@@ -40,6 +41,7 @@ export default function page() {
             <CardBanner />
 
             <DebitCreditCardTab />
+            <Offer/>
             <LoanCalculatorPage />
             <ForeignExchange />
             <TotalCount />
