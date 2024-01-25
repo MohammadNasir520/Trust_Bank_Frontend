@@ -17,14 +17,14 @@ export default function Home() {
   return (
    
       <>
-       <Navbar />
+        <Navbar />
         <SliderCarousel /> 
         {/* <Banner /> */}
          <DebitCreditCardTab />
       <div className="my-44 lg:my-8 md:my-20">
       <LoanCalculatorPage />
       </div>
-        <BankProfile />
+        {/* <BankProfile /> */}
         <ForeignExchange />
         <Footer />
       </>
