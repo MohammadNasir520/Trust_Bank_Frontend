@@ -9,9 +9,9 @@ import TotalCount from "@/components/pages/home_page/TotalCount";
 import CardBanner from "@/components/ui/slider/CardBanner";
 
 export default function page() {
-    return (
-        <>
-            {/* <div className="relative h-[400px] w-full bg-[url('https://travel.usnews.com/dims4/USNEWS/cf7910a/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2FEllis_Island_Danny_Lehman_Getty.jpg')] bg-no-repeat bg-cover bg-center">
+  return (
+    <>
+      {/* <div className="relative h-[400px] w-full bg-[url('https://travel.usnews.com/dims4/USNEWS/cf7910a/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2FEllis_Island_Danny_Lehman_Getty.jpg')] bg-no-repeat bg-cover bg-center">
                 <div className="flex flex-col gap-5 justify-center h-full px-2 lg:px-4">
                     <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-[#F5EEE6]">
                         Travel to the moon
@@ -37,13 +37,14 @@ export default function page() {
                     </div>
                 </div>
             </div> */}
-            <CardBanner />
+      {/* <CardBanner /> */}
+      <SliderCarousel />
 
-            <DebitCreditCardTab />
-            <LoanCalculatorPage />
-            <ForeignExchange />
-            <TotalCount />
-            <FaqSection />
-        </>
-    )
+      <DebitCreditCardTab />
+      <LoanCalculatorPage />
+      <ForeignExchange />
+      <TotalCount />
+      <FaqSection />
+    </>
+  );
 }
