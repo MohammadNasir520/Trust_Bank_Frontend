@@ -8,19 +8,17 @@ interface InputProps {
   id: string;
   type?: string;
   required?: boolean;
-  register: any;
+  //   register: UseFormRegister<FieldValues>;
   //   errors: FieldErrors;
   disabled?: boolean;
-  name: string;
 }
 
 const Input: React.FC<InputProps> = ({
   label,
   id,
   type,
-  name,
   required,
-  register,
+  //   register,
   //   errors,
   disabled,
 }) => {
@@ -40,8 +38,6 @@ const Input: React.FC<InputProps> = ({
         id={id}
         type={type}
         autoComplete={id}
-        // {...register(name)}
-        {...register("ha")}
         className={clsx(
           `
         form-input
