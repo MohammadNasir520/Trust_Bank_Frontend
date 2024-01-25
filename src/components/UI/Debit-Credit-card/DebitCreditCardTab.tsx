@@ -81,10 +81,12 @@ const DebitCreditCardTab = () => {
         },
       ],
     },
-  
-   
-  
+
+
+
   ];
+
+  return (
 
     <div className="-mt-20">
       {/* Use responsive styles for padding */}

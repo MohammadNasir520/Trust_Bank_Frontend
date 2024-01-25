@@ -3,13 +3,17 @@
 // Inside SliderCarousel component
 import { useEffect, useState } from "react";
 import Slider from "react-slick";
-import NextArrow from "./NextArrow";
-import PrevArrow from "./PrevArrow";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import image_1 from '../../../../public/assets/slide-v1-1.jpg'
+import image_2 from '../../../../public/assets/slide-v1-2.jpg'
+import image_3 from '../../../../public/assets/slide-v1-3.jpg'
 
 const data = [
-  { img: "/assets/slide-v1-1.jpg" },
-  { img: "/assets/slide-v1-2.jpg" },
-  { img: "/assets/slide-v1-3.jpg" },
+  { img: "../../../../public/assets/slide-v1-1.jpg" },
+  { img: "../../../../public/assets/slide-v1-2.jpg" },
+  { img: "../../../../public/assets/slide-v1-3.jpg" },
 ];
 
 const SliderCarousel = () => {
@@ -29,19 +33,20 @@ const SliderCarousel = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     infinite: true,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+
   };
 
   return (
     <>
+
+
       {isMounted && (
         <Slider {...settings}>
           {data.map((el, index) => (
             <div key={index} className="relative">
               <div
                 style={{
-                  backgroundImage: `url(${el.img})`,
+                  backgroundImage: `url(${image_1})`,
                 }}
                 className="bg-cover bg-center lg:h-[400px] h-[280px] text-white relative"
                 id="c__animate"
