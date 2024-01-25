@@ -45,6 +45,7 @@ const GeneralManagers = () => {
       <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-6 my-8">
         {managersData.map((el, index) => (
           <ManagerCard
+            key={index}
             name={el.name}
             avatar={el.avatar}
             designation={el.designation}
