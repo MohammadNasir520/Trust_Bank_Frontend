@@ -28,13 +28,13 @@ const FormSelectField = ({
   return (
     <>
       {label && (
-        <label
-          htmlFor={name}
-          className="text-sm font-medium text-gray-600 block"
-        >
-          {label}
-        </label>
-      )}
+  <label
+    htmlFor={name}
+    className="text-sm font-semibold text-black rounded-md px-4 py-2 block "
+  >
+    {label}
+  </label>
+)}
       <Controller
         control={control}
         name={name}

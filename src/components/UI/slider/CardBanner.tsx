@@ -19,7 +19,7 @@ const cardBanner = () => {
   };
   return (
     <div className="">
-      <div className="h-5px bg-[#012169]"></div>
+   
       <Slider {...settings}>
         <div className="relative h-[400px] py-2 w-full bg-[url('https://assets-global.website-files.com/5c30841dedb5fd496eb1396c/5f157beb90654581f7f5c6ba_dPLhfpcDROPvwkdQxC6wk1b28KlkQTpoorl760f0Mzel5lQH3sSplzSyXxXY4lTPrWRg0CmCRq2-v_AG1FauFJ0EsXVTh6K7z0-ucdlTesV25uGYYxcJWZuGqJHmnJB9x0YKUCZm.jpeg')] bg-no-repeat bg-cover bg-center">
           <div className="flex flex-col gap-5 justify-center h-full pl-4 lg:px-4">

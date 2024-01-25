@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import banner from "../../../../public/assets/images/ezgif-2-a79a0f4570-removebg-preview.png";
+import banner from "../../../../public/assets/images/banner.webp";
 import { RiAccountBoxLine } from 'react-icons/ri';
 
 const Banner = () => {

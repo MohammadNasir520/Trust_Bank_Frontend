@@ -125,7 +125,7 @@ const AccountPage = () => {
             <div className="flex items-center justify-between">
               <button
                 type="submit"
-                className="bg-[#012169] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-5"
+                className="bg-[#012169] text-white font-bold py-2 px-4 text-sm rounded focus:outline-none focus:shadow-outline mt-5"
               >
                 Create
               </button>
