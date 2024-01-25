@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { HiEye, HiEyeOff } from "react-icons/hi";
 import Button from "@/components/Common/Button";
