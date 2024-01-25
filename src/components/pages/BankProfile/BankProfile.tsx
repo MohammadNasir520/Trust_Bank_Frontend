@@ -13,7 +13,7 @@ const BankProfile = () => {
         colorScheme="green"
       >
         {/* Left Side  */}
-        <TabList className="w-full lg:w-1/4 flex flex-row lg:flex-col items-start gap-4">
+        <TabList className="w-full lg:w-1/4 flex flex-row lg:flex-col items-start gap-4 flex-wrap">
           {TabListItems.map((el, index) => (
             <Tab
               key={index}
