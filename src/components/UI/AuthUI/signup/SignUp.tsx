@@ -4,17 +4,11 @@ import { useState } from "react";
 import { HiEye, HiEyeOff } from "react-icons/hi";
 import Button from "@/components/Common/Button";
 import Input from "../input/Input";
-import { useForm, SubmitHandler, FieldValues } from "react-hook-form";
 
 interface AuthVariable {
   variant: "LOGIN" | "REGISTER";
 }
 
-// export interface ISignUpInput {
-//   name: string;
-//   email: string;
-//   disabled: boolean;
-// }
 const SIgnUp = ({ variant }: AuthVariable) => {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -23,39 +17,23 @@ const SIgnUp = ({ variant }: AuthVariable) => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
 
-  const handleSignUp: SubmitHandler<FieldValues> = (data: any) => {
-    console.log(data);
-  };
-
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm<FieldValues>();
-
   return (
-    <form className="my-2 " onSubmit={handleSubmit(handleSignUp)}>
-      <input type="text" {...register("nameRH")} />
+    <form className="my-2">
       <Input
         id="name"
         label="Username"
         type="name"
-        // name="name"
-        register={register}
+        // register={register}
         // errors={errors}
         disabled={isLoading}
-        {...register("name")}
       />
       <Input
         id="email"
         label="Email Address"
         type="email"
-        // name="email"
         // register={register}
         // errors={errors}
         disabled={isLoading}
-        {...register("email")}
       />
       <div className="relative">
         <Input
@@ -63,10 +41,8 @@ const SIgnUp = ({ variant }: AuthVariable) => {
           label="Password"
           type={showPassword ? "text" : "password"}
           // register={register}
-          // name="password"
           // errors={errors}
           disabled={isLoading}
-          {...register("password")}
         />
         <button
           type="button"

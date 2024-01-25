@@ -1,10 +1,10 @@
 'use client'
 
 import Link from 'next/link';
-import facebook from "../../../../public/assets/social media/facebook.png"
-import instagram from "../../../../public/assets/social media/instagram.png"
-import whatsapp from "../../../../public/assets/social media/whatsapp.png"
-import telegram from "../../../../public/assets/social media/telegram.png"
+import facebook from "../../../public/assets/social media/facebook.png"
+import instagram from "../../../public/assets/social media/instagram.png"
+import whatsapp from "../../../public/assets/social media/whatsapp.png"
+import telegram from "../../../public/assets/social media/telegram.png"
 import Image from 'next/image';
 const Footer = () => {
   const footerLinks = [
