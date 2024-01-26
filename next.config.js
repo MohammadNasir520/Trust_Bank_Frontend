@@ -9,7 +9,8 @@ const nextConfig = {
       "i.ibb.co",
       "img.freepik.com",
       "ibb.co",
-    ], 
+      "www.biotecnika.org",
+    ],
   },
 };
 

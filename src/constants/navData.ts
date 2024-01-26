@@ -1,48 +1,17 @@
-export const loanNavMenuOptions = [
+
+
+export const cardNavMenuOptions = [
     {
-        label: 'Agriculture',
-        link: '/loan/agriculture'
+        label: 'Credit',
+        link: '/card'
     },
     {
-        label: 'Personal',
+        label: 'Debit',
         link: '',
-        children: [
-            {
-                label: 'Education Loan',
-                link: '',
-                children: [
-                    {
-                        label: 'Terms and Condition',
-                        link: '/loan/personal/education/terms_condition',
 
-                    },
-                    {
-                        label: 'Apply for loan',
-                        link: '/loan/personal/education/apply'
-                    },
-
-                ]
-            },
-            {
-                label: 'Loan Against D.',
-                link: '/loan/personal/loan_against_d'
-            },
-            {
-                label: 'Pension Loan',
-                link: '/loan/personal/pension'
-            },
-            {
-                label: 'Event Loan',
-                link: '/loan/personal/event'
-            },
-            {
-                label: 'Loan Against Gold',
-                link: '/loan/personal/loan_against_gold'
-            },
-        ]
     },
     {
-        label: 'Corporate & Business',
+        label: 'Corporate Card',
         link: '',
         children: [
             {
@@ -64,7 +33,7 @@ export const loanNavMenuOptions = [
         ]
     },
     {
-        label: 'Education',
+        label: 'Student',
         link: '',
         children: [
             {
@@ -81,13 +50,96 @@ export const loanNavMenuOptions = [
             },
         ]
     },
-    {
-        label: 'Home Loans',
-        link: '/loan/home'
-    },
-    {
-        label: 'Vehicle Loans',
-        link: '/loan/vehicle'
-    },
 
 ]
+
+export const loanNavMenuOptions = [
+    {
+        label: "Agriculture",
+        link: "/loan/agriculture",
+    },
+    {
+        label: "Personal",
+        link: "",
+        children: [
+            {
+                label: "Education Loan",
+                link: "",
+                children: [
+                    {
+                        label: "Terms and Condition",
+                        link: "/loan/personal/education/terms_condition",
+                    },
+                    {
+                        label: "Apply for loan",
+                        link: "/loan/personal/education/apply",
+                    },
+                ],
+            },
+            {
+                label: "Loan Against D.",
+                link: "/loan/personal/loan_against_d",
+            },
+            {
+                label: "Pension Loan",
+                link: "/loan/personal/pension",
+            },
+            {
+                label: "Event Loan",
+                link: "/loan/personal/event",
+            },
+            {
+                label: "Loan Against Gold",
+                link: "/loan/personal/loan_against_gold",
+            },
+        ],
+    },
+    {
+        label: "Corporate & Business",
+        link: "",
+        children: [
+            {
+                label: "Small business",
+                link: "/loan/corporate/small_business",
+            },
+            {
+                label: "Large business",
+                link: "/loan/corporate/large_business",
+            },
+            {
+                label: "Manufacture",
+                link: "/loan/corporate/manufacture",
+            },
+            {
+                label: "Marketing",
+                link: "/loan/corporate/manufacture",
+            },
+        ],
+    },
+    {
+        label: "Education",
+        link: "",
+        children: [
+            {
+                label: "Scholarship",
+                link: "/loan/education/scholarship",
+            },
+            {
+                label: "Phd",
+                link: "/loan/education/scholarship",
+            },
+            {
+                label: "Graduate",
+                link: "/loan/education/graduate",
+            },
+        ],
+    },
+    {
+        label: "Home Loans",
+        link: "/loan/home",
+    },
+    {
+        label: "Vehicle Loans",
+        link: "/loan/vehicle",
+    },
+];

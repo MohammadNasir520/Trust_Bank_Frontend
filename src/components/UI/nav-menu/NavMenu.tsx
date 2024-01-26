@@ -14,38 +14,46 @@ export default function NavMenu({ title, items }: { title: string, items: any[] 
 
   return (
     <>
-      <Menu autoSelect={false} closeOnSelect={false} >
+      <Menu autoSelect={false} closeOnSelect={false}>
         <CloseSubMenuOverlay
           isActive={innerMenusActive}
           closeSubMenu={closeSubMenus}
         />
-        <MenuButton _expanded={{
-
-          color: "#012169"
-        }}
+        <MenuButton
+          _expanded={{
+            color: "#012169",
+          }}
           _focus={{
             fontWeight: 500,
-            color: "#012169"
+            color: "#012169",
           }}
         >
           {title}
         </MenuButton>
-        <MenuList transition="all 0.1s" zIndex={999}
-          className='bg-white p-4 rounded border w-[250px]'
+        <MenuList
+          transition="all 0.1s"
+          zIndex={999}
+          className="bg-white p-4 rounded border w-[250px]"
         >
-          {items?.map((item: any) => <>
-
-            {!item?.children && <MenuItems><Link href={item?.link}>{item?.label}</Link></MenuItems>}
-            {item?.children && <MenuItemSubMenu>
-              <InnerMenu
-                title={item?.label}
-                childrenItems={item?.children}
-              />
-            </MenuItemSubMenu>}
-          </>)}
-
+          {items?.map((item: any) => (
+            <>
+              {!item?.children && (
+                <MenuItems key={item?.label}>
+                  <Link href={item?.link}>{item?.label}</Link>
+                </MenuItems>
+              )}{" "}
+              {item?.children && (
+                <MenuItemSubMenu>
+                  <InnerMenu
+                    title={item?.label}
+                    childrenItems={item?.children}
+                  />
+                </MenuItemSubMenu>
+              )}
+            </>
+          ))}
         </MenuList>
       </Menu>
     </>
-  )
+  );
 }
