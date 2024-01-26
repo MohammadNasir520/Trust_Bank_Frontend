@@ -1,15 +1,6 @@
-import {
-  Tabs,
-  TabList,
-  TabPanels,
-  Tab,
-  TabPanel,
-  Divider,
-} from "@chakra-ui/react";
+import { Divider } from "@chakra-ui/react";
 import QuickContact from "./QuickContact/QuickContact";
 import Link from "next/link";
-
-const TabListItems = ["Email Id's", "Bank’s Profile", "Management"];
 
 const Contact = () => {
   return (
