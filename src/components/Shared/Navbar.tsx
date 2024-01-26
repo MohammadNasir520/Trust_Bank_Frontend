@@ -17,9 +17,10 @@ import {
   //@ts-ignore
 } from "@chakra-ui/react";
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
-import { loanNavMenuOptions } from "@/constants/navData";
+
+import { cardNavMenuOptions, loanNavMenuOptions } from "@/constants/navData";
 import NavMenu from "../UI/nav-menu/NavMenu";
 import ResponsiveNavMenu from "../UI/nav-menu/ResponsiveNavMenu";
 import Link from "next/link";
@@ -32,6 +33,11 @@ export default function Navbar() {
   const btnRef = useRef();
   const isLogin = isLoggedIn();
   const {push} = useRouter()
+
+
+  useEffect(()=>{
+
+  },[isLogin])
 
   const handleLogin =()=>{
     removeUserInfo(authKey);
@@ -124,4 +130,5 @@ export default function Navbar() {
       <ResponsiveNavMenu isOpen={isOpen} onClose={onClose} />
     </>
   );
-}
+  
+                    }

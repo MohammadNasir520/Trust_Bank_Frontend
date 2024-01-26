@@ -219,7 +219,7 @@ const LoanCalculator = () => {
               USD <span>${monthlyRepayment}</span>
             </h1>
             <Link href="/">
-              <button className="py-2 px-4 text-md bg-yellow-200 rounded-md">
+              <button className="py-2 px-4 text-md bg-[#012169] text-[#FFFFDD] rounded-md">
                 Get Started
               </button>
             </Link>
@@ -233,7 +233,7 @@ const LoanCalculator = () => {
           </div>
           <div className="row-span-2 bg-[#182F7C]">
             <div className="flex flex-col items-center justify-center gap-2 mt-3 ">
-              <IoMdFlashlight size={25} color="black" />
+              <IoMdFlashlight size={25} color="#DCF2F1" />
               <h1 className="text-white font-serif text-[17px]">
                 Borrow wisely
               </h1>

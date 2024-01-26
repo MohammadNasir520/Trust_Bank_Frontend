@@ -6,15 +6,12 @@ import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import image_1 from '../../../../public/assets/slide-v1-1.jpg'
-import image_2 from '../../../../public/assets/slide-v1-2.jpg'
-import image_3 from '../../../../public/assets/slide-v1-3.jpg'
 
 
 const data = [
-  { img: "../../../../public/assets/slide-v1-1.jpg" },
-  { img: "../../../../public/assets/slide-v1-2.jpg" },
-  { img: "../../../../public/assets/slide-v1-3.jpg" },
+  { img: "/assets/slide-v1-1.jpg" },
+  { img: "/assets/slide-v1-2.jpg" },
+  { img: "/assets/slide-v1-3.jpg" },
 ];
 
 const SliderCarousel = () => {
@@ -27,27 +24,24 @@ const SliderCarousel = () => {
   const settings = {
     dots: false,
     autoplay: true,
-    speed: 4000,
+    speed: 2000,
     autoplaySpeed: 3000,
     pauseOnHover: true,
-    arrows: true,
+    arrows: false,
     slidesToShow: 1,
     slidesToScroll: 1,
     infinite: true,
-
   };
 
   return (
     <>
-
-
       {isMounted && (
         <Slider {...settings}>
           {data.map((el, index) => (
-            <div key={index} className="relative">
+            <div key={index} className="relative hidden">
               <div
                 style={{
-                  backgroundImage: `url(${image_1})`,
+                  backgroundImage: `url(${el.img})`,
                 }}
                 className="bg-cover bg-center lg:h-[400px] h-[280px] text-white relative"
                 id="c__animate"
