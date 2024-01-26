@@ -7,6 +7,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+
 const data = [
   { img: "/assets/slide-v1-1.jpg" },
   { img: "/assets/slide-v1-2.jpg" },

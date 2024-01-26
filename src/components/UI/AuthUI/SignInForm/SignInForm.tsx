@@ -5,30 +5,32 @@ import Input from "../input/Input";
 import Form from "@/components/Forms/Form/Form";
 import FormInput from "@/components/Forms/FormInput/FormInput";
 import { useSigninMutation } from "@/redux/api/authApi";
+import { useRouter } from "next/navigation";
+import { storeUserInfo } from "../../../../../services/auth.service";
 
-interface AuthVariable {
-  variant: "LOGIN" | "REGISTER";
-}
 
-const SignIn = ({ variant }: AuthVariable) => {
+const SignInForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const {push} = useRouter()
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
   const [signin] = useSigninMutation();
   const onSubmit = async (values: any) => {
-    console.log(values);
+  
     try {
-      const res = await signin(values)
+      const res = await signin(values).unwrap()
+      storeUserInfo({ accessToken: res?.data?.accessToken });
+      push("/")
     } catch (err) {
       console.log(err);
     }
   };
 
   return (
-    <Form submitHandler={onSubmit} >
+    <Form submitHandler={onSubmit} className="py-2 bg-white p-4">
        <FormInput
                   name="email"
                   label="Email"
@@ -55,11 +57,11 @@ const SignIn = ({ variant }: AuthVariable) => {
 
       <div className="mt-2">
         <Button disabled={isLoading} type="submit">
-          {variant === "LOGIN" ? "Sign In" : "Sign Up"}
+          Sign In
         </Button>
       </div>
     </Form>
   );
 };
 
-export default SignIn;
+export default SignInForm;
