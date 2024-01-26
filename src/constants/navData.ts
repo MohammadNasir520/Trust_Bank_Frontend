@@ -1,7 +1,7 @@
 export const loanNavMenuOptions = [
     {
         label: 'Agriculture',
-        link: ''
+        link: '/loan/agriculture'
     },
     {
         label: 'Personal',
@@ -13,31 +13,31 @@ export const loanNavMenuOptions = [
                 children: [
                     {
                         label: 'Terms and Condition',
-                        link: '',
+                        link: '/loan/personal/education/terms_condition',
 
                     },
                     {
                         label: 'Apply for loan',
-                        link: ''
+                        link: '/loan/personal/education/apply'
                     },
 
                 ]
             },
             {
                 label: 'Loan Against D.',
-                link: ''
+                link: '/loan/personal/loan_against_d'
             },
             {
                 label: 'Pension Loan',
-                link: ''
+                link: '/loan/personal/pension'
             },
             {
                 label: 'Event Loan',
-                link: ''
+                link: '/loan/personal/event'
             },
             {
                 label: 'Loan Against Gold',
-                link: ''
+                link: '/loan/personal/loan_against_gold'
             },
         ]
     },
@@ -47,19 +47,19 @@ export const loanNavMenuOptions = [
         children: [
             {
                 label: 'Small business',
-                link: ''
+                link: '/loan/corporate/small_business'
             },
             {
                 label: 'Large business',
-                link: ''
+                link: '/loan/corporate/large_business'
             },
             {
                 label: 'Manufacture',
-                link: ''
+                link: '/loan/corporate/manufacture'
             },
             {
                 label: 'Marketing',
-                link: ''
+                link: '/loan/corporate/manufacture'
             },
         ]
     },
@@ -69,25 +69,25 @@ export const loanNavMenuOptions = [
         children: [
             {
                 label: 'Scholarship',
-                link: ''
+                link: '/loan/education/scholarship'
             },
             {
                 label: 'Phd',
-                link: ''
+                link: '/loan/education/scholarship'
             },
             {
                 label: 'Graduate',
-                link: ''
+                link: '/loan/education/graduate'
             },
         ]
     },
     {
         label: 'Home Loans',
-        link: ''
+        link: '/loan/home'
     },
     {
         label: 'Vehicle Loans',
-        link: ''
+        link: '/loan/vehicle'
     },
 
 ]

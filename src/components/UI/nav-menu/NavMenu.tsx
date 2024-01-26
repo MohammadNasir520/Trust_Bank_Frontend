@@ -3,6 +3,7 @@ import { Menu, MenuList } from "@chakra-ui/menu";
 
 import { useState } from "react";
 import { CloseSubMenuOverlay, InnerMenu, MenuItemSubMenu, MenuItems } from ".";
+import Link from "next/link";
 
 export default function NavMenu({ title, items }: { title: string, items: any[] }) {
   const [innerMenusActive, setInnerMenusActive] = useState<boolean>(true);
@@ -34,7 +35,7 @@ export default function NavMenu({ title, items }: { title: string, items: any[] 
         >
           {items?.map((item: any) => <>
 
-            {!item?.children && <MenuItems>{item?.label}</MenuItems>}
+            {!item?.children && <MenuItems><Link href={item?.link}>{item?.label}</Link></MenuItems>}
             {item?.children && <MenuItemSubMenu>
               <InnerMenu
                 title={item?.label}

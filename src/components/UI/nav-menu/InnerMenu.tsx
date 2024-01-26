@@ -17,6 +17,7 @@ import { IoChevronDownCircleOutline } from "react-icons/io5";
 
 import { FaAngleDown } from "react-icons/fa";
 import { MenuItemSubMenu, MenuItems } from ".";
+import Link from "next/link";
 
 function addEL(ref: any, event: any, handler: any) {
     if (ref) ref.addEventListener(event, handler);
@@ -95,7 +96,6 @@ export default function InnerMenu({ title, childrenItems }: any) {
         <Menu autoSelect={false} offset={[0, 0]} isOpen={isOpen} placement={placement as 'bottom-start' | 'right'}>
             <MenuButton
                 ref={refSubMenuButton}
-                rightIcon={<IoChevronDownCircleOutline />}
                 _expanded={{
                     bg: "#e6eef7",
                     color: "#012169"
@@ -116,7 +116,7 @@ export default function InnerMenu({ title, childrenItems }: any) {
                 className='bg-white z-[99] p-4 absolute w-[300px] rounded-lg border'
             >
                 {childrenItems.map((item: any, i: number) => <>
-                    {!item?.children && <MenuItems key={item?.label}>{item?.label}</MenuItems>}
+                    {!item?.children && <MenuItems key={item?.label}><Link href={item?.link}>{item?.label}</Link></MenuItems>}
                     {item?.children && <MenuItemSubMenu>
                         <InnerMenu
                             title={item?.label}
