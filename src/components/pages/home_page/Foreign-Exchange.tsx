@@ -22,7 +22,7 @@ const ForeignExchange = () => {
 
   return (
   <>
-   <h1 className="text-center mb-4 text-3xl">
+   <h1 className="text-center my-3 text-xl lg:text-2xl">
       Rely on us - whatever the currency
         </h1>
     <Marquee direction="left" speed={30} style={{ overflow: 'hidden', width: '100%' }}>

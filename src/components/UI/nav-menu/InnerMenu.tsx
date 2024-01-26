@@ -17,6 +17,7 @@ import { IoChevronDownCircleOutline } from "react-icons/io5";
 
 import { FaAngleDown } from "react-icons/fa";
 import { MenuItemSubMenu, MenuItems } from ".";
+import Link from "next/link";
 
 function addEL(ref: any, event: any, handler: any) {
     if (ref) ref.addEventListener(event, handler);
@@ -92,40 +93,52 @@ export default function InnerMenu({ title, childrenItems }: any) {
     }, [screenSize])
 
     return (
-        <Menu autoSelect={false} offset={[0, 0]} isOpen={isOpen} placement={placement as 'bottom-start' | 'right'}>
-            <MenuButton
-                ref={refSubMenuButton}
-                rightIcon={<IoChevronDownCircleOutline />}
-                _expanded={{
-                    bg: "#e6eef7",
-                    color: "#012169"
-                }}
-                // className='hover:text-[#012169] font-semibold'
-                className="hover:text-[#012169] px-2 py-1  rounded w-[300px] text-start   hover:bg-[#e6eef7]  duration-200 "
-            >
-                <div className="flex justify-between items-center">
-                    <span> {title}</span> <FaAngleDown className="inline" />
-                </div>
-
-            </MenuButton>
-            <MenuList
-                minW={0}
-                ref={refSubMenuList}
-                zIndex={999}
-                _hover={{ zIndex: 1000 }}
-                className='bg-white z-[99] p-4 absolute w-[300px] rounded-lg border'
-            >
-                {childrenItems.map((item: any, i: number) => <>
-                    {!item?.children && <MenuItems key={item?.label}>{item?.label}</MenuItems>}
-                    {item?.children && <MenuItemSubMenu>
-                        <InnerMenu
-                            title={item?.label}
-                            childrenItems={item?.children}
-                        />
-                    </MenuItemSubMenu>}
-                </>)}
-            </MenuList>
-        </Menu>
+      <Menu
+        autoSelect={false}
+        offset={[0, 0]}
+        isOpen={isOpen}
+        placement={placement as "bottom-start" | "right"}
+      >
+        <MenuButton
+          ref={refSubMenuButton}
+          rightIcon={<IoChevronDownCircleOutline />}
+          _expanded={{
+            bg: "#e6eef7",
+            color: "#012169",
+          }}
+          // className='hover:text-[#012169] font-semibold'
+          className="hover:text-[#012169] px-2 py-1  rounded w-[300px] text-start   hover:bg-[#e6eef7]  duration-200 "
+        >
+          <div className="flex justify-between items-center">
+            <span> {title}</span> <FaAngleDown className="inline" />
+          </div>
+        </MenuButton>
+        <MenuList
+          minW={0}
+          ref={refSubMenuList}
+          zIndex={999}
+          _hover={{ zIndex: 1000 }}
+          className="bg-white z-[99] p-4 absolute w-[300px] rounded-lg border"
+        >
+          {childrenItems.map((item: any, i: number) => (
+            <>
+              {!item?.children && (
+                <MenuItems key={item?.label}>
+                  <Link href={item?.link}>{item?.label}</Link>
+                </MenuItems>
+              )}{" "}
+              {item?.children && (
+                <MenuItemSubMenu>
+                  <InnerMenu
+                    title={item?.label}
+                    childrenItems={item?.children}
+                  />
+                </MenuItemSubMenu>
+              )}
+            </>
+          ))}
+        </MenuList>
+      </Menu>
     );
 };
 
