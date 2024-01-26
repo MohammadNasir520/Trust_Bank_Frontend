@@ -1,27 +1,40 @@
 "use client";
 import Slider from "react-slick";
-import NextArrow from "./NextArrow";
-import PrevArrow from "./PrevArrow";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const CardBanner = () => {
+  // const settings = {
+  //   dots: false,
+  //   autoplay: true,
+  //   speed: 4000,
+  //   autoplaySpeed: 3000,
+  //   pauseOnHover: true,
+  //   arrows: true,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   infinite: true,
+  // nextArrow: <NextArrow />,
+  // prevArrow: <PrevArrow />,
+  // };
+
   const settings = {
     dots: false,
     autoplay: true,
-    speed: 4000,
-    autoplaySpeed: 3000,
+    infinite: true,
+    speed: 500,
     pauseOnHover: true,
-    arrows: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    infinite: true,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+    // nextArrow: <NextArrow />,
+    // prevArrow: <PrevArrow />
   };
   return (
     <div className="">
-      <div className="h-5px bg-[#012169]"></div>
-      <Slider {...settings}>
-        <div className="relative h-[400px] py-2 w-full bg-[url('https://assets-global.website-files.com/5c30841dedb5fd496eb1396c/5f157beb90654581f7f5c6ba_dPLhfpcDROPvwkdQxC6wk1b28KlkQTpoorl760f0Mzel5lQH3sSplzSyXxXY4lTPrWRg0CmCRq2-v_AG1FauFJ0EsXVTh6K7z0-ucdlTesV25uGYYxcJWZuGqJHmnJB9x0YKUCZm.jpeg')] bg-no-repeat bg-cover bg-center">
+      <div className=" bg-[#012169]"></div>
+      <Slider {...settings} className="overflow-hidden">
+        <div className="relative h-[400px] py-2 w-full  overflow-hidden bg-[url('https://assets-global.website-files.com/5c30841dedb5fd496eb1396c/5f157beb90654581f7f5c6ba_dPLhfpcDROPvwkdQxC6wk1b28KlkQTpoorl760f0Mzel5lQH3sSplzSyXxXY4lTPrWRg0CmCRq2-v_AG1FauFJ0EsXVTh6K7z0-ucdlTesV25uGYYxcJWZuGqJHmnJB9x0YKUCZm.jpeg')] bg-no-repeat bg-cover bg-center">
           <div className="flex flex-col gap-5 justify-center h-full pl-4 lg:px-4">
             <h1 className="text-2xl md:text-3xl lg:text-3xl font-medium font-serif uppercase text-[#F5EEE6]">
               Spend quality Time with family members
@@ -33,7 +46,7 @@ const CardBanner = () => {
             </div>
           </div>
         </div>
-        <div className="relative h-[400px] w-full bg-[url('https://travel.usnews.com/dims4/USNEWS/cf7910a/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2FEllis_Island_Danny_Lehman_Getty.jpg')] bg-no-repeat bg-cover bg-center">
+        <div className="relative h-[400px] overflow-hidden w-full bg-[url('https://travel.usnews.com/dims4/USNEWS/cf7910a/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2FEllis_Island_Danny_Lehman_Getty.jpg')] bg-no-repeat bg-cover bg-center">
           <div className="flex flex-col gap-5 justify-center h-full px-2 lg:px-4">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-[#F5EEE6]">
               Travel to the moon
@@ -59,7 +72,7 @@ const CardBanner = () => {
             </div>
           </div>
         </div>
-        <div className="relative h-[400px] w-full bg-[url('https://www.bankrate.com/2020/04/06134711/HowToMakePaymentsWithYourPhone.jpeg?auto=webp&optimize=high&crop=16:9')] bg-no-repeat bg-cover bg-center">
+        <div className="relative h-[400px] overflow-hidden w-full bg-[url('https://www.bankrate.com/2020/04/06134711/HowToMakePaymentsWithYourPhone.jpeg?auto=webp&optimize=high&crop=16:9')] bg-no-repeat bg-cover bg-center">
           <div className="flex flex-col gap-5 justify-center h-full px-2 lg:px-4">
             <h1 className="text-2xl md:text-3xl lg:text-4xl text-[#F5EEE6] font-semibold ">
               Save time and money with credit cards
@@ -80,7 +93,7 @@ const CardBanner = () => {
             </div>
           </div>
         </div>
-        <div className="relative h-[400px] w-full bg-[url('https://www.loucoporviagens.com.br/wp-content/uploads/2011/10/Viceroy-Bali-2-thegem-blog-default.jpg')] bg-no-repeat bg-cover bg-center">
+        <div className="relative h-[400px] overflow-hidden w-full bg-[url('https://www.loucoporviagens.com.br/wp-content/uploads/2011/10/Viceroy-Bali-2-thegem-blog-default.jpg')] bg-no-repeat bg-cover bg-center">
           <div className="flex flex-col gap-5 justify-center h-full px-2 lg:px-4 ">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-[#F5EEE6]">
               Explore the world

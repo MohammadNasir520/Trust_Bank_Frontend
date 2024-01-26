@@ -8,7 +8,7 @@ import Link from 'next/link';
 const Card = () => {
   return (
     <div className="flex justify-center my-8">
-      <div className=" w-[300px]   rounded-lg shadow-lg">
+      <div className="   rounded-lg shadow-lg ">
         <div
           className="bg-cover bg-center h-56 p-4 rounded-t-lg relative"
           style={{
