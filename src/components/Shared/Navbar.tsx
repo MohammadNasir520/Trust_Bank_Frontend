@@ -21,7 +21,7 @@ import {
 import { useRef } from "react";
 
 
-import { loanNavMenuOptions } from "@/constants/navData";
+import { cardNavMenuOptions, loanNavMenuOptions } from "@/constants/navData";
 import NavMenu from "../UI/nav-menu/NavMenu";
 import ResponsiveNavMenu from "../UI/nav-menu/ResponsiveNavMenu";
 import Link from "next/link";
@@ -64,15 +64,15 @@ export default function Navbar() {
                     <BiMenu />
                   </Button>
                 </div>
-                <Link href="/" >                  
-                <Image
-                  src={"/assets/logo/logo-no-background.png"}
-                  height={170}
-                  width={200}
-                  alt="logo"
-                  className=""
-                  style={{ transform: "skew(30deg)" }}
-                />
+                <Link href="/">
+                  <Image
+                    src={"/assets/logo/logo-no-background.png"}
+                    height={170}
+                    width={200}
+                    alt="logo"
+                    className=""
+                    style={{ transform: "skew(30deg)" }}
+                  />
                 </Link>
               </div>
               <div className=" lg:col-span-6 col-span-4 h-full  ">
@@ -85,18 +85,19 @@ export default function Navbar() {
                     <div className="lg:block hidden">{infoItems}</div>
                   </div>
                   <div className="lg:flex hidden justify-between my-auto p-5 text-black h-1/2  w-full  ">
-                    <div className="flex   gap-5">
+                    <div className="flex text-[16px]  font-medium   gap-5">
                       <NavMenu items={loanNavMenuOptions} title="Loan" />
                       <NavMenu items={loanNavMenuOptions} title="Investment" />
                       <NavMenu items={loanNavMenuOptions} title="Insurance" />
-                      <NavMenu items={loanNavMenuOptions} title="Card" />
+                      <NavMenu items={cardNavMenuOptions} title="Card" />
                       <NavMenu items={loanNavMenuOptions} title="Deposit" />
                       <NavMenu
                         items={loanNavMenuOptions}
-                        title="NRI services"
+                        title="
+                        Foreign services"
                       />
                     </div>
-                    <div className="flex px-5 gap-5">
+                    <div className="flex px-5 gap-5 text-[16px]  font-medium">
                       <p>Profile</p>
                       <Link href="/account">
                         {" "}

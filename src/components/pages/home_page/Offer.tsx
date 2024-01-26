@@ -11,7 +11,7 @@ import Image from "next/image";
 const Offer = () => {
   return (
     <div>
-      <div className="my-56 max-w-[1400px] mx-auto">
+      <div className=" my-4 max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
           <div
             className=" bg-cover bg-center h-60 lg:h-80 p-4  relative "
@@ -43,7 +43,7 @@ const Offer = () => {
                 "url(https://www2.bac-assets.com/hp-assets/spa-assets/images/assets-images-site-hp-assets-super-highlights-consumer-enterprise-en-ent_shl_local_student_5917192_722_gc.webp)",
             }}
           >
-            <div className="bg-[#FFF8E3] md:bg-[#FFFFFF] lg:bg-[#FFFFFF] w-56 lg:w-80 text-left py-4 px-3 rounded-md">
+            <div className="bg-[#FFF8E3] md:bg-[#FFFFFF] lg:bg-[#FFFFFF] w-56 lg:w-80 text-left py-4 px-3 rounded-md ">
               <div className="text-[15px] lg:text-2xl text-[#012169] ">
                 <h1 className="">Meet the next</h1>
                 <h1>generation of</h1>
@@ -62,8 +62,8 @@ const Offer = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-[1px] rounded-b-md">
-          <div className=" bg-[#ffffff] px-4 py-6 ">
-            <div className="my-2">
+          <div className=" bg-[#ffffff] px-4 py-6 flex flex-col justify-center ">
+            <div className="my-2  ">
               <Image
                 src="https://www2.bac-assets.com/hp-assets/spa-assets/images/assets-images-site-hp-assets-highlights-consumer-mobile-banking-bofa_icon_erica1_186rgb.svg"
                 width={100}
@@ -84,7 +84,7 @@ const Offer = () => {
               See how <IoIosArrowForward />
             </h1>
           </div>
-          <div className=" bg-[#FFF8E3] px-4 py-6 relative">
+          <div className=" bg-[#ECECEC] px-4 py-6 relative">
             <div className="my-2">
               <Image
                 src="https://www2.bac-assets.com/hp-assets/spa-assets/images/assets-images-site-hp-assets-highlights-consumer-other-en-bofa_icon_rewards2_280rgb.svg"
@@ -127,7 +127,7 @@ const Offer = () => {
               See how <IoIosArrowForward />
             </h1>
           </div>
-          <div className=" bg-[#F5EEE6] px-4 py-6">
+          <div className=" bg-[#F3F8FF] px-4 py-6 flex-col justify-center gap-2">
             <div className="my-3">
               <Image
                 src="https://www2.bac-assets.com/hp-assets/spa-assets/images/assets-images-site-hp-assets-highlights-consumer-merrill-en-merrill_lo1_rgb.svg"
