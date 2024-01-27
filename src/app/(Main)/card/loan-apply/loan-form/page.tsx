@@ -255,7 +255,7 @@ const page = () => {
             Postal Code: {formData.postalCode}
           </h1>
           <Link
-            href="/card/loan-apply/loan-form"
+            href="/card/loan-apply/loan-form/loan-approve"
             className="btn w-[250px] ml-1 my-4 rounded-md  text-white text-center py-2 px-4 bg-[#012169]"
           >
             <button>Confirm Loan Apply</button>
