@@ -1,52 +1,61 @@
-'use client';
+"use client";
 import LoanCalculatorPage from "@/components/pages/home_page/LoanCalculatorPage";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const page = () => {
-     const [firstName, setFirstName] = useState("");
-     const [lastName, setLastName] = useState("");
-     const [email, setEmail] = useState("");
-     const [country, setCountry] = useState("");
-     const [streetAddress, setStreetAddress] = useState("");
-     const [city, setCity] = useState("");
-     const [region, setRegion] = useState("");
-     const [postalCode, setPostalCode] = useState("");
-      const [formData, setFormData] = useState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        country: "",
-        streetAddress: "",
-        city: "",
-        region: "",
-        postalCode: "",
-      });
 
-     // Function to handle form submission
-     const handleSubmit = (e) => {
-       e.preventDefault();
+  const pathname = usePathname();
 
-       // Collect form data and perform desired actions
-       const formData = {
-         firstName,
-         lastName,
-         email,
-         country,
-         streetAddress,
-         city,
-         region,
-         postalCode,
-       };
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [country, setCountry] = useState("");
+  const [streetAddress, setStreetAddress] = useState("");
+  const [city, setCity] = useState("");
+  const [region, setRegion] = useState("");
+  const [postalCode, setPostalCode] = useState("");
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    country: "",
+    streetAddress: "",
+    city: "",
+    region: "",
+    postalCode: "",
+  });
 
-       // You can use formData as needed (e.g., send it to an API, store in state, etc.)
-       console.log(formData);
-       setFormData(formData);
-     };
+  // Function to handle form submission
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-     console.log(formData);
+    // Collect form data and perform desired actions
+    const formData = {
+      firstName,
+      lastName,
+      email,
+      country,
+      streetAddress,
+      city,
+      region,
+      postalCode,
+    };
+
+    // You can use formData as needed (e.g., send it to an API, store in state, etc.)
+    console.log(formData);
+    setFormData(formData);
+  };
+
+  console.log(formData);
   return (
     <div>
+      <div>
+        <div>
+          <p>Current pathname: {pathname}</p>
+        </div>
+      </div>
       <div className="flex flex-col lg:flex-row justify-center items-center">
         <div>
           <form className="m-10" onSubmit={handleSubmit}>
@@ -233,36 +242,32 @@ const page = () => {
           {/* firstName, lastName, email, country, streetAddress, city, region,
           postalCode, */}
 
-          <h1 className="text-2xl tracking-wide font-serif font-semibold ">
+          <h1 className="text-2xl tracking-wide  ">
             Name: {formData.firstName} {formData.lastName}
           </h1>
-          <h1 className="text-xl tracking-wide font-serif font-semibold ">
-            Email: {formData.email}
-          </h1>
-          <h1 className="text-xl tracking-wide font-serif font-semibold ">
+          <h1 className="text-xl tracking-wide  ">Email: {formData.email}</h1>
+          <h1 className="text-xl tracking-wide  ">
             Country: {formData.country}
           </h1>
-          <h1 className="text-xl tracking-wide font-serif font-semibold ">
+          <h1 className="text-xl tracking-wide  ">
             Street Address: {formData.streetAddress}
           </h1>
-          <h1 className="text-xl tracking-wide font-serif font-semibold ">
-            City: {formData.city}
-          </h1>
-          <h1 className="text-xl tracking-wide font-serif font-semibold ">
-            Region: {formData.region}
-          </h1>
-          <h1 className="text-xl tracking-wide font-serif font-semibold ">
+          <h1 className="text-xl tracking-wide  ">City: {formData.city}</h1>
+          <h1 className="text-xl tracking-wide  ">Region: {formData.region}</h1>
+          <h1 className="text-xl tracking-wide  ">
             Postal Code: {formData.postalCode}
           </h1>
           <Link
-            href="/card/loan-apply/loan-form/loan-approve"
+            href={`${pathname}/loan-approve`}
             className="btn w-[250px] ml-1 my-4 rounded-md  text-white text-center py-2 px-4 bg-[#012169]"
           >
             <button>Confirm Loan Apply</button>
           </Link>
         </div>
       </div>
-      <LoanCalculatorPage />
+      <div className=" mb-3">
+        <LoanCalculatorPage />
+      </div>
     </div>
   );
 };

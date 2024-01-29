@@ -5,7 +5,7 @@ import { TiTickOutline } from "react-icons/ti";
 import { FaAngleRight } from "react-icons/fa";
 import Link from 'next/link';
 
-const Card = () => {
+const Card = ({card}) => {
   return (
    
       <div className="flex justify-center my-8">
@@ -38,28 +38,24 @@ const Card = () => {
           </div>
           <div className="px-2 flex flex-col  pt-[60px] pb-3 bg-[#F8F4EC] ">
             <h1 className="text-lg fon-semibold">
-              Premium Shopping credit card
+              {card.title}
             </h1>
             <hr className="my-2 h-[2px] bg-[#F0EDCF]" />
             <div>
               <h1 className="text-[16px] ">Benefits</h1>
 
               <ul className="ml-2 mt-2">
-                <li className="flex items-center gap-1 text-[14px] lg:text-[14px]">
-                  <TiTickOutline />
-                  Get 10% cashback
-                </li>
-                <li className="flex items-center gap-1 text-[14px] lg:text-[14px]">
-                  {" "}
-                  <TiTickOutline />
-                  Welcome offer
-                </li>
-                <li className="flex items-center gap-1 text-[14px] lg:text-[14px]">
-                  {" "}
-                  <TiTickOutline />
-                  Get Guest Miles
-                </li>
-                <li></li>
+
+                {
+                  card.benefits.map((benefit)=>{
+                    return(
+                      <li className="flex items-center gap-1 text-[14px] lg:text-[14px]">
+                        <TiTickOutline />
+                        {benefit}
+                      </li>
+                    )
+                  })
+                }               
               </ul>
             </div>
             <hr className="h-[3px] bg-black my-2" />
@@ -67,7 +63,7 @@ const Card = () => {
               <Link href="/card/loan-apply">
                 <button className=" px-5 py-1">Apply Now</button>
               </Link>
-              <Link href="/card/loan-apply">
+              <Link href={`/card/${card.id}`}>
                 <button className="   px-5 py-1 flex items-center gap-1">
                   Know More <FaAngleRight />
                 </button>

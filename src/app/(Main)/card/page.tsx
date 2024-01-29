@@ -1,4 +1,3 @@
-import PageLayout from "@/components/layout/PageLayout";
 import Card from "@/components/pages/card_page/Card";
 import CardBanner from "@/components/ui/slider/CardBanner";
 
@@ -11,89 +10,104 @@ const page = () => {
       id: 1,
       title: "Debit Card",
       description: "Debit Card",
+      category: "Credit Card",
       image: "/assets/images/debit-card.png",
-      benefits: [
-        "Get 10% cashback",
-        "Welcome offer",
-        "Get premium discount"
-    ],
+      cardImg: "/assets/images/debit-card.png",
+      benefits: ["Get 10% cashback", "Welcome offer", "Get premium discount"],
+      condition:[{
+        age: 10,
+        limit: 5000,
+        offer: 10,        
+
+      }]
     },
     {
-      id: 1,
-      title: "Debit Card",
-      description: "Debit Card",
+      id: 2,
+      title: "Premium Shopping Card",
+      description: "Credit Card",
+      category: "Credit Card",
       image: "/assets/images/debit-card.png",
-      benefits: [
-        "Get 10% cashback",
-        "Welcome offer",
-        "Get premium discount"
-    ],
+      cardImg: "/assets/images/debit-card.png",
+      benefits: ["Get 10% cashback", "Welcome offer", "Get premium discount"],
+      condition:[{
+        age: 10,
+        limit: 5000,
+        offer: 10,
+      }]
     },
     {
-      id: 1,
+      id: 3,
       title: "Debit Card",
-      description: "Debit Card",
+      description: "Credit Card",
+      category: "Credit Card",
       image: "/assets/images/debit-card.png",
-      benefits: [
-        "Get 10% cashback",
-        "Welcome offer",
-        "Get premium discount"
-    ],
+      cardImg: "/assets/images/debit-card.png",
+      benefits: ["Get 10% cashback", "Welcome offer", "Get premium discount"],
+      condition:[{
+        age: 10,
+        limit: 5000,
+        offer: 10,
+      }]
     },
     {
-      id: 1,
+      id: 4,
       title: "Debit Card",
       description: "Debit Card",
+      category: "Credit Card",
       image: "/assets/images/debit-card.png",
-      benefits: [
-        "Get 10% cashback",
-        "Welcome offer",
-        "Get premium discount"
-    ],
+      cardImg: "/assets/images/debit-card.png",
+      benefits: ["Get 10% cashback", "Welcome offer", "Get premium discount"],
+      condition:[{
+        age: 10,
+        limit: 5000,
+        offer: 10,
+      }]
     },
     {
-      id: 1,
+      id: 5,
       title: "Debit Card",
       description: "Debit Card",
+      category: "Credit Card",
       image: "/assets/images/debit-card.png",
-      benefits: [
-        "Get 10% cashback",
-        "Welcome offer",
-        "Get premium discount"
-    ],
+      cardImg: "/assets/images/debit-card.png",
+      benefits: ["Get 10% cashback", "Welcome offer", "Get premium discount"],
+      condition:[{
+        age: 10,
+        limit: 5000,
+        offer: 10,
+      }]
     },
     {
-      id: 1,
+      id: 6,
       title: "Debit Card",
       description: "Debit Card",
+      category: "Credit Card",
       image: "/assets/images/debit-card.png",
-      benefits: [
-        "Get 10% cashback",
-        "Welcome offer",
-        "Get premium discount"
-    ],
+      cardImg: "/assets/images/debit-card.png",
+      benefits: ["Get 10% cashback", "Welcome offer", "Get Airport launch offer"],
+      condition:[{
+        age: 10,
+        limit: 5000,
+        offer: 10,
+      }]
     },
+    
   ];
   return (
     <>
-     
-        <CardBanner />
-        <div className="text-center mt-8">
-          <h1 className="text-center text-3xl font-semibold">
-            Pick Your Best debit & credit card
-          </h1>
+      <CardBanner />
+      <div className="text-center mt-8">
+        <h1 className="text-center text-3xl font-semibold">
+          Pick Your Best debit & credit card
+        </h1>
+      </div>
+      <div className="max-w-[1400px] mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-[80%] mx-auto my-4">
+          {cardData.map((card) => (
+            <Card key={card.id} card={card} />
+          ))}
         </div>
-        <div className="max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-[80%] mx-auto my-4">          
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-        </div>
-        </div>
-     
+      </div>
     </>
   );
 };
