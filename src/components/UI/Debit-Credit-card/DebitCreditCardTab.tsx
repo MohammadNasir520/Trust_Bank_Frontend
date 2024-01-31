@@ -2,6 +2,17 @@
 
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import DebitCreditCard from "./DebitCreditCard";
+import { MdAccountBalance } from "react-icons/md";
+import { RiMoneyDollarBoxLine } from "react-icons/ri";
+import { FaRegCreditCard } from "react-icons/fa";
+import { MdOutlineCreditCardOff } from "react-icons/md";
+import { CiBank } from "react-icons/ci";
+import { MdSupervisorAccount } from "react-icons/md";
+
+
+
+
+
 
 import loanImg from "@/assets/images/loan.png";
 
@@ -9,7 +20,33 @@ const DebitCreditCardTab = () => {
   const tabData = [
     {
       name: "popular",
+      icon: <CiBank size={20} />,
       panelData: [
+        {
+          title: "Savings Account",
+          description: "ZERO charges on ATM transactions",
+          image: loanImg,
+        },
+        {
+          title: "Savings Account",
+          description: "ZERO charges on ATM transactions",
+          image: loanImg,
+        },
+        {
+          title: "Savings Account",
+          description: "ZERO charges on ATM transactions",
+          image: loanImg,
+        },
+        {
+          title: "Savings Account",
+          description: "ZERO charges on ATM transactions",
+          image: loanImg,
+        },
+        {
+          title: "Savings Account",
+          description: "ZERO charges on ATM transactions",
+          image: loanImg,
+        },
         {
           title: "Savings Account",
           description: "ZERO charges on ATM transactions",
@@ -19,7 +56,18 @@ const DebitCreditCardTab = () => {
     },
     {
       name: "Accounts",
+      icon: <MdSupervisorAccount size={25} />,
       panelData: [
+        {
+          title: "Savings Account",
+          description: "ZERO charges on ATM transactions",
+          image: loanImg,
+        },
+        {
+          title: "Savings Account",
+          description: "ZERO charges on ATM transactions",
+          image: loanImg,
+        },
         {
           title: "Savings Account",
           description: "ZERO charges on ATM transactions",
@@ -34,6 +82,7 @@ const DebitCreditCardTab = () => {
     },
     {
       name: "Loan",
+      icon: <RiMoneyDollarBoxLine size={20} />,
       panelData: [
         {
           title: "Savings Account",
@@ -53,8 +102,24 @@ const DebitCreditCardTab = () => {
       ],
     },
     {
-      name: "popular",
+      name: "Credits",
+      icon: <FaRegCreditCard size={20} />,
       panelData: [
+        {
+          title: "Savings Account",
+          description: "ZERO charges on ATM transactions",
+          image: loanImg,
+        },
+        {
+          title: "Savings Account",
+          description: "ZERO charges on ATM transactions",
+          image: loanImg,
+        },
+        {
+          title: "Savings Account",
+          description: "ZERO charges on ATM transactions",
+          image: loanImg,
+        },
         {
           title: "Savings Account",
           description: "ZERO charges on ATM transactions",
@@ -68,8 +133,14 @@ const DebitCreditCardTab = () => {
       ],
     },
     {
-      name: "popular",
+      name: "Debit",
+      icon: <MdOutlineCreditCardOff size={20} />,
       panelData: [
+        {
+          title: "Savings Account",
+          description: "ZERO charges on ATM transactions",
+          image: loanImg,
+        },
         {
           title: "Savings Account",
           description: "ZERO charges on ATM transactions",
@@ -82,9 +153,6 @@ const DebitCreditCardTab = () => {
         },
       ],
     },
-
-
-
   ];
 
   return (
@@ -100,10 +168,11 @@ const DebitCreditCardTab = () => {
           {tabData?.map((tab, tabIndex) => (
             <Tab
               key={tabIndex}
-              className="flex items-center rounded justify-center h-16 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 relative text-blue-950 hover:bg-white/50"
+              className="flex flex-col items-center rounded justify-center h-16 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 relative text-blue-950 hover:bg-white/50"
               _selected={{ color: "white", bg: "#012169", font: "bold" }}
             >
-              <h1>{tab?.name}</h1>
+              <span>{tab?.icon}</span>
+              <h1 className="text-[14px] md:text-[16px] lg:text-[18px]">{tab?.name}</h1>
               <div
                 style={{
                   borderRight: "1px",
@@ -114,7 +183,7 @@ const DebitCreditCardTab = () => {
             </Tab>
           ))}
         </TabList>
-        <TabPanels className="my-5">
+        <TabPanels className="my-9">
           {tabData?.map((tab, tabIndex) => (
             <TabPanel key={tabIndex}>
               {/* Adjust grid layout for responsiveness */}

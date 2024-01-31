@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+
 const CardBanner = () => {
   // const settings = {
   //   dots: false,
@@ -20,15 +21,14 @@ const CardBanner = () => {
   // };
 
   const settings = {
-    dots: false,
+    dots: true,
     autoplay: true,
     infinite: true,
     speed: 500,
     pauseOnHover: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    // nextArrow: <NextArrow />,
-    // prevArrow: <PrevArrow />
+   
   };
   return (
     <div className="">

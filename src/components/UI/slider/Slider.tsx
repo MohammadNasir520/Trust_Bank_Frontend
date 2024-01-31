@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Text } from "@chakra-ui/react";
 
+
 const data = [
   {
     img: "/assets/plus_saver_promo_main.jpg",
