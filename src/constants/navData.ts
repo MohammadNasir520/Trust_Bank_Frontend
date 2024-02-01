@@ -3,11 +3,11 @@
 export const cardNavMenuOptions = [
     {
         label: 'Credit',
-        link: '/card'
+        link: '/credit-card'
     },
     {
         label: 'Debit',
-        link: '',
+        link: '/debit-card',
       
     },
     {

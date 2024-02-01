@@ -1,3 +1,4 @@
+'use client'
 import Link from "next/link";
 import React from "react";
 import { TiTickOutline } from "react-icons/ti";
@@ -10,14 +11,14 @@ import {
 } from "react-icons/tb";
 import { GoClock } from "react-icons/go";
 import { GoDotFill } from "react-icons/go";
+import { usePathname } from "next/navigation";
 
 const page = ({ params }: { params: { cardApply: string } }) => {
+    const pathname = usePathname();
+
 
   return (
-    <div className="py-8 ">
-      <h1 className="text-3xl text-center my-2 ">
-        My Post: {params.cardApply}
-      </h1>
+    <div className="py-8 ">     
       <div className="text-left flex flex-col gap-2 bg-[#E6E6E6] pl-6 lg:pl-24 py-4">
         <h1 className="text-3xl">
           Personal loan application <br /> checklist
@@ -30,7 +31,7 @@ const page = ({ params }: { params: { cardApply: string } }) => {
           <GoClock /> Get response from our team
         </p>
         <Link
-          href={`/card/${params.cardApply}/credit-loan`}
+          href={`${pathname}/credit-loan`}
           className="btn w-[150px] ml-1 rounded-md  text-white text-center py-2 px-4 bg-[#012169]"
         >
           Apply Now
@@ -146,7 +147,7 @@ const page = ({ params }: { params: { cardApply: string } }) => {
           information ready, let's get started.
         </h1>
         <Link
-          href={`/card/${params.cardApply}/credit-loan`}
+          href={`${pathname}/credit-loan`}
           className="btn w-[150px] rounded-md  text-white text-center py-2 px-4 bg-[#012169]"
         >
           Apply Now

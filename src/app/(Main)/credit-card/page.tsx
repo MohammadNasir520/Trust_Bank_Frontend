@@ -1,10 +1,14 @@
+'use client'
 import Card from "@/components/pages/card_page/Card";
 import CardBanner from "@/components/ui/slider/CardBanner";
+import { usePathname } from "next/navigation";
 
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
 const page = () => {
+    const pathname = usePathname();
+
   const cardData = [
     {
       id: 1,
@@ -104,7 +108,7 @@ const page = () => {
       <div className="max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-[80%] mx-auto my-4">
           {cardData.map((card) => (
-            <Card key={card.id} card={card} />
+            <Card key={card.id} card={card}  pathname={pathname}/>
           ))}
         </div>
       </div>
