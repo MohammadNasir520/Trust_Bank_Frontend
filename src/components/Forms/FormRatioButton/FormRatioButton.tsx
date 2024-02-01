@@ -1,11 +1,12 @@
 // FormRadioField.tsx
-import React from 'react';
-import { useFormContext, Controller } from 'react-hook-form';
+import React from "react";
+import { useFormContext, Controller } from "react-hook-form";
 
 interface IRadioInput {
   name: string;
   label?: string;
   options: string[];
+  className?: string;
 }
 
 const FormRadioField: React.FC<IRadioInput> = ({ name, label, options }) => {
@@ -13,19 +14,19 @@ const FormRadioField: React.FC<IRadioInput> = ({ name, label, options }) => {
 
   return (
     <div>
-        {label && (
-  <label
-    htmlFor={name}
-    className="text-sm font-semibold text-black rounded-md px-4 py-2 block"
-  >
-    {label}
-  </label>
-)}
+      {label && (
+        <label
+          htmlFor={name}
+          className="text-sm font-semibold text-black rounded-md px-4 py-2 block"
+        >
+          {label}
+        </label>
+      )}
       <Controller
         control={control}
         name={name}
         render={({ field: { value, onChange } }) => (
-          <div className="flex space-x-4">
+          <div className="flex gap-2">
             {options.map((option) => (
               <div key={option} className="flex items-center">
                 <input
@@ -43,7 +44,7 @@ const FormRadioField: React.FC<IRadioInput> = ({ name, label, options }) => {
                 >
                   <span
                     className={`h-4 w-4 rounded-full border border-gray-500 transition duration-300 ${
-                      value === option ? 'bg-[#012169] border-[#012169]' : ''
+                      value === option ? "bg-[#012169] border-[#012169]" : ""
                     }`}
                   ></span>
                   <span className="ml-2">{option}</span>

@@ -20,8 +20,8 @@ const Calculator = () => {
   };
 
   return (
-    <div className="w-full flex flex-col justify-center items-center py-6 gap-4 lg:gap-10">
-      <div className="text-lg lg:text-3xl text-black font-extralight mt-10">
+    <div className="w-full flex flex-col justify-center items-center py-12 lg:py-20 gap-4 lg:gap-10">
+      <div className="text-lg lg:text-3xl text-black font-extralight">
         Currency conversion calculator
       </div>
 
