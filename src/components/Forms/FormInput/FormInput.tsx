@@ -33,7 +33,7 @@ const FormInput: React.FC<FormInputProps> = ({
   const errorMessage = getErrorMessageByPropertyName(errors, name);
 
   return (
-    <div className="">
+    <div >
   {label && (
   <label
     htmlFor={name}
@@ -54,8 +54,8 @@ const FormInput: React.FC<FormInputProps> = ({
               placeholder={placeholder}
               {...field}
               value={value ? value : field.value}
-              className={className}
-              // You can use customStyle prop for additional styling
+              className={`mt-1 p-2 w-full border rounded-md ${size === "large" ? "large-styles" : "small-styles"}`}
+             
             />
             {errorMessage && (
               <small className="text-red-500 mt-1">{errorMessage}</small>
