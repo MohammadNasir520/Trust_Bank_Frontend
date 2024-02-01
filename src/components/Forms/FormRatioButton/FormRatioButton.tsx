@@ -4,7 +4,7 @@ import { useFormContext, Controller } from 'react-hook-form';
 
 interface IRadioInput {
   name: string;
-  label: string;
+  label?: string;
   options: string[];
 }
 

@@ -7,18 +7,11 @@ import FormRadioField from "@/components/Forms/FormRatioButton/FormRatioButton";
 import FormSelectField from "@/components/Forms/FormSelectedField/FormSelectedField";
 import LoanCalculatorPage from "@/components/pages/home_page/LoanCalculatorPage";
 import { accountOptions } from "@/constants/constants";
-import { useAccountMutation } from "@/redux/api/authApi";
 
 const Test = () => {
-  const [account] = useAccountMutation();
-    const onSubmit = async (values: any) => {
-
-    const obj = {...values}
-    obj.profileImage = "demo url"
-    obj.age = parseInt(obj.age)
+  const onSubmit = async (values: any) => {
+    console.log(values);
     try {
-      console.log(obj)
-      const res = await account(obj).unwrap()
     } catch (err) {
       console.log(err);
     }
@@ -55,11 +48,7 @@ const Test = () => {
                   </div>
 
                   <div className="sm:col-span-3">
-                  <FormInput
-                        name="age"
-                        label="Age"
-                        type="number"
-                      />
+                    <FormDatePicker name="age" label="Date of birth" />
                   </div>
 
                   <div className="sm:col-span-3">
@@ -74,7 +63,7 @@ const Test = () => {
                   <div className="sm:col-span-3">
                     <div>
                       <FormSelectField
-                        name="accountType"
+                        name="account"
                         label="Account Type"
                         options={accountOptions}
                       />
@@ -83,7 +72,7 @@ const Test = () => {
                   <div className="sm:col-span-3">
                     <div className="mt-1">
                       <FormRadioField
-                        name="citizenShip"
+                        name="citizen"
                         label="Citizen"
                         options={["International", "Bangladesh"]}
                       />
@@ -120,7 +109,9 @@ const Test = () => {
         </div>
         <div className="hidden lg:block h-1/2 w-[3px]  bg-black mx-2"> </div>
       </div>
-    
+      <div className=" mb-3">
+        <LoanCalculatorPage />
+      </div>
     </div>
   );
 };

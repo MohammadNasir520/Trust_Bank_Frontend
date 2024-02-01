@@ -13,12 +13,14 @@ interface IInput {
   label?: string;
   defaultValue?: SelectOptions;
   className?: string;
+  size?:any;
 }
 
 const FormSelectField = ({
   name,
   value,
   options,
+  size="large",
   label,
   defaultValue,
   className,
@@ -42,7 +44,7 @@ const FormSelectField = ({
           <select
             onChange={(e) => onChange(e.target.value)}
             value={value}
-            className={className}
+            className={`mt-1 p-3 w-full border rounded-md ${size === "large" ? "large-styles" : "small-styles"}`}
           >
             {/* Add an empty option as a placeholder */}
             <option value="">
