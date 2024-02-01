@@ -22,7 +22,6 @@ const page = ({ params }: { params: { cardApply: string } }) => {
   return (
     <div className="py-8 ">
       
-      <h1 className="text-3xl text-center my-2 ">My Post: {pathname}</h1>
       <div className="text-left flex flex-col gap-2 bg-[#E6E6E6] pl-6 lg:pl-24 py-4">
         <h1 className="text-3xl">
           Personal loan application <br /> checklist
