@@ -41,6 +41,47 @@ export const accountOptions = [
     value: "student",
   },
 ];
+
+export const countryOptions = [
+  {
+    label: "Bangladesh",
+    value: "bangladesh",
+  },
+  {
+    label: "India",
+    value: "india",
+  },
+
+  {
+    label: "United State",
+    value: "united-state",
+  },
+  {
+    label: "UAE",
+    value: "uae",
+  }
+];
+export const employementOptions = [
+  {
+    label: "Employed",
+    value: "employed",
+  },
+  {
+    label: "Unemployed",
+    value: "unemployed",
+  }
+];
+
+export const maritailOptions = [
+  {
+    label: "Single",
+    value: "single",
+  },
+  {
+    label: "Married",
+    value: "married",
+  }
+];
 export const correctAnswerOptions = [
   {
     label: "A",

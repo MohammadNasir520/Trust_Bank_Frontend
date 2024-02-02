@@ -41,7 +41,7 @@ const FormDatePicker: React.FC<FormDatePickerProps> = ({
        {label && (
   <label
     htmlFor={name}
-    className="text-sm font-semibold text-black rounded-md px-4 py-2 block "
+    className="text-sm  text-black rounded-md px-2 block "
   >
     {label}
   </label>
