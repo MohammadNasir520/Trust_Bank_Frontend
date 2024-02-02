@@ -10,7 +10,7 @@ const loanApi = baseApi.injectEndpoints({
                 url: `/agricultureLoan`,
                 method: "GET",
             }),
-            providesTags: [tagTypes.agricultureLoan]
+            providesTags: [tagTypes.agriculture]
         }),
         updateAgricultureLoan: build.mutation({
             query: ({ data, id }) => ({
@@ -18,28 +18,28 @@ const loanApi = baseApi.injectEndpoints({
                 method: "PATCH",
                 body: data
             }),
-            invalidatesTags: [tagTypes.agricultureLoan]
+            invalidatesTags: [tagTypes.agriculture]
         }),
         getPersonalLoan: build.query({
             query: (data) => ({
                 url: `/personalLoan`,
                 method: "GET",
             }),
-            providesTags: [tagTypes.personalLoan]
+            // providesTags: [tagTypes.personalLoan]
         }),
         getCorporateLoan: build.query({
             query: (data) => ({
                 url: `/corporateLoan`,
                 method: "GET",
             }),
-            providesTags: [tagTypes.corporateLoan]
+            // providesTags: [tagTypes.corporateLoan]
         }),
         getEducationLoan: build.query({
             query: (data) => ({
                 url: `/educationLoan`,
                 method: "GET",
             }),
-            providesTags: [tagTypes.educationLoan]
+            // providesTags: [tagTypes.educationLoan]
         }),
     }),
     // overrideExisting: false,

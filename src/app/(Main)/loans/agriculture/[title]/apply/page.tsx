@@ -2,12 +2,41 @@
 import Form from "@/components/Forms/Form/Form";
 import FormInput from "@/components/Forms/FormInput/FormInput";
 import LoanCalculatorPage from "@/components/pages/home_page/LoanCalculatorPage";
-
+import { useAddAgricultureLoanMutation } from "@/redux/api/agricultureLoanApi";
+import demodata from "../../../../../../components/pages/Agriculture/data"
+import { usePathname, useRouter } from "next/navigation";
 
 const AgricultureLoanApply = () => {
+  const pathname = usePathname()
+  const {push} = useRouter()
+  const split = pathname.split('/')
+  const title = split[3]
+
+  function convertToTitle(inputString:string) {
+    return inputString
+      .split("-")
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  }
+ 
+  let formattedTitle = convertToTitle(title);
+  
+  const loan = demodata.filter((data:any)=> data.title === formattedTitle)
+  console.log(loan[0]);
+  let loanName = loan[0]?.title;
+  let amount = loan[0].amount;
+
+
+  const [addAgricultureLoan] = useAddAgricultureLoanMutation()
   const onSubmit = async (values: any) => {
-    console.log(values);
+    const obj = {...values}
+    obj.loanName = loanName;
+    obj.amount = amount;
     try {
+      const res = await addAgricultureLoan(obj).unwrap();
+      if(res.data){
+        push(`${pathname}/loan-approve`)
+      }
     } catch (err) {
       console.log(err);
     }
@@ -42,7 +71,7 @@ const AgricultureLoanApply = () => {
                         type="text"
                         name="loanName"
                         className="block w-full px-2 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                         value="agricultural-jewel-loan-scheme-1"
+                         value={loanName}
                       />
                     </div>
                   </div>
@@ -55,10 +84,10 @@ const AgricultureLoanApply = () => {
                     </label>
                     <div className="mt-2">
                       <FormInput
-                        type="text"
+                        type="number"
                         name="amount"                  
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                       value=" 50000"
+                         value={amount.toString()}
                       />
                     </div>
                   </div>
@@ -192,3 +221,5 @@ const AgricultureLoanApply = () => {
 };
 
 export default AgricultureLoanApply;
+
+

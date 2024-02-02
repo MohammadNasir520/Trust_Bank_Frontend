@@ -1,14 +1,15 @@
 export enum tagTypes {
   user = "user",
   account = "account",
-  agricultureLoan = 'agricultureLoan',
-  personalLoan = 'personalLoan',
-  corporateLoan = 'corporateLoan',
-  educationLoan = 'education',
+  agriculture = "agriculture",
+  card = "card"
+
 }
 
 export const tagTypesList = [
   tagTypes.user,
   tagTypes.account,
-  tagTypes.agricultureLoan
+  tagTypes.agriculture,
+  tagTypes.card
 ];
+
