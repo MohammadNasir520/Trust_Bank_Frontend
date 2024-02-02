@@ -2,7 +2,7 @@
 import Card from "@/components/pages/card_page/Card";
 // @ts-ignore
 import CardBanner from "@/components/ui/slider/CardBanner";
-// import CardBanner from "@/components/ui/slider/CardBanner";
+
 import { usePathname } from "next/navigation";
 
 import "slick-carousel/slick/slick-theme.css";
