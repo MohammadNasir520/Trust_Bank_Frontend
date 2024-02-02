@@ -10,15 +10,15 @@
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
-    "@emotion/react": "^11.11.3",
-    "@emotion/styled": "^11.11.0",
     "@reduxjs/toolkit": "^2.0.1",
     "axios": "^1.6.5",
+    "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "css-loader": "^6.9.1",
     "dayjs": "^1.11.10",
     "framer-motion": "^10.18.0",
     "jwt-decode": "^4.0.0",
+    "lucide-react": "^0.321.0",
     "next": "14.0.1",
     "postcss-loader": "^8.0.0",
     "react": "^18",
@@ -33,6 +33,8 @@
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
     "swiper": "^11.0.5",
+    "tailwind-merge": "^2.2.1",
+    "tailwindcss-animate": "^1.0.7",
     "webpack": "^5.89.0"
   },
   "devDependencies": {
