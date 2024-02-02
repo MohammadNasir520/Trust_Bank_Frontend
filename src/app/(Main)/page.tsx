@@ -1,5 +1,4 @@
 import DebitCreditCardTab from "@/components/UI/Debit-Credit-card/DebitCreditCardTab";
-
 import SliderCarousel from "@/components/UI/slider/Slider";
 import FaqSection from "@/components/pages/home_page/FaqSection";
 import ForeignExchange from "@/components/pages/home_page/Foreign-Exchange";
