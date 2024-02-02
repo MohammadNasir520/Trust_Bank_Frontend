@@ -6,11 +6,19 @@ import { baseApi } from './baseApi'
 const loanApi = baseApi.injectEndpoints({
     endpoints: (build) => ({
         getAgricultureLoan: build.query({
-            query: (data) => ({
+            query: () => ({
                 url: `/agricultureLoan`,
                 method: "GET",
             }),
             providesTags: [tagTypes.agricultureLoan]
+        }),
+        updateAgricultureLoan: build.mutation({
+            query: ({ data, id }) => ({
+                url: `/agricultureLoan/${id}`,
+                method: "PATCH",
+                body: data
+            }),
+            invalidatesTags: [tagTypes.agricultureLoan]
         }),
         getPersonalLoan: build.query({
             query: (data) => ({
@@ -34,11 +42,12 @@ const loanApi = baseApi.injectEndpoints({
             providesTags: [tagTypes.educationLoan]
         }),
     }),
-    overrideExisting: false,
+    // overrideExisting: false,
 })
 
 export const {
     useGetAgricultureLoanQuery,
     useGetCorporateLoanQuery,
     useGetEducationLoanQuery,
+    useUpdateAgricultureLoanMutation,
     useGetPersonalLoanQuery } = loanApi;
