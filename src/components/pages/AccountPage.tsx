@@ -1,140 +1,128 @@
 "use client";
+import CustomFileInput from "@/components/Forms/CustomFileInput/CustomFileInput";
+import Form from "@/components/Forms/Form/Form";
+import FormDatePicker from "@/components/Forms/FormDatePicker/FormDatePicker";
 import FormInput from "@/components/Forms/FormInput/FormInput";
-import React, { useState } from "react";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
-import Form from "../Forms/Form/Form";
-import FormSelectField from "../Forms/FormSelectedField/FormSelectedField";
+import FormRadioField from "@/components/Forms/FormRatioButton/FormRatioButton";
+import FormSelectField from "@/components/Forms/FormSelectedField/FormSelectedField";
+import LoanCalculatorPage from "@/components/pages/home_page/LoanCalculatorPage";
 import { accountOptions } from "@/constants/constants";
-import FormRadioField from "../Forms/FormRatioButton/FormRatioButton";
-import CustomFileInput from "../Forms/CustomFileInput/CustomFileInput";
+import { useAccountMutation } from "@/redux/api/authApi";
 
-const AccountPage = () => {
-  const [passwordVisible, setPasswordVisible] = useState(false);
+const Test = () => {
+  const [account] = useAccountMutation();
+    const onSubmit = async (values: any) => {
 
-  const onSubmit = async (values: any) => {
-    console.log(values);
+    const obj = {...values}
+    obj.profileImage = "demo url"
+    obj.age = parseInt(obj.age)
     try {
+      console.log(obj)
+      const res = await account(obj).unwrap()
     } catch (err) {
       console.log(err);
     }
   };
+
   return (
-    <div className="">
-      <div className="px-[25px] pt-[25px] pb-[40px]">
-        <div className="mb-7">
-          <h3 className="font-semibold text-xl text-gray-800">
-            Open your account
-          </h3>
-        </div>
-        <div className="w-full mt-8 space-y-4 bg-white p-5">
-          <Form submitHandler={onSubmit}>
-            <div className="flex flex-wrap -mx-2">
-              {/* For large and extra-large devices (lg, xl) */}
-              <div className="w-full lg:w-2/6 xl:w-1/3 md:w-1/2 sm:w-1/2 xs:w-full px-2 ">
-                <FormInput
-                  name="name"
-                  label="Name"
-                  placeholder="Enter your full name"
-                  className="w-full text-sm px-4 py-3 bg-gray-100 focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"
-                />
-              </div>
-              <div className="w-full lg:w-2/6 xl:w-1/3 md:w-1/2 sm:w-1/2 xs:w-full px-2 ">
-                <FormInput
-                  name="email"
-                  label="Email"
-                  placeholder="Enter your email"
-                  className="w-full text-sm px-4 py-3 bg-gray-100 focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"
-                />
-              </div>
+    <div>
+      <div></div>
+      <div className="flex flex-col lg:flex-row justify-center items-center">
+        <div>
+          <Form submitHandler={onSubmit} className="m-10">
+            <div className="space-y-12">
+              <div className="border-b border-gray-900/10 pb-12">
+                <h2 className="text-base font-semibold leading-7 text-gray-900">
+                  Open your account
+                </h2>
+                <p className="mt-1 text-sm leading-6 text-gray-600">
+                  Use a permanent address where you can receive mail.
+                </p>
+                <div className="mt-10 grid grid-cols-1 gap-y-8 gap-x-6 sm:grid-cols-6">
+                  <div className="sm:col-span-3">
+                    <div>
+                      <FormInput name="contactNo" label="Phone" type="number" />
+                    </div>
+                  </div>
+                  <div className="sm:col-span-3">
+                    <div>
+                      <FormInput
+                        name="profession"
+                        label="Profession"
+                        type="text"
+                      />
+                    </div>
+                  </div>
 
-              <div className="w-full lg:w-1/3 xl:w-1/3 md:w-1/2 sm:w-1/2 xs:w-full px-2 ">
-                <FormInput
-                  name="phone"
-                  label="Phone Number"
-                  type="number"
-                  placeholder="Enter your phone number"
-                  className="w-full text-sm px-4 py-3 bg-gray-100 focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"
-                />
-              </div>
+                  <div className="sm:col-span-3">
+                  <FormInput
+                        name="age"
+                        label="Age"
+                        type="number"
+                      />
+                  </div>
 
-              <div className="w-full lg:w-1/3 xl:w-1/3 md:w-1/2 sm:w-1/2 xs:w-full px-2 mt-5 ">
-                <FormInput
-                  name="profession"
-                  label="Profession"
-                  placeholder="Enter your profession"
-                  className="w-full text-sm px-4 py-3 bg-gray-100 focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"
-                />
-              </div>
-
-              <div className="w-full lg:w-1/3 xl:w-1/3 md:w-1/2 sm:w-1/2 xs:w-full px-2 mt-5">
-                <FormInput
-                  name="age"
-                  label="Age"
-                  type="number"
-                  placeholder="Enter your phone number"
-                  className="w-full text-sm px-4 py-3 bg-gray-100 focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"
-                />
-              </div>
-
-              <div className="w-full lg:w-1/3 xl:w-1/3 md:w-1/2 sm:w-1/2 xs:w-full px-2 mt-5">
-                <FormInput
-                  name="education"
-                  label="Education"
-                  placeholder="Enter your education"
-                  className="w-full text-sm px-4 py-3 bg-gray-100 focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"
-                />
-              </div>
-
-              {/* For small and extra-small devices (sm, xs) */}
-              <div className="w-full lg:w-1/3 xl:w-1/3 md:w-1/2 sm:w-1/2 xs:w-full px-2 mt-5">
-                <FormInput
-                  name="profileImg"
-                  label="Profile Image"
-                  placeholder="Enter your Profile"
-                  className="w-full text-sm px-4 py-3 bg-gray-100 focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"
-                />
-              </div>
-
-              <div className="w-full lg:w-1/3 xl:w-1/3 md:w-1/2 sm:w-1/2 xs:w-full px-2 mt-5">
-                <FormSelectField
-                  name="account"
-                  label="Account Type"
-                  options={accountOptions}
-                  className="w-full text-sm px-4 py-3 bg-gray-100 focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"
-                />
-              </div>
-
-              <div className="w-full lg:w-1/3 xl:w-1/3 md:w-1/2 sm:w-1/2 xs:w-full px-2 mt-5">
-                <FormRadioField
-                  name="citizen"
-                  label="Citizen"
-                  options={["International", "Bangladesh"]}
-                />
-              </div>
-
-              <div className=" px-2 mt-5">
-                <CustomFileInput
-                  label="Upload File"
-                  id="fileInput"
-                  // onChange={handleFileChange}
-                  className="mb-8"
-                />
+                  <div className="sm:col-span-3">
+                    <div>
+                      <FormInput
+                        type="string"
+                        label="Education"
+                        name="education"
+                      />
+                    </div>
+                  </div>
+                  <div className="sm:col-span-3">
+                    <div>
+                      <FormSelectField
+                        name="accountType"
+                        label="Account Type"
+                        options={accountOptions}
+                      />
+                    </div>
+                  </div>
+                  <div className="sm:col-span-3">
+                    <div className="mt-1">
+                      <FormRadioField
+                        name="citizenShip"
+                        label="Citizen"
+                        options={["International", "Bangladesh"]}
+                      />
+                    </div>
+                  </div>
+                  <div className="sm:col-span-3">
+                    <div>
+                      <CustomFileInput
+                        label="Upload File"
+                        id="fileInput"
+                        // onChange={handleFileChange}
+                        className="mb-8"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-
-            <div className="flex items-center justify-between">
+            <div className="mt-6 flex items-center justify-end gap-x-6">
+              <button
+                type="button"
+                className="text-sm font-semibold leading-6 text-gray-900"
+              >
+                Cancel
+              </button>
               <button
                 type="submit"
-                className="bg-[#012169] text-white font-bold py-2 px-4 text-sm rounded focus:outline-none focus:shadow-outline mt-5"
+                className="rounded-md bg-[#012169] py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
-                Create
+                create
               </button>
             </div>
           </Form>
         </div>
+        <div className="hidden lg:block h-1/2 w-[3px]  bg-black mx-2"> </div>
       </div>
+    
     </div>
   );
 };
 
-export default AccountPage;
+export default Test;

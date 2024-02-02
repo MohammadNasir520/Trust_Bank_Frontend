@@ -10,6 +10,8 @@ const nextConfig = {
       "img.freepik.com",
       "ibb.co",
       "www.biotecnika.org",
+      "www.indianbank.in",
+      "d3fl6msah8aj3y.cloudfront.net"
     ],
   },
 };

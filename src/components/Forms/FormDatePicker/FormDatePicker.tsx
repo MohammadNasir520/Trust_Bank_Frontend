@@ -38,12 +38,14 @@ const FormDatePicker: React.FC<FormDatePickerProps> = ({
 
   return (
     <div>
-      {label && (
-        <>
-          {label}
-          <br />
-        </>
-      )}
+       {label && (
+  <label
+    htmlFor={name}
+    className="text-sm font-semibold text-black rounded-md px-4 py-2 block "
+  >
+    {label}
+  </label>
+)}
 
       <Controller
         name={name}

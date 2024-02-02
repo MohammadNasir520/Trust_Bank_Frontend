@@ -3,53 +3,15 @@
 export const cardNavMenuOptions = [
     {
         label: 'Credit',
-        link: '/card'
+        link: '/credit-card'
     },
     {
         label: 'Debit',
-        link: '',
-
-    },
-    {
-        label: 'Corporate Card',
-        link: '',
-        children: [
-            {
-                label: 'Small business',
-                link: '/loan/corporate/small_business'
-            },
-            {
-                label: 'Large business',
-                link: '/loan/corporate/large_business'
-            },
-            {
-                label: 'Manufacture',
-                link: '/loan/corporate/manufacture'
-            },
-            {
-                label: 'Marketing',
-                link: '/loan/corporate/manufacture'
-            },
-        ]
-    },
-    {
-        label: 'Student',
-        link: '',
-        children: [
-            {
-                label: 'Scholarship',
-                link: '/loan/education/scholarship'
-            },
-            {
-                label: 'Phd',
-                link: '/loan/education/scholarship'
-            },
-            {
-                label: 'Graduate',
-                link: '/loan/education/graduate'
-            },
-        ]
-    },
+        link: '/debit-card',
+      
+    }
+  
+    
 
 ]
 

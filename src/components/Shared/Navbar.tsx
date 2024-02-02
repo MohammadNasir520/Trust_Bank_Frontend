@@ -96,9 +96,9 @@ export default function Navbar() {
                     <NavMenu items={loanNavMenuOptions} title="Loan" />
                     <NavMenu items={loanNavMenuOptions} title="Investment" />
                     <NavMenu items={loanNavMenuOptions} title="Insurance" />
-                    <NavMenu items={loanNavMenuOptions} title="Card" />
+                    <NavMenu items={cardNavMenuOptions} title="Card" />
                     <NavMenu items={loanNavMenuOptions} title="Deposit" />
-                    <NavMenu items={loanNavMenuOptions} title="NRI services" />
+                    <NavMenu items={loanNavMenuOptions} title="Foreign services" />
                   </div>
                   <div className="flex px-5 gap-5">
                     <p>Profile</p>
