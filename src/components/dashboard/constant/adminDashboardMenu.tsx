@@ -1,4 +1,5 @@
 import { BsDash, BsPerson } from "react-icons/bs"
+import { FaUsers } from "react-icons/fa";
 export interface IDashboardMenuItem {
     title: string;
     pathname: string;
@@ -10,18 +11,12 @@ export const adminDashboardMenu: IDashboardMenuItem[] = [
         title: 'profile',
         pathname: '/dashboard/profile',
         icon: <BsPerson />,
-        children: [
-            {
-                title: 'Accounts',
-                pathname: '/dashboard/profile/account'
-            },
 
-            {
-                title: 'Setting',
-                pathname: '/dashboard/profile/setting'
-            },
-
-        ]
+    },
+    {
+        title: 'Accounts',
+        pathname: '/dashboard/account',
+        icon: <FaUsers />,
     },
     {
         title: 'Loan',
@@ -29,8 +24,16 @@ export const adminDashboardMenu: IDashboardMenuItem[] = [
         icon: <BsDash />,
         children: [
             {
-                title: 'Home Loan',
-                pathname: '/dashboard/loan/home'
+                title: 'Agriculture Loan',
+                pathname: '/dashboard/loan/agriculture'
+            },
+            {
+                title: 'Personal Loan',
+                pathname: '/dashboard/loan/personal'
+            },
+            {
+                title: 'Corporate Loan',
+                pathname: '/dashboard/loan/corporate'
             },
             {
                 title: 'Education Loan',

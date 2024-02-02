@@ -1,16 +1,16 @@
 'use client'
 
+import { useGetCorporateLoanQuery } from "@/redux/api/loanApi";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/UI/table";
 import EmptyTable from "@/components/dashboard/dashboard_ui/EmptyTable";
-import { useGetEducationLoanQuery } from "@/redux/api/loanApi";
 
+export default function CorporateLoan() {
 
-export default function EducationLoan() {
-    const { data, isLoading } = useGetEducationLoanQuery(undefined);
+    const { data, isLoading } = useGetCorporateLoanQuery(undefined);
     const loans = data?.data;
     return (
         <div>
-            <h1 className="text-xl font-semibold  text-gray-700 mb-2">All Education Loans</h1>
+            <h1 className="text-xl font-semibold  text-gray-700 mb-2">All Corporate Loans</h1>
             <Table className="bg-gray-50 rounded">
                 <TableHeader>
                     <TableRow>
@@ -48,7 +48,10 @@ export default function EducationLoan() {
                     }
                 </TableBody>
             </Table>
+
             {!isLoading && !loans?.length && <EmptyTable />}
+
+
         </div>
     )
 }

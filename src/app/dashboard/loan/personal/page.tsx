@@ -1,16 +1,16 @@
 'use client'
 
+import React from 'react'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/UI/table";
-import EmptyTable from "@/components/dashboard/dashboard_ui/EmptyTable";
-import { useGetEducationLoanQuery } from "@/redux/api/loanApi";
+import { useGetPersonalLoanQuery } from '@/redux/api/loanApi';
+import EmptyTable from '@/components/dashboard/dashboard_ui/EmptyTable';
 
-
-export default function EducationLoan() {
-    const { data, isLoading } = useGetEducationLoanQuery(undefined);
+export default function PersonalLoan() {
+    const { data, isLoading } = useGetPersonalLoanQuery(undefined);
     const loans = data?.data;
     return (
         <div>
-            <h1 className="text-xl font-semibold  text-gray-700 mb-2">All Education Loans</h1>
+            <h1 className="text-xl font-semibold  text-gray-700 mb-2">All Personal Loans</h1>
             <Table className="bg-gray-50 rounded">
                 <TableHeader>
                     <TableRow>

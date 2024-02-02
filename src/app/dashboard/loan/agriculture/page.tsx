@@ -2,15 +2,15 @@
 
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/UI/table";
 import EmptyTable from "@/components/dashboard/dashboard_ui/EmptyTable";
-import { useGetEducationLoanQuery } from "@/redux/api/loanApi";
+import { useGetAgricultureLoanQuery } from "@/redux/api/loanApi"
 
+export default function AgricultureLoan() {
 
-export default function EducationLoan() {
-    const { data, isLoading } = useGetEducationLoanQuery(undefined);
+    const { data, isLoading } = useGetAgricultureLoanQuery(undefined);
     const loans = data?.data;
     return (
         <div>
-            <h1 className="text-xl font-semibold  text-gray-700 mb-2">All Education Loans</h1>
+            <h1 className="text-xl font-semibold  text-gray-700 mb-2">All Agriculture Loans</h1>
             <Table className="bg-gray-50 rounded">
                 <TableHeader>
                     <TableRow>
@@ -24,6 +24,7 @@ export default function EducationLoan() {
                     </TableRow>
                 </TableHeader>
                 <TableBody>
+
                     {
                         loans?.map((loan: any) => <TableRow key={loan?.id}>
                             <TableCell className="font-medium">{loan?.user?.name}</TableCell>
@@ -52,3 +53,4 @@ export default function EducationLoan() {
         </div>
     )
 }
+
