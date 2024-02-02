@@ -17,13 +17,13 @@ const LoanCalculator = () => {
   
 
 
-  const handleAmountChange = (e) => {
+  const handleAmountChange = (e:any) => {
     const amount =Number(e.target.value)
     setLoanAmount(amount);
     console.log(typeof(amount))
   };
 
-  const handleTermChange = (e) => {
+  const handleTermChange = (e:any) => {
     const term =Number(e.target.value);
     
     setLoanTerm(term);
@@ -39,7 +39,7 @@ const LoanCalculator = () => {
   return (
     <div className="w-full lg:w-[90%] mx-auto">
       <div className="grid grid-cols-5">
-        <div className="col-span-5 md:col-span-3 lg:col-span-3 white py-4 h-[350px] shadow-2xl flex items-center justify-center">
+        <div className="col-span-5 md:col-span-3 lg:col-span-3 white py-4 h-[350px] flex items-center justify-center">
           <Tabs isLazy={true} size="md" variant="enclosed">
             <TabList className="w-full flex justify-center gap-3">
               <Tab
@@ -219,7 +219,7 @@ const LoanCalculator = () => {
               USD <span>${monthlyRepayment}</span>
             </h1>
             <Link href="/">
-              <button className="py-2 px-4 text-md bg-yellow-200 rounded-md">
+              <button className="py-2 px-4 text-md bg-[#012169] text-[#FFFFDD] rounded-md">
                 Get Started
               </button>
             </Link>
@@ -233,7 +233,7 @@ const LoanCalculator = () => {
           </div>
           <div className="row-span-2 bg-[#182F7C]">
             <div className="flex flex-col items-center justify-center gap-2 mt-3 ">
-              <IoMdFlashlight size={25} color="black" />
+              <IoMdFlashlight size={25} color="#DCF2F1" />
               <h1 className="text-white font-serif text-[17px]">
                 Borrow wisely
               </h1>
