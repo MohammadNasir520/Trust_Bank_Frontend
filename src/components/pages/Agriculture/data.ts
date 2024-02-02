@@ -1,6 +1,7 @@
 const demoData = [
     {
       id: 1,
+      amount: 50000,
       image: "https://www.indianbank.in/wp-content/uploads/2018/03/600x600_7.jpg",
       title: "Agricultural Jewel Loan Scheme 1",
       type: "agriculture",
@@ -9,6 +10,7 @@ const demoData = [
     },
     {
       id: 2,
+      amount: 75000,
       image: "https://www.indianbank.in/wp-content/uploads/2018/03/600x600_7.jpg",
       title: "Agricultural Jewel Loan Scheme 2",
       type: "agriculture",
@@ -17,6 +19,7 @@ const demoData = [
     },
     {
       id: 3,
+      amount: 100000,
       image: "https://www.indianbank.in/wp-content/uploads/2018/03/600x600_7.jpg",
       title: "Agricultural Jewel Loan Scheme 3",
       type: "agriculture",
@@ -25,6 +28,7 @@ const demoData = [
     },
     {
       id: 4,
+      amount: 150000,
       image: "https://www.indianbank.in/wp-content/uploads/2018/03/600x600_7.jpg",
       title: "Agricultural Jewel Loan Scheme 4",
       type: "agriculture",
@@ -33,6 +37,7 @@ const demoData = [
     },
     {
       id: 5,
+      amount: 175000,
       image: "https://www.indianbank.in/wp-content/uploads/2018/03/600x600_7.jpg",
       title: "Agricultural Jewel Loan Scheme 5",
       type: "agriculture",
@@ -41,6 +46,7 @@ const demoData = [
     },
     {
       id: 6,
+      amount: 200000,
       image: "https://www.indianbank.in/wp-content/uploads/2018/03/600x600_7.jpg",
       title: "Agricultural Jewel Loan Scheme 6",
       type: "agriculture",
