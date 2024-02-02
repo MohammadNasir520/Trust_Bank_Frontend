@@ -7,6 +7,6 @@ export const getBaseUrl = (): any => {
         case 'production':
             return process.env.NEXT_PUBLIC_API_BASE_URL;// Replace with your production API URL
         default:
-            return ' http://localhost:6060/api/v1'; // Replace with a default API URL
+            return 'http://localhost:6060/api/v1'; // Replace with a default API URL
     }
 };
