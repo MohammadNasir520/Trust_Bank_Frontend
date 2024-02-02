@@ -11,7 +11,8 @@ const nextConfig = {
       "ibb.co",
       "www.biotecnika.org",
       "www.indianbank.in",
-      "d3fl6msah8aj3y.cloudfront.net"
+      "d3fl6msah8aj3y.cloudfront.net",
+      "t4.ftcdn.net",
     ],
   },
 };
