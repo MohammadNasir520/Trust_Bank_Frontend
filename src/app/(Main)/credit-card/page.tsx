@@ -1,7 +1,5 @@
 "use client";
 import Card from "@/components/pages/card_page/Card";
-// @ts-ignore
-import CardBanner from "@/components/ui/slider/CardBanner";
 
 import { usePathname } from "next/navigation";
 
@@ -115,7 +113,20 @@ const page = () => {
   ];
   return (
     <>
-      <CardBanner />
+      {/* banner */}
+      <div className="relative h-[400px] py-2 w-full  overflow-hidden bg-[url('https://assets-global.website-files.com/5c30841dedb5fd496eb1396c/5f157beb90654581f7f5c6ba_dPLhfpcDROPvwkdQxC6wk1b28KlkQTpoorl760f0Mzel5lQH3sSplzSyXxXY4lTPrWRg0CmCRq2-v_AG1FauFJ0EsXVTh6K7z0-ucdlTesV25uGYYxcJWZuGqJHmnJB9x0YKUCZm.jpeg')] bg-no-repeat bg-cover bg-center">
+        <div className="flex flex-col gap-5 justify-center h-full pl-4 lg:px-4">
+          <h1 className="text-2xl md:text-3xl lg:text-3xl font-medium font-serif uppercase text-[#F5EEE6]">
+            Spend quality Time with family members
+          </h1>
+          <div className="w-full lg:w-[80%]">
+            <p className="text-[16px]   text-[#F5EEE6] font-[400] font-serif ">
+              During the winter, family members can spend time together.
+            </p>
+          </div>
+        </div>
+      </div>
+      {/* banner */}
       <div className="text-center mt-8">
         <h1 className="text-center text-3xl font-semibold">
           Pick Your Best debit & credit card
