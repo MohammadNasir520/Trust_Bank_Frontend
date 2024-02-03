@@ -19,7 +19,6 @@ import {
 
 import { useEffect, useRef } from "react";
 
-
 import { cardNavMenuOptions, loanNavMenuOptions } from "@/constants/navData";
 import NavMenu from "../UI/nav-menu/NavMenu";
 import ResponsiveNavMenu from "../UI/nav-menu/ResponsiveNavMenu";
@@ -32,17 +31,14 @@ export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
   const isLogin = isLoggedIn();
-  const {push} = useRouter()
+  const { push } = useRouter();
 
+  useEffect(() => {}, [isLogin]);
 
-  useEffect(()=>{
-
-  },[isLogin])
-
-  const handleLogin =()=>{
+  const handleLogin = () => {
     removeUserInfo(authKey);
-    push('auth/signin')
-  }
+    push("auth/signin");
+  };
 
   const infoItems = (
     <div className="flex  justify-end gap-4 lg:mt-0 mt-3 lg:pr-0 pr-2 text-xl lg:text-white text-black">
@@ -132,5 +128,4 @@ export default function Navbar() {
       <ResponsiveNavMenu isOpen={isOpen} onClose={onClose} />
     </>
   );
-  
-                    }
+}
