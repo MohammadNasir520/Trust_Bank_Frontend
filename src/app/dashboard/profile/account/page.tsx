@@ -3,7 +3,6 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { TiTickOutline } from "react-icons/ti";
 
-
 interface Account {
   id: string;
   accountId: string;
@@ -30,39 +29,62 @@ interface ProfileData {
   };
 }
 
-
 export default function page() {
-  const [profileData, setProfileData] = useState({});
+  //   const [profileData, setProfileData] = useState({});
 
-  useEffect(() => {
-    const data: ProfileData = {
-      data: {
-        id: "7deff374-7bf9-4262-9709-9f45c4703c61",
-        name: "masud",
-        email: "mss@gmail.com",
-        role: "client",
-        createdAt: "2024-02-01T19:14:05.926Z",
-        accounts: [
-          {
-            id: "16752978-0832-4c1c-ac72-ea202d01d9c7",
-            accountId: "M-00005",
-            balance: 0,
-            contactNo: "+123456789012",
-            profession: "Software Engineer",
-            age: 25,
-            education: "Master's in Computer Science",
-            profileImage: "https://example.com/profile-image.jpg",
-            accountType: "Marchent",
-            citizenShip: "United States",
-            userId: "7deff374-7bf9-4262-9709-9f45c4703c61",
-            createdAt: "2024-02-01T19:18:04.658Z",
-          },
-        ],
+  //   useEffect(() => {
+  //     const data: ProfileData = {
+  //       data: {
+  //         id: "7deff374-7bf9-4262-9709-9f45c4703c61",
+  //         name: "masud",
+  //         email: "mss@gmail.com",
+  //         role: "client",
+  //         createdAt: "2024-02-01T19:14:05.926Z",
+  //         accounts: [
+  //           {
+  //             id: "16752978-0832-4c1c-ac72-ea202d01d9c7",
+  //             accountId: "M-00005",
+  //             balance: 0,
+  //             contactNo: "+123456789012",
+  //             profession: "Software Engineer",
+  //             age: 25,
+  //             education: "Master's in Computer Science",
+  //             profileImage: "https://example.com/profile-image.jpg",
+  //             accountType: "Marchent",
+  //             citizenShip: "United States",
+  //             userId: "7deff374-7bf9-4262-9709-9f45c4703c61",
+  //             createdAt: "2024-02-01T19:18:04.658Z",
+  //           },
+  //         ],
+  //       },
+  //     };
+
+  //     setProfileData(data.data);
+  //   }, []);
+
+  const profileData = {
+    id: "7deff374-7bf9-4262-9709-9f45c4703c61",
+    name: "masud",
+    email: "mss@gmail.com",
+    role: "client",
+    createdAt: "2024-02-01T19:14:05.926Z",
+    accounts: [
+      {
+        id: "16752978-0832-4c1c-ac72-ea202d01d9c7",
+        accountId: "M-00005",
+        balance: 0,
+        contactNo: "+123456789012",
+        profession: "Software Engineer",
+        age: 25,
+        education: "Master's in Computer Science",
+        profileImage: "https://example.com/profile-image.jpg",
+        accountType: "Marchent",
+        citizenShip: "United States",
+        userId: "7deff374-7bf9-4262-9709-9f45c4703c61",
+        createdAt: "2024-02-01T19:18:04.658Z",
       },
-    };
-
-    setProfileData(data.data);
-  }, []);
+    ],
+  };
 
   return (
     <div className="w-full">
@@ -72,6 +94,7 @@ export default function page() {
           <div className="grid grid-cols-6 -mt-24 ">
             <Image
               src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+              // @ts-ignore
               alt={profileData.name}
               width={90}
               height={90}
@@ -142,11 +165,13 @@ export default function page() {
             </h1>
           </div>
 
-          <h4 className="text-md font-semibold leading-3 ">Balance Calculation</h4>
+          <h4 className="text-md font-semibold leading-3 ">
+            Balance Calculation
+          </h4>
           <div className="grid grid-cols-6 gap-3">
             <div className="col-span-6 md:col-span-3 lg:col-span-2 flex flex-col justify-center items-center bg-white rounded border w-full py-4 ">
               <div className="py-2">
-                <svg
+                {/* <svg
                   stroke="currentColor"
                   fill="currentColor"
                   strokeWidth={0}
@@ -158,7 +183,7 @@ export default function page() {
                 >
                   <path fill="none" d="M0 0h24v24H0z" />
                   <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z" />
-                </svg>
+                </svg> */}
               </div>
               <div className="leading-3">
                 <p className=" text-md font-bold text-slate-700">
@@ -175,7 +200,7 @@ export default function page() {
             </div>
             <div className="col-span-6 md:col-span-3 lg:col-span-2 flex flex-col justify-center items-center bg-white rounded border w-full py-4 ">
               <div className="py-2">
-                <svg
+                {/* <svg
                   stroke="currentColor"
                   fill="currentColor"
                   strokeWidth={0}
@@ -187,7 +212,7 @@ export default function page() {
                 >
                   <path fill="none" d="M0 0h24v24H0z" />
                   <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z" />
-                </svg>
+                </svg> */}
               </div>
               <div className="leading-3">
                 <p className=" text-md font-bold text-slate-700">
@@ -204,7 +229,7 @@ export default function page() {
             </div>
             <div className="col-span-6 md:col-span-6 lg:col-span-2 flex flex-col justify-center items-center bg-white rounded border w-full py-4 ">
               <div className="py-2">
-                <svg
+                {/* <svg
                   stroke="currentColor"
                   fill="currentColor"
                   strokeWidth={0}
@@ -216,7 +241,7 @@ export default function page() {
                 >
                   <path fill="none" d="M0 0h24v24H0z" />
                   <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z" />
-                </svg>
+                </svg> */}
               </div>
               <div className="leading-3">
                 <p className=" text-md font-bold text-slate-700">

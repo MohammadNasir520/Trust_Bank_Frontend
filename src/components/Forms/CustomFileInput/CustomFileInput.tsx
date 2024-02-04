@@ -1,7 +1,9 @@
 // CustomFileInput.tsx
-import React, { useState, ChangeEvent } from 'react';
-import { FaTrashAlt } from 'react-icons/fa';
-import { FaFile } from 'react-icons/fa6';
+"use client";
+
+import React, { useState, ChangeEvent } from "react";
+import { FaTrashAlt } from "react-icons/fa";
+import { FaFile } from "react-icons/fa6";
 
 interface CustomFileInputProps {
   label?: string;
@@ -40,19 +42,19 @@ const CustomFileInput: React.FC<CustomFileInputProps> = ({
   return (
     <div>
       {label && (
-  <label
-    htmlFor={id}
-    className="text-sm font-semibold text-black rounded-md px-4 py-2 block"
-  >
-    {label}
-  </label>
-)}
+        <label
+          htmlFor={id}
+          className="text-sm font-semibold text-black rounded-md px-4 py-2 block"
+        >
+          {label}
+        </label>
+      )}
       <div className="relative">
         <input
           type="file"
           className="hidden"
           onChange={handleFileChange}
-          id={id || ''}
+          id={id || ""}
         />
         <div className="border-dashed border-2 border-gray-400 p-1 rounded-md">
           {selectedFile ? (
@@ -68,13 +70,12 @@ const CustomFileInput: React.FC<CustomFileInputProps> = ({
             </div>
           ) : (
             <label
-            htmlFor={id || ''}
-            className="cursor-pointer text-sm font-sm text-black py-2 px-4 rounded-lg inline-flex items-center"
-          >
-            <FaFile className="text-[#012169] mr-2" />
-            Choose a file
-          </label>
-          
+              htmlFor={id || ""}
+              className="cursor-pointer text-sm font-sm text-black py-2 px-4 rounded-lg inline-flex items-center"
+            >
+              <FaFile className="text-[#012169] mr-2" />
+              Choose a file
+            </label>
           )}
         </div>
       </div>
