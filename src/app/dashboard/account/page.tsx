@@ -48,7 +48,7 @@ export default function Account() {
                     }
                 </TableBody>
             </Table>
-            {!isLoading && !accounts?.length && <EmptyTable />}
+            {/* {!isLoading && !accounts?.length && <EmptyTable />} */}
         </div>
     )
 }

@@ -16,12 +16,12 @@ export default function PieChart() {
                 datasets: [{
                     data: [70, 10, 6],
                     borderColor: [
-                        "red",
+                        "rgb(63, 213, 250)",
                         "orange",
                         "blue",
                     ],
                     backgroundColor: [
-                        "red",
+                        "rgb(63, 213, 250)",
                         "orange",
                         "blue",
                     ],
