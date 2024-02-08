@@ -37,7 +37,7 @@ const FormTextArea: React.FC<FormTextAreaProps> = ({
             placeholder={placeholder}
             className="mt-1 p-2 w-full border rounded-md"
             {...field}
-            value={value || ''}  
+            value={value || ""}
           />
         )}
       />

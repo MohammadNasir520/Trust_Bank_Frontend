@@ -1,6 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#modal-scrollbar-measure {
+  height: 50vh;
+  overflow-y: scroll !important;
+  scrollbar-width: none;
+  scrollbar-color: #333 #fff;
+  overflow-x: hidden !important;
+}
+
+/* Hide scrollbar for WebKit browsers */
+.chakra-modal__content-container section::-webkit-scrollbar {
+  width: 0px !important;
+  height: 0px !important;
+  visibility: hidden; /* Hide scrollbar */
+}
+
+/* Hide scrollbar thumb for WebKit browsers */
+.chakra-modal__content-container section::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Make scrollbar thumb transparent */
+  width: 0px !important;
+  height: 0px !important;
+}
+
+/* Hide scrollbar track for WebKit browsers */
+.chakra-modal__content-container section::-webkit-scrollbar-track {
+  background-color: transparent; /* Make scrollbar track transparent */
+  width: 0px !important;
+  height: 0px !important;
+}
+
+
+
  
 @layer base {
   :root {

@@ -3,39 +3,38 @@ import Form from "@/components/Forms/Form/Form";
 import FormInput from "@/components/Forms/FormInput/FormInput";
 import LoanCalculatorPage from "@/components/pages/home_page/LoanCalculatorPage";
 import { useAddAgricultureLoanMutation } from "@/redux/api/agricultureLoanApi";
-import demodata from "../../../../../../components/pages/Agriculture/data"
+import demodata from "../../../../../../components/pages/Agriculture/data";
 import { usePathname, useRouter } from "next/navigation";
 
 const AgricultureLoanApply = () => {
-  const pathname = usePathname()
-  const {push} = useRouter()
-  const split = pathname.split('/')
-  const title = split[3]
+  const pathname = usePathname();
+  const { push } = useRouter();
+  const split = pathname.split("/");
+  const title = split[3];
 
-  function convertToTitle(inputString:string) {
+  function convertToTitle(inputString: string) {
     return inputString
       .split("-")
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
       .join(" ");
   }
- 
+
   let formattedTitle = convertToTitle(title);
-  
-  const loan = demodata.filter((data:any)=> data.title === formattedTitle)
+
+  const loan = demodata.filter((data: any) => data.title === formattedTitle);
   console.log(loan[0]);
   let loanName = loan[0]?.title;
   let amount = loan[0].amount;
 
-
-  const [addAgricultureLoan] = useAddAgricultureLoanMutation()
+  const [addAgricultureLoan] = useAddAgricultureLoanMutation();
   const onSubmit = async (values: any) => {
-    const obj = {...values}
+    const obj = { ...values };
     obj.loanName = loanName;
     obj.amount = amount;
     try {
       const res = await addAgricultureLoan(obj).unwrap();
-      if(res.data){
-        push(`${pathname}/loan-approve`)
+      if (res.data) {
+        push(`${pathname}/loan-approve`);
       }
     } catch (err) {
       console.log(err);
@@ -44,9 +43,7 @@ const AgricultureLoanApply = () => {
 
   return (
     <div>
-      <div>
-       
-      </div>
+      <div></div>
       <div className="flex flex-col lg:flex-row justify-center items-center">
         <div>
           <Form submitHandler={onSubmit} className="m-10">
@@ -71,7 +68,7 @@ const AgricultureLoanApply = () => {
                         type="text"
                         name="loanName"
                         className="block w-full px-2 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                         value={loanName}
+                        value={loanName}
                       />
                     </div>
                   </div>
@@ -80,14 +77,14 @@ const AgricultureLoanApply = () => {
                       htmlFor="amount"
                       className="block text-sm font-medium leading-6 text-gray-900"
                     >
-                     Amount
+                      Amount
                     </label>
                     <div className="mt-2">
                       <FormInput
                         type="number"
-                        name="amount"                  
+                        name="amount"
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                         value={amount.toString()}
+                        value={amount.toString()}
                       />
                     </div>
                   </div>
@@ -112,19 +109,17 @@ const AgricultureLoanApply = () => {
                       htmlFor="cropType"
                       className="block text-sm font-medium leading-6 text-gray-900"
                     >
-                       cropType
+                      cropType
                     </label>
                     <div className="mt-2">
-                      <FormInput               
+                      <FormInput
                         name="cropType"
-                        type="text"    
+                        type="text"
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                      
                       />
                     </div>
                   </div>
-               
-               
+
                   <div className="sm:col-span-3">
                     <label
                       htmlFor="landSize"
@@ -137,25 +132,22 @@ const AgricultureLoanApply = () => {
                         type="number"
                         name="landSize"
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                       
                       />
                     </div>
                   </div>
-
 
                   <div className="sm:col-span-2 sm:col-start-1">
                     <label
                       htmlFor="guarantorName"
                       className="block text-sm font-medium leading-6 text-gray-900"
                     >
-                     Guarantor Name
+                      Guarantor Name
                     </label>
                     <div className="mt-2">
                       <FormInput
                         type="text"
                         name="guarantorName"
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                        
                       />
                     </div>
                   </div>
@@ -164,14 +156,13 @@ const AgricultureLoanApply = () => {
                       htmlFor=" guarantorAddress"
                       className="block text-sm font-medium leading-6 text-gray-900"
                     >
-                       Guarantor Address
+                      Guarantor Address
                     </label>
                     <div className="mt-2">
                       <FormInput
                         type="text"
                         name="guarantorAddress"
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                      
                       />
                     </div>
                   </div>
@@ -180,14 +171,13 @@ const AgricultureLoanApply = () => {
                       htmlFor=" guarantorPhone"
                       className="block text-sm font-medium leading-6 text-gray-900"
                     >
-                       Guarantor Phone
+                      Guarantor Phone
                     </label>
                     <div className="mt-2">
                       <FormInput
                         type="text"
                         name="guarantorPhone"
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                       
                       />
                     </div>
                   </div>
@@ -211,7 +201,6 @@ const AgricultureLoanApply = () => {
           </Form>
         </div>
         <div className="hidden lg:block h-1/2 w-[3px]  bg-black mx-2"> </div>
-        
       </div>
       <div className=" mb-3">
         <LoanCalculatorPage />
@@ -221,5 +210,3 @@ const AgricultureLoanApply = () => {
 };
 
 export default AgricultureLoanApply;
-
-

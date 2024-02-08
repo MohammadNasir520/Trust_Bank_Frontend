@@ -1,6 +1,7 @@
 import { Divider } from "@chakra-ui/react";
 import QuickContact from "./QuickContact/QuickContact";
 import Link from "next/link";
+import ContactForm from "./contactForm/ContactForm";
 
 const Contact = () => {
   return (
@@ -50,6 +51,7 @@ const Contact = () => {
         </div>
 
         <QuickContact />
+        <ContactForm />
       </div>
     </div>
   );
