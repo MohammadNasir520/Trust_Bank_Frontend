@@ -1,7 +1,7 @@
 // CustomFileInput.tsx
 import React, { useState, ChangeEvent } from 'react';
 import { FaTrashAlt } from 'react-icons/fa';
-import { FaFile } from 'react-icons/fa6';
+import { FaFileImage } from 'react-icons/fa';
 
 interface CustomFileInputProps {
   label?: string;
@@ -38,15 +38,12 @@ const CustomFileInput: React.FC<CustomFileInputProps> = ({
   };
 
   return (
-    <div>
+    <div className="flex flex-col">
       {label && (
-  <label
-    htmlFor={id}
-    className="text-sm font-semibold text-black rounded-md px-4 py-2 block"
-  >
-    {label}
-  </label>
-)}
+        <label htmlFor={id} className="text-sm text-black font-semibold mb-1">
+          {label}
+        </label>
+      )}
       <div className="relative">
         <input
           type="file"
@@ -54,27 +51,26 @@ const CustomFileInput: React.FC<CustomFileInputProps> = ({
           onChange={handleFileChange}
           id={id || ''}
         />
-        <div className="border-dashed border-2 border-gray-400 p-1 rounded-md">
+        <div className="rounded-md border border-gray-300 p-3 flex items-center justify-between">
           {selectedFile ? (
             <div className="flex items-center space-x-2">
-              <span>{selectedFile.name}</span>
+              <span className="truncate mr-2">{selectedFile.name}</span>
               <button
                 type="button"
                 onClick={handleRemoveFile}
-                className="text-red-500 hover:text-red-700"
+                className="text-red-500 hover:text-red-700 focus:outline-none"
               >
                 <FaTrashAlt />
               </button>
             </div>
           ) : (
             <label
-            htmlFor={id || ''}
-            className="cursor-pointer text-sm font-sm text-black py-2 px-4 rounded-lg inline-flex items-center"
-          >
-            <FaFile className="text-[#012169] mr-2" />
-            Choose a file
-          </label>
-          
+              htmlFor={id || ''}
+              className="cursor-pointer text-sm text-[#012169] font-semibold flex items-center space-x-1"
+            >
+              <FaFileImage className="text-[#012169]" />
+              <span>Choose an image</span>
+            </label>
           )}
         </div>
       </div>

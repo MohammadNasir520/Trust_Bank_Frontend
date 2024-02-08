@@ -9,7 +9,7 @@ export interface IDashboardMenuItem {
 export const adminDashboardMenu: IDashboardMenuItem[] = [
     {
         title: 'profile',
-        pathname: '/dashboard/profile',
+        pathname: '/dashboard/profile/account',
         icon: <BsPerson />,
 
     },
