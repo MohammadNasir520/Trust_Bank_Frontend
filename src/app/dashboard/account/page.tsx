@@ -11,15 +11,17 @@ import {
     TableRow,
 } from "@/components/UI/table"
 import EmptyTable from "@/components/dashboard/dashboard_ui/EmptyTable";
+import { useRouter } from "next/navigation";
 
 export default function Account() {
+    const router = useRouter();
     const { data, isLoading } = useGetAllAccountsQuery(undefined);
     const accounts = data?.data;
 
     return (
         <div>
             <h1 className="text-xl font-semibold  text-gray-700 mb-2">All Accounts</h1>
-            <Table>
+            <Table className="bg-white rounded">
 
                 <TableHeader>
                     <TableRow>
@@ -41,8 +43,11 @@ export default function Account() {
                             <TableCell>{account?.contactNo}</TableCell>
                             <TableCell className="text-start">{account?.user?.email}</TableCell>
                             <TableCell className="text-start">{account?.citizenShip}</TableCell>
-                            <TableCell className="text-start">{account?.balance}</TableCell>
-                            <TableCell className="text-start"><button className="bg-blue-100 px-2  rounded text-blue-500">View </button></TableCell>
+                            <TableCell className="text-start">{account?.balance ? account?.balance : 0}</TableCell>
+                            <TableCell className="text-start flex gap-2">
+                                <button onClick={() => router.push(`/dashboard/account/${account?.user?.id}`)} className="bg-blue-100 px-2  rounded text-blue-500">Details </button>
+                                <button className="bg-orange-100 px-2  rounded text-orange-500">Statement </button>
+                            </TableCell>
                         </TableRow>
                         )
                     }

@@ -5,9 +5,8 @@ import PieChart from "@/components/dashboard/charts/PieChart";
 
 export default function page() {
     return (
-        <div>dashboard page
+        <div>dashboard overview page
             <div className=" grid lg:grid-cols-3 gap-4">
-
                 <LineChart />
                 <BarChart />
                 <PieChart />
