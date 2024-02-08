@@ -1,5 +1,7 @@
 "use client";
+import { useExchangeCurrencyMutation } from "@/redux/api/currency";
 import React, { ChangeEvent, useState, useEffect } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 interface Currency {
   name: string;
@@ -34,7 +36,7 @@ const CurrencyExchange = () => {
   const [toCurrency, setToCurrency] = useState<string>();
   const [amount, setAmount] = useState<number>(0);
   const [convertedAmount, setConvertedAmount] = useState<number>(amount);
-
+  const [exchangeCurrency] = useExchangeCurrencyMutation()
   useEffect(() => {
     const fromExchangeRate =
       currencyDataArray.find((currency) => currency.code === fromCurrency)
@@ -63,15 +65,35 @@ const CurrencyExchange = () => {
     setToCurrency(selectedCurrency);
   };
 
-  const handleExchange = async() =>{
-  console.log(fromCurrency);
-  console.log(amount);
-  console.log(toCurrency);
-  console.log(convertedAmount);
-  }
+  const handleExchange = async () => {
+    console.log(fromCurrency);
+    console.log(amount);
+    console.log(toCurrency);
+    console.log(convertedAmount);
+    const obj = {
+      fromCurrency: fromCurrency,
+      fromAmount: amount,
+      toCurrency: toCurrency,
+      toAmount: convertedAmount,
+    };
+    const data = JSON.stringify(obj)
+    const res =  await exchangeCurrency(data).unwrap()
+    console.log(res?.message);
+    if(res){
+        toast(res?.message, {
+            icon: <span style={{ color: "black" }}>✔</span>,
+            style: {
+              borderRadius: "10px",
+              background: "#FDB712",
+              color: "#fff",
+            }
+          });
+    }
+  };
 
   return (
     <div>
+         <Toaster position="top-center" reverseOrder={false} />
       <div className="bg-white p-8 border rounded-lg">
         <div className="mb-6">
           <select
@@ -139,20 +161,29 @@ const CurrencyExchange = () => {
             )}
           </div>
           <div className=" px-1">
-          <button
-  type="submit"
-  className={`px-5 py-3 bg-[#FDB712] rounded-md text-black focus:outline-none ${fromCurrency === undefined || toCurrency === undefined || amount === 0 ? 'cursor-not-allowed' : ''}`}
-  onClick={(e) => {
-    if (fromCurrency === undefined || toCurrency === undefined || amount === 0) {
-      e.preventDefault(); // Prevent any default behavior
-    } else {
-      handleExchange();
-    }
-  }}
->
-  Exchange Currency
-</button>
-
+            <button
+              type="submit"
+              className={`px-5 py-3 bg-[#FDB712] rounded-md text-black focus:outline-none ${
+                fromCurrency === undefined ||
+                toCurrency === undefined ||
+                amount === 0
+                  ? "cursor-not-allowed"
+                  : ""
+              }`}
+              onClick={(e) => {
+                if (
+                  fromCurrency === undefined ||
+                  toCurrency === undefined ||
+                  amount === 0
+                ) {
+                  e.preventDefault(); // Prevent any default behavior
+                } else {
+                  handleExchange();
+                }
+              }}
+            >
+              Exchange Currency
+            </button>
           </div>
         </div>
       </div>

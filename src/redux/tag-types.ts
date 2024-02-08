@@ -2,7 +2,8 @@ export enum tagTypes {
     user = "user",
     account = "account",
     agriculture="agriculture",
-    card = "card"
+    card = "card",
+    currency = "currency"
   
   }
   
@@ -10,6 +11,7 @@ export enum tagTypes {
     tagTypes.user,
     tagTypes.account,
     tagTypes.agriculture,
-    tagTypes.card
+    tagTypes.card,
+    tagTypes.currency
   ];
   
