@@ -31,6 +31,15 @@
   height: 0px !important;
 }
 
+div[role="progressbar"] svg{
+  width: 120px;
+  height: 120px;
+}
+
+div[role="progressbar"] svg circle.chakra-progress__track{
+  stroke: #012169;
+}
+
 
 
  
