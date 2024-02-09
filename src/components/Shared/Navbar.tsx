@@ -33,7 +33,7 @@ export default function Navbar() {
   const isLogin = isLoggedIn();
   const { push } = useRouter();
 
-  useEffect(() => { }, [isLogin]);
+  useEffect(() => {}, [isLogin]);
 
   const handleLogin = () => {
     removeUserInfo(authKey);
@@ -98,7 +98,10 @@ export default function Navbar() {
                     <NavMenu items={loanNavMenuOptions} title="Insurance" />
                     <NavMenu items={cardNavMenuOptions} title="Card" />
                     <NavMenu items={loanNavMenuOptions} title="Deposit" />
-                    <NavMenu items={loanNavMenuOptions} title="Foreign services" />
+
+                    <Link href="/foreign-services">
+                      <p>Foreign service</p>
+                    </Link>
                   </div>
                   <div className="flex px-5 gap-5">
                     <p>Profile</p>

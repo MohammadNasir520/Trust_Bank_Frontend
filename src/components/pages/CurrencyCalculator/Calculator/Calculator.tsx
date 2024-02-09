@@ -1,37 +1,46 @@
-"use client";
-import FormInput from "@/components/Forms/FormInput/FormInput";
+"use client"
 import React, { ChangeEvent, useState, useEffect } from "react";
 
-interface ExchangeRates {
-  BDT: number;
-  USD: number;
-  EURO: number; // Add EURO currency
-  JPY: number; // Add JPY currency
+interface Currency {
+  name: string;
+  code: string;
+  exchangeRate: number;
 }
 
+const currencyDataArray: Currency[] = [
+  { name: "Bangladesh", code: "BDT", exchangeRate: 106.99 },
+  { name: "United States", code: "USD", exchangeRate: 1 },
+  { name: "Eurozone", code: "EUR", exchangeRate: 0.85 },
+  { name: "Japan", code: "JPY", exchangeRate: 110.23 },
+  { name: "India", code: "INR", exchangeRate: 74.5 },
+  { name: "China", code: "CNY", exchangeRate: 6.37 },
+  { name: "South Korea", code: "KRW", exchangeRate: 1175.5 },
+  { name: "Singapore", code: "SGD", exchangeRate: 1.34 },
+  { name: "United Kingdom", code: "GBP", exchangeRate: 0.72 },
+  { name: "Canada", code: "CAD", exchangeRate: 1.25 },
+  { name: "Australia", code: "AUD", exchangeRate: 1.29 },
+  { name: "Brazil", code: "BRL", exchangeRate: 5.41 },
+  { name: "Russia", code: "RUB", exchangeRate: 76.85 },
+  { name: "South Africa", code: "ZAR", exchangeRate: 15.18 },
+  { name: "Turkey", code: "TRY", exchangeRate: 13.23 },
+  { name: "Pakistan", code: "PKR", exchangeRate: 295.0 },
+  // Add more currencies as needed
+];
+
 const Calculator: React.FC = () => {
-  const mockExchangeRates: ExchangeRates = {
-    USD: 1 / 106.99,
-    BDT: 106.99,
-    EURO: 1 / 1.12, // Add exchange rate for EURO
-    JPY: 1 / 0.0096, // Add exchange rate for JPY
-  };
+  const demoCountry: Currency = { name: "United States", code: "USD", exchangeRate: 1 };
 
-  const currencies = Object.keys(mockExchangeRates) as (keyof ExchangeRates)[];
-
-  const [fromCurrency, setFromCurrency] = useState<keyof ExchangeRates>("USD");
-  const [toCurrency, setToCurrency] = useState<keyof ExchangeRates>("BDT");
+  const [fromCurrency, setFromCurrency] = useState<string>(demoCountry.code);
+  const [toCurrency, setToCurrency] = useState<string>(currencyDataArray[1].code);
   const [amount, setAmount] = useState<number>(1);
-  const [exchangeRate, setExchangeRate] = useState<number>(
-    mockExchangeRates[fromCurrency]
-  );
-  const [convertedAmount, setConvertedAmount] = useState<string>(
-    (amount / exchangeRate).toFixed(2)
-  );
+  const [convertedAmount, setConvertedAmount] = useState<number>(amount);
 
   useEffect(() => {
-    setConvertedAmount((amount / exchangeRate).toFixed(2));
-  }, [amount, exchangeRate]);
+    const fromExchangeRate = currencyDataArray.find((currency) => currency.code === fromCurrency)?.exchangeRate || 1;
+    const toExchangeRate = currencyDataArray.find((currency) => currency.code === toCurrency)?.exchangeRate || 1;
+    const newConvertedAmount = (amount / fromExchangeRate) * toExchangeRate;
+    setConvertedAmount(newConvertedAmount);
+  }, [amount, fromCurrency, toCurrency]);
 
   const handleAmountChange = (e: ChangeEvent<HTMLInputElement>) => {
     const inputValue = parseFloat(e.target.value);
@@ -40,67 +49,75 @@ const Calculator: React.FC = () => {
   };
 
   const handleFromCurrencyChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    const selectedCurrency = e.target.value as keyof ExchangeRates;
+    const selectedCurrency = e.target.value;
     setFromCurrency(selectedCurrency);
-    setToCurrency(selectedCurrency === "BDT" ? "USD" : "BDT");
-    setExchangeRate(mockExchangeRates[selectedCurrency]);
   };
 
   const handleToCurrencyChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    const selectedCurrency = e.target.value as keyof ExchangeRates;
+    const selectedCurrency = e.target.value;
     setToCurrency(selectedCurrency);
   };
 
   return (
-    <div className="w-full flex flex-col justify-center items-center py-12 lg:py-20 gap-4 lg:gap-10 bg-[#F3F4F6]">
-      <div className="text-lg lg:text-3xl text-black font-extralight">
-        Currency conversion calculator
-      </div>
-      <div className="w-4/5 md:w-3/4 lg:w-2/3 px-8 py-12 border rounded bg-white">
+    <div className="w-full flex flex-col justify-center items-center  text-white ">
+      <div className="w-4/5 md:w-3/4 lg:w-2/3 px-8  rounded-lg  p-6">
+        <div className="text-2xl lg:text-2xl text-gray-800 font-extralight mb-4">
+          Currency Conversion Calculator
+        </div>
         <div className="w-full flex flex-wrap justify-between items-center gap-4">
-          <div className="w-full lg:w-auto">
-            <label>From Currency: </label>
+          <div className="w-full lg:w-1/3">
+            <label className="text-gray-800">From Currency: </label>
             <select
-              className="w-full text-sm px-4 py-3 bg-gray-100 focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"
+              className="w-full text-black text-sm px-4 py-3 bg-[#F3F8FF] focus:bg-[#F3F8FF] border border-[#012169] rounded-lg p-12 "
               value={fromCurrency}
               onChange={handleFromCurrencyChange}
             >
-              {currencies.map((currency) => (
-                <option key={currency} value={currency}>
-                  {currency}
+              {currencyDataArray.map((currency) => (
+                <option key={currency.code} value={currency.code}>
+                  {currency.name}
                 </option>
               ))}
             </select>
           </div>
 
-          <div className="w-full lg:w-auto">
-            <label>Amount: </label>
+          <div className="w-full lg:w-1/3">
+            <label className="text-gray-800">To Currency: </label>
+            <select
+              className="w-full text-black text-sm px-4 py-3 bg-[#F3F8FF] focus:bg-[#F3F8FF] border border-[#012169] rounded-lg "
+              value={toCurrency}
+              onChange={handleToCurrencyChange}
+            >
+              {currencyDataArray.map((currency) => (
+                <option key={currency.code} value={currency.code}>
+                  {currency.name}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div className="w-full lg:w-1/3">
+            <label className="text-gray-800">Amount: </label>
             <input
               type="number"
               value={amount}
               onChange={handleAmountChange}
-              className="w-full text-sm px-4 py-3 bg-gray-100 focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"
+              className="w-full text-black text-sm px-4 py-3 bg-[#F3F8FF] focus:bg-[#F3F8FF] border border-[#012169] rounded-lg "
             />
           </div>
 
-          <div className="w-full lg:w-auto">
-            <label>To Currency: </label>
-            <select
-              className="w-full text-sm px-4 py-3 bg-gray-100 focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"
-              value={toCurrency}
-              onChange={handleToCurrencyChange}
-            >
-              {currencies.map((currency) => (
-                <option key={currency} value={currency}>
-                  {currency}
-                </option>
-              ))}
-            </select>
+          <div className="w-full lg:w-1/3">
+            <label className="text-gray-800">Result: </label>
+            <input
+              type="text"
+              value={`${convertedAmount.toFixed(2)} ${toCurrency}`}
+              readOnly
+              className="w-full text-black text-sm px-4 py-3 bg-[#F3F8FF] focus:bg-[#F3F8FF] border border-[#012169] rounded-lg "
+            />
           </div>
         </div>
 
-        <div className="mt-10 text-center font-bold">
-          The result: {amount} {fromCurrency} = {convertedAmount} {toCurrency}
+        <div className="mt-8 text-center font-bold text-gray-800">
+          The result: {amount} {fromCurrency} = {convertedAmount.toFixed(2)} {toCurrency}
         </div>
       </div>
     </div>

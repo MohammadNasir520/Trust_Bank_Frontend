@@ -11,6 +11,11 @@ export interface IDashboardMenuItem {
   children?: IDashboardMenuItem[]; // Optional children for nested menu items
 }
 export const adminDashboardMenu: IDashboardMenuItem[] = [
+    {
+        title: 'profile',
+        pathname: '/dashboard/profile/account',
+        icon: <BsPerson />,
+    },
   {
     title: "Dashboard",
     pathname: "/dashboard/overview",
