@@ -1,41 +1,14 @@
+'use client'
+
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/UI/table"
+import { useGetAllWithdrawQuery } from "@/redux/api/transactionApi";
+import { formatDate, formatTime } from "@/utils/formatDate";
+import { IoMdPrint } from "react-icons/io";
 
 export default function Withdraws() {
-    const data: any = [
-        {
-            id: '0207101014680',
-            accountType: 'Student',
-            name: 'Abu Sani Faysal',
-            email: 'abu.faysal002@gmail.com',
-            contactNo: '01634319696',
-            amount: 250,
-            createdAt: '12 June, 2024',
-            status: 'Success'
+    const { data } = useGetAllWithdrawQuery(undefined);
+    const withdraws = data?.data || [];
 
-        },
-        {
-            id: '0207101014681',
-            accountType: 'Marchent',
-            name: 'Kalam Hosen',
-            email: 'abu.faysal002@gmail.com',
-            contactNo: '01634319696',
-            amount: 250,
-            createdAt: '12 June, 2024',
-            status: 'Success'
-
-        },
-        {
-            id: '0207101014642',
-            accountType: 'Student',
-            name: 'Rabbil Karim',
-            email: 'abu.rabbil@gmail.com',
-            contactNo: '01634319696',
-            amount: 250,
-            createdAt: '12 June, 2024',
-            status: 'Success'
-
-        },
-    ]
     return (
         <div>
             <h1 className="text-xl font-semibold  text-gray-700 mb-2">All Withdraws</h1>
@@ -44,40 +17,38 @@ export default function Withdraws() {
                 <TableHeader>
                     <TableRow>
                         <TableHead className=""> Account</TableHead>
-                        <TableHead className=""> Account Type</TableHead>
-                        <TableHead>Contact No</TableHead>
+                        <TableHead>Email</TableHead>
                         <TableHead>Amount</TableHead>
+                        <TableHead>Type</TableHead>
                         <TableHead>Created at</TableHead>
-                        <TableHead>Status</TableHead>
                         <TableHead>Action</TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>
 
                     {
-                        data?.map((account: any) => <TableRow key={account?.id}>
+                        withdraws?.map((deposit: any) => <TableRow key={deposit?.id}>
                             <TableCell className="font-medium">
                                 <div className="text-gray-700 mt-2">
-                                    <p> {account?.name}</p>
-                                    <p className="text-sm"> {account?.id}</p>
+                                    <p className="capitalize"> {deposit?.user?.name}</p>
+                                    {/* <p className="text-sm"> {deposit?.user?.id}</p> */}
                                 </div>
                             </TableCell>
-                            <TableCell>{account?.accountType}</TableCell>
-                            <TableCell>{account?.contactNo}</TableCell>
-                            <TableCell className="text-start text-top">
-                                {account?.amount}
-                            </TableCell>
+                            <TableCell>{deposit?.user?.email}</TableCell>
+                            <TableCell>{deposit?.amount} {deposit?.currency}</TableCell>
+                            <TableCell className='capitalize'>{deposit?.type}</TableCell>
                             <TableCell className="text-start">
                                 <div className="text-sm">
-                                    <p> {account?.createdAt} </p>
-                                    <p> At 12.30PM </p>
+                                    <p> {formatDate(deposit?.createdAt)} </p>
+                                    <p> At {formatTime(deposit?.createdAt)} </p>
                                 </div>
 
                             </TableCell>
-                            <TableCell className="text-start"><div>
-                                {account?.status}</div></TableCell>
+
                             <TableCell className="text-start flex gap-2 mt-2">
                                 <button className="bg-blue-100 px-2  rounded text-blue-500">Profile </button>
+                                <IoMdPrint />
+
                             </TableCell>
                         </TableRow>
                         )
