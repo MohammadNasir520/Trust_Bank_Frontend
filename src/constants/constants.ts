@@ -41,6 +41,100 @@ export const accountOptions = [
     value: "student",
   },
 ];
+export const genderOptions = [
+  {
+    label: "Male",
+    value: "male",
+  },
+  {
+    label: "Female",
+    value: "female",
+  },
+
+  {
+    label: "Other",
+    value: "other",
+  }
+];
+export const currencyOptions = [
+  {
+    label: "BDT",
+    value: "BDT",
+  },
+  {
+    label: "USD",
+    value: "USD",
+  },
+
+  {
+    label: "EURO",
+    value: "EURO",
+  },
+
+  {
+    label: "INR",
+    value: "INR",
+  },
+  {
+    label: "PKR",
+    value: "PKR",
+  }
+];
+
+export const bloodOptions = [
+  {
+    label: "A+",
+    value: "a+",
+  },
+  {
+    label: "A-",
+    value: "a-",
+  },
+  {
+    label: "B+",
+    value: "b+",
+  },
+  {
+    label: "B-",
+    value: "b-",
+  },
+  {
+    label: "AB+",
+    value: "ab+",
+  },
+  {
+    label: "AB-",
+    value: "ab-",
+  },
+  {
+    label: "O+",
+    value: "o+",
+  },
+  {
+    label: "O-",
+    value: "o-",
+  },
+];
+
+export const occupationOptions = [
+  {
+    label: "Businessman",
+    value: "businessman",
+  },
+  {
+    label: "Job",
+    value: "job",
+  },
+  {
+    label: "Student",
+    value: "student",
+  },
+  {
+    label: "Other",
+    value: "other",
+  },
+];
+
 
 export const countryOptions = [
   {

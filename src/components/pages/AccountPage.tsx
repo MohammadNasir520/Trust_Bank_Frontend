@@ -11,14 +11,13 @@ import { useAccountMutation } from "@/redux/api/authApi";
 
 const Test = () => {
   const [account] = useAccountMutation();
-    const onSubmit = async (values: any) => {
-
-    const obj = {...values}
-    obj.profileImage = "demo url"
-    obj.age = parseInt(obj.age)
+  const onSubmit = async (values: any) => {
+    const obj = { ...values };
+    obj.profileImage = "demo url";
+    obj.age = parseInt(obj.age);
     try {
-      console.log(obj)
-      const res = await account(obj).unwrap()
+      console.log(obj);
+      const res = await account(obj).unwrap();
     } catch (err) {
       console.log(err);
     }
@@ -55,11 +54,7 @@ const Test = () => {
                   </div>
 
                   <div className="sm:col-span-3">
-                  <FormInput
-                        name="age"
-                        label="Age"
-                        type="number"
-                      />
+                    <FormInput name="age" label="Age" type="number" />
                   </div>
 
                   <div className="sm:col-span-3">
@@ -120,7 +115,6 @@ const Test = () => {
         </div>
         <div className="hidden lg:block h-1/2 w-[3px]  bg-black mx-2"> </div>
       </div>
-    
     </div>
   );
 };

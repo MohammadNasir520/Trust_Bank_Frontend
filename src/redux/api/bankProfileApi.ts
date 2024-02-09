@@ -1,19 +1,18 @@
 import { tagTypes } from "../tag-types";
 import { baseApi } from "./baseApi";
 
-const ACCOUNT_URL = "/accounts";
-const accountApi = baseApi.injectEndpoints({
+const Profile_URL = "/bankProfile";
+const bankProfileApi = baseApi.injectEndpoints({
   //@ts-ignore
   endpoints: (build) => ({
-    getAllAccounts: build.query({
+    getAllBankProfiles: build.query({
       query: () => ({
-        url: `${ACCOUNT_URL}/`,
+        url: `${Profile_URL}/`,
         method: "GET",
       }),
       providesTags: [tagTypes.account],
     }),
   }),
-  // overrideExisting: false,
 });
 
-export const { useGetAllAccountsQuery } = accountApi;
+export const { useGetAllBankProfilesQuery } = bankProfileApi;
