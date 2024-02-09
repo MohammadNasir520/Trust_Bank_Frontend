@@ -9,11 +9,6 @@ import { MdOutlineCreditCardOff } from "react-icons/md";
 import { CiBank } from "react-icons/ci";
 import { MdSupervisorAccount } from "react-icons/md";
 
-
-
-
-
-
 import loanImg from "@/assets/images/loan.png";
 
 const DebitCreditCardTab = () => {
@@ -156,7 +151,6 @@ const DebitCreditCardTab = () => {
   ];
 
   return (
-
     <div className="-mt-20">
       {/* Use responsive styles for padding */}
       <Tabs
@@ -172,13 +166,15 @@ const DebitCreditCardTab = () => {
               _selected={{ color: "white", bg: "#012169", font: "bold" }}
             >
               <span>{tab?.icon}</span>
-              <h1 className="text-[14px] md:text-[16px] lg:text-[18px]">{tab?.name}</h1>
+              <h1 className="text-[14px] md:text-[16px] lg:text-[18px]">
+                {tab?.name}
+              </h1>
               <div
                 style={{
                   borderRight: "1px",
-                  borderColor: "#012169",
+                  borderColor: "black",
                 }}
-                className="border h-7 absolute top-9/12 right-0"
+                className="border    h-7 absolute top-9/12 right-0"
               ></div>
             </Tab>
           ))}

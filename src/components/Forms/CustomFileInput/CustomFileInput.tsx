@@ -49,7 +49,7 @@ const CustomFileInput: React.FC<CustomFileInputProps> = ({
           type="file"
           className="hidden"
           onChange={handleFileChange}
-          id={id || ''}
+          id={id || ""}
         />
         <div className="rounded-md border border-gray-300 p-3 flex items-center justify-between">
           {selectedFile ? (

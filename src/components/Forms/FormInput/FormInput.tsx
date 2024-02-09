@@ -37,7 +37,7 @@ const FormInput: React.FC<FormInputProps> = ({
   {label && (
   <label
     htmlFor={name}
-    className="text-sm  text-black rounded-md p-2 block font-semibold "
+    className="text-sm  text-black rounded-md p-2 block  "
   >
     {label}
   </label>

@@ -1,5 +1,11 @@
 import React, { ChangeEvent, useEffect } from "react";
-import { Controller, useFormContext, FieldValues, UseFormSetValue } from "react-hook-form";
+import {
+  Controller,
+  useFormContext,
+  FieldValues,
+  UseFormSetValue,
+} from "react-hook-form";
+//@ts-ignore
 import dayjs, { Dayjs } from "dayjs";
 import { getErrorMessageByPropertyName } from "../../../utils/schema-validator";
 

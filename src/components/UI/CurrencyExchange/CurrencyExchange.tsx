@@ -93,7 +93,7 @@ const CurrencyExchange = () => {
 
   return (
     <div>
-         <Toaster position="top-center" reverseOrder={false} />
+         <Toaster position="top-right" reverseOrder={false} />
       <div className="bg-white p-8 border rounded-lg">
         <div className="mb-6">
           <select

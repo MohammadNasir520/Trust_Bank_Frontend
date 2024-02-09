@@ -56,6 +56,30 @@ export const genderOptions = [
     value: "other",
   }
 ];
+export const currencyOptions = [
+  {
+    label: "BDT",
+    value: "BDT",
+  },
+  {
+    label: "USD",
+    value: "USD",
+  },
+
+  {
+    label: "EURO",
+    value: "EURO",
+  },
+
+  {
+    label: "INR",
+    value: "INR",
+  },
+  {
+    label: "PKR",
+    value: "PKR",
+  }
+];
 
 export const bloodOptions = [
   {
