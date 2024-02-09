@@ -1,6 +1,5 @@
 import DebitCreditCardTab from "@/components/UI/Debit-Credit-card/DebitCreditCardTab";
 import SliderCarousel from "@/components/UI/slider/Slider";
-import BankProfile from "@/components/pages/BankProfile/BankProfile";
 import FaqSection from "@/components/pages/home_page/FaqSection";
 import ForeignExchange from "@/components/pages/home_page/Foreign-Exchange";
 
@@ -42,7 +41,6 @@ export default function page() {
         </div>
       </div> */}
       {/* <CardBanner /> */}
-      <BankProfile />
 
       <SliderCarousel />
 

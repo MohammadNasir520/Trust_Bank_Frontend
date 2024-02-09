@@ -49,7 +49,7 @@ const ManagerCard: React.FC<ManagerCardProps> = ({
         onClick={onOpen}
         ref={finalRef}
         maxW="sm"
-        className="border border-[#01206997]"
+        className="border border-[#01206997] cursor-pointer"
       >
         <CardBody className="flex flex-col items-center justify-center py-4">
           <div className="w-3/4 lg:w-2/3 p-[3px] border border-[#01206997] rounded">

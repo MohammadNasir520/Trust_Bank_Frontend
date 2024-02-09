@@ -13,6 +13,7 @@ const nextConfig = {
       "www.indianbank.in",
       "d3fl6msah8aj3y.cloudfront.net",
       "t4.ftcdn.net",
+      "www.qib.com.qa"
     ],
   },
 };

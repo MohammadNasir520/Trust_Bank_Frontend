@@ -4,7 +4,7 @@ import ManagerCard from "./ManagerCard/ManagerCard";
 const managersData = [
   {
     name: "Md. Nasir Uddin",
-    avatar: "/assets/managers/ah-likhon.jpg",
+    avatar: "/assets/managers/NasirFormalPic.jpg",
     designation: "Founder",
     about:
       "I have completed my graduation with a B.Sc. (Eng.) and an M.Sc. (Eng.) in Information and Communication Technology (ICT) from Comilla University. I am currently working as a Junior Software Engineer (Javascript) with 1 year of experience for Profecia Links Consulting Pvt. Ltd (An Indian company with a remote base). I am skilled in Javascript, TypeScript, and Javascript frameworks like ReactJS, NodeJS, and ExpressJS. I also have solid foundations in HTML5, CSS3, Bootstrap, Tailwind CSS, ES6, MongoDB, Redux, Context API, Restful API, Axios, Firebase Authentication, React Bootstrap, Material UI, and Wordpress Theme Customization.",
@@ -29,8 +29,8 @@ const managersData = [
     },
   },
   {
-    name: "Milkat Sayed",
-    avatar: "/assets/managers/ah-likhon.jpg",
+    name: "Mikat Sayed",
+    avatar: "/assets/managers/Sayed-Gaziul-Haque.jpg",
     designation: "Founder",
     about:
       "I have completed my graduation with a B.Sc. (Eng.) and an M.Sc. (Eng.) in Information and Communication Technology (ICT) from Comilla University. I am currently working as a Junior Software Engineer (Javascript) with 1 year of experience for Profecia Links Consulting Pvt. Ltd (An Indian company with a remote base). I am skilled in Javascript, TypeScript, and Javascript frameworks like ReactJS, NodeJS, and ExpressJS. I also have solid foundations in HTML5, CSS3, Bootstrap, Tailwind CSS, ES6, MongoDB, Redux, Context API, Restful API, Axios, Firebase Authentication, React Bootstrap, Material UI, and Wordpress Theme Customization.",
@@ -43,7 +43,7 @@ const managersData = [
   },
   {
     name: "Morshed Ali Masud",
-    avatar: "/assets/managers/ah-likhon.jpg",
+    avatar: "/assets/managers/Morshed.png",
     designation: "Founder",
     about:
       "I have completed my graduation with a B.Sc. (Eng.) and an M.Sc. (Eng.) in Information and Communication Technology (ICT) from Comilla University. I am currently working as a Junior Software Engineer (Javascript) with 1 year of experience for Profecia Links Consulting Pvt. Ltd (An Indian company with a remote base). I am skilled in Javascript, TypeScript, and Javascript frameworks like ReactJS, NodeJS, and ExpressJS. I also have solid foundations in HTML5, CSS3, Bootstrap, Tailwind CSS, ES6, MongoDB, Redux, Context API, Restful API, Axios, Firebase Authentication, React Bootstrap, Material UI, and Wordpress Theme Customization.",
@@ -56,7 +56,7 @@ const managersData = [
   },
   {
     name: "Foysal Ahmed",
-    avatar: "/assets/managers/ah-likhon.jpg",
+    avatar: "/assets/managers/abu-sany-faysal.png",
     designation: "Founder",
     about:
       "I have completed my graduation with a B.Sc. (Eng.) and an M.Sc. (Eng.) in Information and Communication Technology (ICT) from Comilla University. I am currently working as a Junior Software Engineer (Javascript) with 1 year of experience for Profecia Links Consulting Pvt. Ltd (An Indian company with a remote base). I am skilled in Javascript, TypeScript, and Javascript frameworks like ReactJS, NodeJS, and ExpressJS. I also have solid foundations in HTML5, CSS3, Bootstrap, Tailwind CSS, ES6, MongoDB, Redux, Context API, Restful API, Axios, Firebase Authentication, React Bootstrap, Material UI, and Wordpress Theme Customization.",

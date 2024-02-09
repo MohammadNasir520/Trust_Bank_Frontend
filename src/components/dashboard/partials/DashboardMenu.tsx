@@ -19,7 +19,6 @@ export default function DashboardMenu({
     const router = useRouter()
     const currentPath = usePathname();
 
-
     const handleMenuOpen = (
         e: any, handleClick: any,
         children: any, pathname: string
@@ -32,19 +31,21 @@ export default function DashboardMenu({
     }
 
     return (
-        <SidebarLinkGroup activecondition={currentPath.includes(pathname)}>
+        <SidebarLinkGroup activecondition={currentPath?.includes(pathname)}>
             {(handleClick: any, open: any) => {
                 return (
                     <>
                         <div
-                            className={`block cursor-pointer text-slate-200 truncate transition duration-150 ${pathname.includes('ecommerce') ? 'hover:text-slate-200' : 'hover:text-white'
+                            className={`block cursor-pointer text-slate-200 truncate transition duration-150 
+                            ${pathname.includes('dashboard') ? 'hover:text-slate-200' : 'hover:text-white'
                                 }`}
                             onClick={(e) => handleMenuOpen(e, handleClick, children, pathname)}
                         >
                             <div className="flex items-center justify-between">
                                 <div className="flex items-center">
                                     {icon}
-                                    <span className="text-sm font-medium ml-3  lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                                    <span className="text-sm font-medium ml-3 
+                                     lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
                                         {title}
                                     </span>
                                 </div>

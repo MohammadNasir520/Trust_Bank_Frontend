@@ -70,13 +70,13 @@ function Sidebar({ sidebarOpen, setSidebarOpen }: any) {
               <path d="M10.7 18.7l1.4-1.4L7.8 13H20v-2H7.8l4.3-4.3-1.4-1.4L4 12z" />
             </svg>
           </button>
-          <div className='lg:w-[300px] w-[50px]'>
+          <Link href={'/'} className='lg:w-[300px] w-[50px]'>
             {
               sidebarExpanded ? <Image src={'/assets/logo/logo-no-background.png'} width={170} height={170} alt='logo' />
                 :
-                <Image src={'/assets/logo/logo.png'} width={300} height={300} alt='logo' />
+                <Image src={'/assets/logo/logo.png'} width={100} height={100} alt='logo' />
             }
-          </div>
+          </Link>
         </div>
 
 

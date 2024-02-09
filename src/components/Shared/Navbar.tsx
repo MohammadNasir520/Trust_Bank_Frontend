@@ -86,8 +86,8 @@ export default function Navbar() {
               <div className="flex flex-col justify-between w-full      ">
                 <div className="bg-[#012169] text-white py-2  flex justify-between h-1/2  w-full pr-16">
                   <div className="lg:flex hidden gap-5 ml-6">
-                    <p>Dashboard</p>
-                    <span>About</span>
+                    <Link href={'/dashboard'}>Dashboard</Link>
+                    <Link href={'/about'}>About</Link>
                   </div>
                   <div className="lg:block hidden">{infoItems}</div>
                 </div>
@@ -98,7 +98,10 @@ export default function Navbar() {
                     <NavMenu items={loanNavMenuOptions} title="Insurance" />
                     <NavMenu items={cardNavMenuOptions} title="Card" />
                     <NavMenu items={loanNavMenuOptions} title="Deposit" />
-                    <NavMenu items={loanNavMenuOptions} title="Foreign services" />
+
+                    <Link href="/foreign-services">
+                      <p>Foreign service</p>
+                    </Link>
                   </div>
                   <div className="flex px-5 gap-5">
                     <p>Profile</p>
