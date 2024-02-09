@@ -12,7 +12,6 @@ const loanApi = baseApi.injectEndpoints({
     }),
     updateAgricultureLoan: build.mutation({
       query: ({ data, id }) => {
-        console.log("data", data, id);
         return {
           url: `/agricultureLoan/${id}`,
           method: "PATCH",
