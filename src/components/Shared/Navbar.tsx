@@ -33,7 +33,7 @@ export default function Navbar() {
   const isLogin = isLoggedIn();
   const { push } = useRouter();
 
-  useEffect(() => {}, [isLogin]);
+  useEffect(() => { }, [isLogin]);
 
   const handleLogin = () => {
     removeUserInfo(authKey);
@@ -73,14 +73,16 @@ export default function Navbar() {
                   <BiMenu />
                 </Button>
               </div>
-              <Image
-                src={"/assets/logo/logo-no-background.png"}
-                height={170}
-                width={200}
-                alt="logo"
-                className=""
-                style={{ transform: "skew(30deg)" }}
-              />
+              <div onClick={() => push('/')} className="cursor-pointer">
+                <Image
+                  src={"/assets/logo/logo-no-background.png"}
+                  height={170}
+                  width={200}
+                  alt="logo"
+                  className=""
+                  style={{ transform: "skew(30deg)" }}
+                />
+              </div>
             </div>
             <div className=" lg:col-span-6 col-span-4 h-full  ">
               <div className="flex flex-col justify-between w-full      ">
