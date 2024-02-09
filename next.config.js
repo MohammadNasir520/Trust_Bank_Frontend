@@ -25,6 +25,7 @@ const nextConfig = {
       "www.shutterstock.com",
       "imgbox.com",
       "thumbs2.imgbox.com",
+      "www.qib.com.qa"
     ],
   },
 };

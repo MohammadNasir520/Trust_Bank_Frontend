@@ -1,4 +1,5 @@
 // FormRadioField.tsx
+import { getErrorMessageByPropertyName } from "@/utils/schema-validator";
 import React from "react";
 import { useFormContext, Controller } from "react-hook-form";
 
@@ -10,14 +11,16 @@ interface IRadioInput {
 }
 
 const FormRadioField: React.FC<IRadioInput> = ({ name, label, options }) => {
-  const { control } = useFormContext();
+  const { control , formState: { errors }, } = useFormContext();
+
+  const errorMessage = getErrorMessageByPropertyName(errors, name);
 
   return (
     <div>
       {label && (
         <label
           htmlFor={name}
-          className="text-sm font-semibold text-black rounded-md px-4 py-2 block"
+          className="text-sm  text-black rounded-md p-2 block"
         >
           {label}
         </label>
@@ -26,7 +29,7 @@ const FormRadioField: React.FC<IRadioInput> = ({ name, label, options }) => {
         control={control}
         name={name}
         render={({ field: { value, onChange } }) => (
-          <div className="flex gap-2">
+          <div className="flex gap-4">
             {options.map((option) => (
               <div key={option} className="flex items-center">
                 <input
@@ -51,9 +54,13 @@ const FormRadioField: React.FC<IRadioInput> = ({ name, label, options }) => {
                 </label>
               </div>
             ))}
+            
           </div>
         )}
       />
+       {errorMessage && (
+        <p className="text-red-500 mt-1 text-sm">{errorMessage}</p>
+      )}
     </div>
   );
 };

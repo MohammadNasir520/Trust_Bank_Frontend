@@ -314,9 +314,7 @@ const page = () => {
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
               quae. explicabo. Sed ut perspiciatis unde omnis.
-            </p>          
-          
-          
+            </p>
           </div>
         </div>
       </div>
@@ -355,7 +353,9 @@ const page = () => {
                 <BillCard key={index} item={item} title={providerData.title} />
               ))
             ) : (
-              <h1>Please select a service</h1>
+              <div className="flex justify-center items-center">
+                <h1>Please select a service</h1>
+              </div>
             )}
           </div>
         </div>
