@@ -2,6 +2,8 @@
 
 import Form from "@/components/Forms/Form/Form";
 import FormInput from "@/components/Forms/FormInput/FormInput";
+import FormSelectField from "@/components/Forms/FormSelectedField/FormSelectedField";
+import { accountOptions } from "@/constants/constants";
 import Image from "next/image";
 import {
   FaHandPointer,
@@ -43,44 +45,76 @@ const page = ({ params }) => {
               <span className="text-[#012169] font-semibold">$100/month</span>{" "}
             </h1>
             <h1 className="text-[#012169] text-md">Claim within 12 months</h1>
-            <div className="bg-[#d1d2d5] p-4 rounded border-2  mx-1">
-              <Form submitHandler={onSubmit} className="m-6">
-                <div className="sm:col-span-3">
-                  <div className="mt-2">
-                    <FormInput
-                      className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                      id="grid-first-name"
-                      name="phoneNumber"
-                      type="string"
-                      label="Phone Number"
-                    />
+            <div className=" p-4 rounded border-2  mx-1">
+              <Form submitHandler={onSubmit} className="m-10">
+                <div className="space-y-12">
+                  <div className="border-b border-gray-900/10 pb-12">
+                    <h2 className="text-base font-semibold leading-7 text-gray-900">
+                      Open your account
+                    </h2>
+                    <p className="mt-1 text-sm leading-6 text-gray-600">
+                      Use a permanent address where you can receive mail.
+                    </p>
+                    <div className="mt-10 grid grid-cols-1 gap-y-8 gap-x-6 sm:grid-cols-6">
+                      <div className="sm:col-span-3">
+                        <div>
+                          <FormInput
+                            name="contactNo"
+                            label="Phone"
+                            type="number"
+                          />
+                        </div>
+                      </div>
+                      <div className="sm:col-span-3">
+                        <div>
+                          <FormInput
+                            name="profession"
+                            label="Profession"
+                            type="text"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="sm:col-span-3">
+                        <FormInput name="age" label="Age" type="number" />
+                      </div>
+
+                      <div className="sm:col-span-3">
+                        <div>
+                          <FormInput
+                            type="string"
+                            label="Education"
+                            name="education"
+                          />
+                        </div>
+                      </div>
+                      <div className="sm:col-span-3">
+                        <div>
+                          <FormSelectField
+                            name="accountType"
+                            label="Account Type"
+                            options={accountOptions}
+                          />
+                        </div>
+                      </div>
+                  
+                      
+                    </div>
                   </div>
                 </div>
-
-                <div className="sm:col-span-3">
-                  <div className="mt-2">
-                    <FormInput
-                      name="billId"
-                      type="string"
-                      label=" Bill Id"
-                      className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                    />
-                  </div>
-                </div>
-
-                <div className="sm:col-span-3">
-                  <div className="mt-2">
-                    <FormInput
-                      name="amount"
-                      type="string"
-                      label=" Amount"
-                      className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                    />
-                  </div>
-                </div>
-
-                <div className=" my-3 text-white text-center bg-[#012169] px-3 py-2 rounded w-[100px]">
-                  <input type="submit" />
+                <div className="mt-6 flex items-center justify-end gap-x-6">
+                  <button
+                    type="button"
+                    className="text-sm font-semibold leading-6 text-gray-900"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    className="rounded-md bg-[#012169] py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  >
+                    create
+                  </button>
                 </div>
               </Form>
             </div>

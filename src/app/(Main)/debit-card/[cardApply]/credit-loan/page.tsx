@@ -337,7 +337,6 @@ const page = () => {
           showData ? "block " : "hidden"
         } justify-center items-center bg-[#E6E6E6] py-4 rounded-md my-5`}
       >
-        
         <h1 className="text-xl font-semibold">
           Check Your Personal information before submit
         </h1>
@@ -382,7 +381,7 @@ const page = () => {
               Credit-Score: {formData.creditScore}
             </h1>
             <h1 className="text-[14px] lg:text-[18px] tracking-wide  ">
-              Loan-Amount: {formData.age}
+              {/* Loan-Amount: {formData.age} */}
             </h1>
           </div>
         </div>

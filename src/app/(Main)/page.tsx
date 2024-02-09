@@ -2,9 +2,13 @@ import DebitCreditCardTab from "@/components/UI/Debit-Credit-card/DebitCreditCar
 import SliderCarousel from "@/components/UI/slider/Slider";
 import FaqSection from "@/components/pages/home_page/FaqSection";
 import ForeignExchange from "@/components/pages/home_page/Foreign-Exchange";
+
 import LoanCalculatorPage from "@/components/pages/home_page/LoanCalculatorPage";
 import Offer from "@/components/pages/home_page/Offer";
 import TotalCount from "@/components/pages/home_page/TotalCount";
+
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 //@ts-ignore
 
 export default function page() {

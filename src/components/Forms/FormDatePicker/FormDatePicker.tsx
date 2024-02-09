@@ -1,5 +1,11 @@
 import React, { ChangeEvent, useEffect } from "react";
-import { Controller, useFormContext, FieldValues, UseFormSetValue } from "react-hook-form";
+import {
+  Controller,
+  useFormContext,
+  FieldValues,
+  UseFormSetValue,
+} from "react-hook-form";
+//@ts-ignore
 import dayjs, { Dayjs } from "dayjs";
 import { getErrorMessageByPropertyName } from "../../../utils/schema-validator";
 
@@ -10,7 +16,12 @@ interface FormDatePickerProps {
   size?: "large" | "small"; // Adjust the type based on your specific use case
 }
 
-const FormDatePicker: React.FC<FormDatePickerProps> = ({ name, label, onChange, size = "large" }) => {
+const FormDatePicker: React.FC<FormDatePickerProps> = ({
+  name,
+  label,
+  onChange,
+  size = "large",
+}) => {
   const {
     control,
     setValue,
@@ -44,7 +55,9 @@ const FormDatePicker: React.FC<FormDatePickerProps> = ({ name, label, onChange, 
             type="date"
             value={field.value ? dayjs(field.value).format("YYYY-MM-DD") : ""}
             onChange={handleOnChange}
-            className={`mt-1 p-2 w-full border rounded-md ${size === "large" ? "large-styles" : "small-styles"}`}
+            className={`mt-1 p-2 w-full border rounded-md ${
+              size === "large" ? "large-styles" : "small-styles"
+            }`}
           />
         )}
       />
