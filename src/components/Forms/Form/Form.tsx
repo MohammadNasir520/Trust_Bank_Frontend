@@ -9,6 +9,9 @@ type FormConfig = {
 };
 
 type FormProps = {
+  amount?: string;
+  billId?: string;
+  phoneNumber?: string;
   children?: ReactElement | ReactNode;
   submitHandler: SubmitHandler<any>;
   className?: string;
@@ -27,6 +30,7 @@ type FormProps = {
 } & FormConfig;
 
 const Form = ({
+
   children,
   submitHandler,
   defaultValues,
@@ -44,6 +48,9 @@ const Form = ({
   const onSubmit = (data: any) => {
     submitHandler(data);
     reset({
+      amount: "",
+      billId: "",
+      phoneNumber: "",
       email: "",
       password: "",
       purpose: "",
