@@ -54,9 +54,7 @@ const FormInput: React.FC<FormInputProps> = ({
               placeholder={placeholder}
               {...field}
               value={value ? value : field.value}
-              className={`mt-1 p-2 w-full border rounded-md ${
-                size === "large" ? "large-styles" : "small-styles"
-              }`}
+              className={`mt-1 p-2 w-full border rounded-md ${className} }`}
             />
             {errorMessage && (
               <small className="text-red-500 mt-1">{errorMessage}</small>

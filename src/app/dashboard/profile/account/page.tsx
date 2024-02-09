@@ -93,10 +93,11 @@ export default function page() {
             </span>
 
             <span className="col-span-4 md:col-span-2 rounded-sm bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800">
-              Citizen:{" "}
+               Citizen:{" "}
               {profileData.accounts &&
                 profileData.accounts[0] &&
-                profileData.accounts[0].citizenShip}
+                profileData.accounts[0].citizenShip}{" "}
+             
             </span>
             <span className="col-span-4 md:col-span-2 rounded-sm bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800">
               Age:{" "}
@@ -142,7 +143,9 @@ export default function page() {
             </h1>
           </div>
 
-          <h4 className="text-md font-semibold leading-3 ">Balance Calculation</h4>
+          <h4 className="text-md font-semibold leading-3 ">
+            Balance Calculation
+          </h4>
           <div className="grid grid-cols-6 gap-3">
             <div className="col-span-6 md:col-span-3 lg:col-span-2 flex flex-col justify-center items-center bg-white rounded border w-full py-4 ">
               <div className="py-2">
