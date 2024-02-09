@@ -15,6 +15,7 @@ interface IAccount {
     citizenShip: string;
     userId: string;
     createdAt: string;
+    userBalances: any[]
 }
 
 interface IProfileData {
@@ -108,60 +109,23 @@ export default function Profile({ profileData }: { profileData: IProfileData }) 
 
                     <div>
                         <h4 className="text-md font-semibold leading-3 text-[#6C22A6]">
-                            Balance Calculation
+                            Balance in Currencies
                         </h4>
-                        <label>Currency</label>
-                        <select id="currency">
-                            <option value="CA">BDT</option>
-                            <option value="FR">USD</option>
-                        </select>
+
                     </div>
-                    <div className="grid grid-cols-6 gap-3  ">
-                        <div className="col-span-6 md:col-span-3 lg:col-span-2 flex flex-col justify-center items-center bg-white rounded border w-full py-4 ">
-                            <div className="py-2">
+                    <div className=" text-gray-700 grid lg:grid-cols-9  md:grid-cols-6 grid-cols-3 gap-3 ">
 
-                            </div>
-                            <div className="leading-3">
-                                <p className=" text-md font-bold text-slate-700">
-                                    Current Balance
+                        {profileData?.accounts[0]?.userBalances?.map((balance: any) =>
+                            <div className="flex flex-col justify-center items-center bg-gray-50 rounded border w-full py-4 ">
+                                <p className="text-center   font-semibold   ">
+                                    {balance?.currency}
                                 </p>
-                            </div>
-                            <div>
-                                <p className="text-xl text-center text-slate-500 font-serif font-semibold  self-start ml-auto">
-                                    {profileData?.accounts[0]?.balance}
+                                <p className=" text-md font-bold">
+                                    {Number(balance?.balance)?.toFixed(2)}
                                 </p>
-                            </div>
-                        </div>
-                        <div className="col-span-6 md:col-span-3 lg:col-span-2 flex flex-col justify-center items-center bg-white rounded border w-full py-4 ">
-                            <div className="py-2">
 
-                            </div>
-                            <div className="leading-3">
-                                <p className=" text-md font-bold text-slate-700">
-                                    Transfer-Balance
-                                </p>
-                            </div>
-                            <div>
-                                <p className="text-xl text-center text-slate-500 font-serif font-semibold  self-start ml-auto">
-                                    {profileData?.accounts[0]?.balance}
-                                </p>
-                            </div>
-                        </div>
-                        <div className="col-span-6 md:col-span-6 lg:col-span-2 flex flex-col justify-center items-center bg-white rounded border w-full py-4 ">
-                            <div className="py-2">
 
-                            </div>
-                            <div className="leading-3">
-                                <p className=" text-md font-bold text-slate-700">
-                                    Total Withdraw Money
-                                </p>
-                            </div>
-                            <div>
-                                <p className="text-xl text-center text-slate-500 font-serif font-semibold  self-start ml-auto">
-
-                                </p>
-                            </div>
-                        </div>
+                            </div>)}
                     </div>
                 </div>
             </div>
