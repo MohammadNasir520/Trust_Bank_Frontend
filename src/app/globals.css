@@ -31,6 +31,11 @@
   height: 0px !important;
 }
 
+.profile-circle div[role="progressbar"] svg{
+  width: 200px;
+  height: 200px;
+}
+
 div[role="progressbar"] svg{
   width: 120px;
   height: 120px;
@@ -113,5 +118,26 @@ div[role="progressbar"] svg circle.chakra-progress__track{
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@media only screen and (max-width: 767px){
+  .profile-circle div[role="progressbar"] svg{
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .profile-circle div[role="progressbar"] svg{
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media only screen and (max-width: 475px){
+  .profile-circle div[role="progressbar"] svg{
+    width: 90px;
+    height: 90px;
   }
 }
