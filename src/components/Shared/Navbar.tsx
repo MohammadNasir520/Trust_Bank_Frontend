@@ -33,7 +33,7 @@ export default function Navbar() {
   const isLogin = isLoggedIn();
   const { push } = useRouter();
 
-  useEffect(() => { }, [isLogin]);
+  useEffect(() => {}, [isLogin]);
 
   const handleLogin = () => {
     removeUserInfo(authKey);
