@@ -4,7 +4,7 @@ import { FaAngleRight } from "react-icons/fa";
 import { TiTickOutline } from "react-icons/ti";
 import card1 from "../../../../public/assets/images/card_carousel/credit-card.png";
 
-const Card = ({ card, pathname }) => {
+const Card = ({ card, pathname }:{card:any, pathname:any}) => {
   return (
     <div className="flex justify-center my-8">
       <div className=" w-[300px] rounded-lg shadow-lg">
@@ -41,7 +41,7 @@ const Card = ({ card, pathname }) => {
             <h1 className="text-[16px] ">Benefits</h1>
 
             <ul className="ml-2 mt-2">
-              {card.benefits.map((benefit) => {
+              {card.benefits.map((benefit:any) => {
                 return (
                   <li className="flex items-center gap-1 text-[14px] lg:text-[14px]">
                     <TiTickOutline />

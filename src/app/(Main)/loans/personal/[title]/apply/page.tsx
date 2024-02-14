@@ -3,7 +3,6 @@ import Form from "@/components/Forms/Form/Form";
 import FormInput from "@/components/Forms/FormInput/FormInput";
 import LoanCalculatorPage from "@/components/pages/home_page/LoanCalculatorPage";
 
-
 const PersonalLoanApply = () => {
   const onSubmit = async (values: any) => {
     console.log(values);
@@ -15,9 +14,7 @@ const PersonalLoanApply = () => {
 
   return (
     <div>
-      <div>
-       
-      </div>
+      <div></div>
       <div className="flex flex-col lg:flex-row justify-center items-center">
         <div>
           <Form submitHandler={onSubmit} className="m-10">
@@ -42,7 +39,7 @@ const PersonalLoanApply = () => {
                         type="text"
                         name="loanName"
                         className="block w-full px-2 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                         value="personal-loan-option-2"
+                        value="personal-loan-option-2"
                       />
                     </div>
                   </div>
@@ -51,14 +48,14 @@ const PersonalLoanApply = () => {
                       htmlFor="amount"
                       className="block text-sm font-medium leading-6 text-gray-900"
                     >
-                     Amount
+                      Amount
                     </label>
                     <div className="mt-2">
                       <FormInput
                         type="text"
-                        name="amount"                  
+                        name="amount"
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                       value=" 50000"
+                        value=" 50000"
                       />
                     </div>
                   </div>
@@ -86,15 +83,14 @@ const PersonalLoanApply = () => {
                       Purpose
                     </label>
                     <div className="mt-2">
-                      <FormInput               
+                      <FormInput
                         name="purpose"
-                        type="text"    
+                        type="text"
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                      
                       />
                     </div>
                   </div>
-               
+
                   <div className="sm:col-span-3">
                     <label
                       htmlFor="employment"
@@ -106,7 +102,7 @@ const PersonalLoanApply = () => {
                       <FormInput
                         type="text"
                         name="employment"
-                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"                   
+                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                       />
                     </div>
                   </div>
@@ -122,25 +118,22 @@ const PersonalLoanApply = () => {
                         type="number"
                         name="income"
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                       
                       />
                     </div>
                   </div>
-
 
                   <div className="sm:col-span-2 sm:col-start-1">
                     <label
                       htmlFor="guarantorName"
                       className="block text-sm font-medium leading-6 text-gray-900"
                     >
-                     Guarantor Name
+                      Guarantor Name
                     </label>
                     <div className="mt-2">
                       <FormInput
                         type="text"
                         name="guarantorName"
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                        
                       />
                     </div>
                   </div>
@@ -149,14 +142,13 @@ const PersonalLoanApply = () => {
                       htmlFor=" guarantorAddress"
                       className="block text-sm font-medium leading-6 text-gray-900"
                     >
-                       Guarantor Address
+                      Guarantor Address
                     </label>
                     <div className="mt-2">
                       <FormInput
                         type="text"
                         name="guarantorAddress"
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                      
                       />
                     </div>
                   </div>
@@ -165,14 +157,13 @@ const PersonalLoanApply = () => {
                       htmlFor=" guarantorPhone"
                       className="block text-sm font-medium leading-6 text-gray-900"
                     >
-                       Guarantor Phone
+                      Guarantor Phone
                     </label>
                     <div className="mt-2">
                       <FormInput
                         type="text"
                         name="guarantorPhone"
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                       
                       />
                     </div>
                   </div>
@@ -196,7 +187,6 @@ const PersonalLoanApply = () => {
           </Form>
         </div>
         <div className="hidden lg:block h-1/2 w-[3px]  bg-black mx-2"> </div>
-        
       </div>
       <div className=" mb-3">
         <LoanCalculatorPage />

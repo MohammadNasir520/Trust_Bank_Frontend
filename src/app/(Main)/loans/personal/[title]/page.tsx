@@ -1,13 +1,13 @@
-"use client"
+"use client";
 import React from "react";
 import AgricultureBanner from "../../../../../../public/assets/images/agriculture.jpg";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import PersonalLoanDetails from "@/components/pages/Personal/PersonalLoanDetails";
-import { usePathname } from 'next/navigation'
+import { usePathname } from "next/navigation";
 
-const AgricultureDetailsPage = (params : any) => {
-  const pathname = usePathname()
+const AgricultureDetailsPage = (params: any) => {
+  const pathname = usePathname();
   console.log(pathname);
   const router = useRouter();
 
@@ -41,11 +41,8 @@ const AgricultureDetailsPage = (params : any) => {
         </div>
       </div>
 
-    
       <div className="w-full flex flex-col gap-1 items-center justify-center py-12 lg:py-16">
-       
         <div className="w-4/5 lg:w-5/6 flex flex-col lg:flex-row gap-6 lg:gap-10">
-         
           <div className="w-full lg:w-1/4 flex flex-col items-start gap-4">
             {loanTypes.map((loanType, index) => (
               <p
@@ -59,9 +56,7 @@ const AgricultureDetailsPage = (params : any) => {
           </div>
 
           <div className="w-full lg:w-3/4">
-          
             <PersonalLoanDetails />
-          
           </div>
         </div>
       </div>

@@ -1,5 +1,11 @@
 import React, { ChangeEvent, useEffect } from "react";
-import { Controller, useFormContext, FieldValues, UseFormSetValue } from "react-hook-form";
+import {
+  Controller,
+  useFormContext,
+  FieldValues,
+  UseFormSetValue,
+} from "react-hook-form";
+//@ts-ignore
 import dayjs, { Dayjs } from "dayjs";
 import { getErrorMessageByPropertyName } from "../../../utils/schema-validator";
 
@@ -7,10 +13,12 @@ interface FormDatePickerProps {
   name: string;
   label?: string;
   onChange?: (selectedDate: Dayjs, formattedDate: string) => void;
-  size?: "large" | "small"; // Adjust the type based on your specific use case
+  size?: "large" | "small"; 
+  className?:string;
+ 
 }
 
-const FormDatePicker: React.FC<FormDatePickerProps> = ({ name, label, onChange, size = "large" }) => {
+const FormDatePicker: React.FC<FormDatePickerProps> = ({ name, label, onChange, size = "large",className }) => {
   const {
     control,
     setValue,
@@ -30,7 +38,7 @@ const FormDatePicker: React.FC<FormDatePickerProps> = ({ name, label, onChange, 
        {label && (
   <label
     htmlFor={name}
-    className="text-sm  text-black rounded-md px-2 block "
+    className="text-sm  text-black rounded-md p-2 block  "
   >
     {label}
   </label>
@@ -44,12 +52,12 @@ const FormDatePicker: React.FC<FormDatePickerProps> = ({ name, label, onChange, 
             type="date"
             value={field.value ? dayjs(field.value).format("YYYY-MM-DD") : ""}
             onChange={handleOnChange}
-            className={`mt-1 p-2 w-full border rounded-md ${size === "large" ? "large-styles" : "small-styles"}`}
+            className={`${className}`}
           />
         )}
       />
       {errorMessage && (
-        <small className="text-red-500 mt-1">{errorMessage}</small>
+        <p className="text-red-500 mt-1">{errorMessage}</p>
       )}
     </div>
   );

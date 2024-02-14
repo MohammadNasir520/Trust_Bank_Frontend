@@ -37,7 +37,7 @@ const FormInput: React.FC<FormInputProps> = ({
   {label && (
   <label
     htmlFor={name}
-    className="text-sm  text-black rounded-md px-1 block "
+    className="text-sm  text-black rounded-md p-2 block  "
   >
     {label}
   </label>
@@ -54,12 +54,10 @@ const FormInput: React.FC<FormInputProps> = ({
               placeholder={placeholder}
               {...field}
               value={value ? value : field.value}
-              className={`mt-1 p-2 w-full border rounded-md ${
-                size === "large" ? "large-styles" : "small-styles"
-              }`}
+              className={`${className}`}
             />
             {errorMessage && (
-              <small className="text-red-500 mt-1">{errorMessage}</small>
+              <p className="text-red-500 mt-1 text-sm">{errorMessage}</p>
             )}
           </div>
         )}

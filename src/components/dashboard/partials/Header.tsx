@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import ThemeToggle from './ThemeToggle';
 
-
 function Header({ sidebarOpen, setSidebarOpen }: any) {
   const [searchModalOpen, setSearchModalOpen] = useState(false);
 
@@ -58,6 +57,10 @@ function Header({ sidebarOpen, setSidebarOpen }: any) {
             </div>
 
             <ThemeToggle />
+            <div className='flex items-center gap-1'>
+              <img src="https://bit.ly/kent-c-dodds" className='w-8 h-8 rounded-full' alt="" />
+              <p className='text-sm text-gray-700'>Admin</p>
+            </div>
           </div>
         </div>
       </div>
