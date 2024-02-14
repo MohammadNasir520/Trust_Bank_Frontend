@@ -31,18 +31,15 @@
   height: 0px !important;
 }
 
-div[role="progressbar"] svg{
+div[role="progressbar"] svg {
   width: 120px;
   height: 120px;
 }
 
-div[role="progressbar"] svg circle.chakra-progress__track{
+div[role="progressbar"] svg circle.chakra-progress__track {
   stroke: #012169;
 }
 
-
-
- 
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -113,7 +110,7 @@ div[role="progressbar"] svg circle.chakra-progress__track{
   }
   body {
     @apply bg-background text-foreground;
-    width: 1400px;
+   max-width: 1400px;
     margin: 0 auto;
   }
 }
