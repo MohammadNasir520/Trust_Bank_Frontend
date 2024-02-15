@@ -58,7 +58,7 @@ const data = [
 
 const BigChartBox = () => {
   return (
-    <div className="w-full h-full flex flex-col justify-between">
+    <div className="w-full h-full flex flex-col justify-between bg-white shadow px-4 py-2 rounded-lg">
       <h1 className="text-xl">Revenue Analytics</h1>
       <div className="w-full h-[200px] text-sm">
         <ResponsiveContainer width="99%" height="100%">

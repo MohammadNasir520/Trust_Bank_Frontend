@@ -134,20 +134,20 @@ export default function Profile({
             </select>
           </div> */}
 
-                    <div className="flex items-center justify-center px-4 py-4 profile-circle">
+                    <div className="flex items-center justify-around px-4 py-4 gap-2  profile-circle">
                         {
-                            profileData?.accounts[0]?.userBalances?.map((userBalance: any) => <CircularProgress>
-                                <CircularProgressLabel>
-                                    <Text className="text-md md:text-[15px] text-center font-bold hidden md:block">
-                                        {userBalance?.currency}
-                                    </Text>
+                            profileData?.accounts[0]?.userBalances?.map((userBalance: any) => <div className=" bg-blue-50 text-blue-700 w-full py-4 rounded-lg">
+                                {/* <CircularProgressLabel> */}
+                                <Text className="text-md md:text-[15px] text-center font-bold hidden md:block">
+                                    {userBalance?.currency}
+                                </Text>
 
-                                    <Text className="text-base md:text-lg lg:text-sm text-center font-bold">
-                                        {/* {profileData?.accounts[0]?.balance || 0} */}
-                                        {Number(userBalance?.balance)?.toFixed(2)}
-                                    </Text>
-                                </CircularProgressLabel>
-                            </CircularProgress>)
+                                <Text className="text-base md:text-lg lg:text-sm text-center font-bold">
+                                    {/* {profileData?.accounts[0]?.balance || 0} */}
+                                    {Number(userBalance?.balance)?.toFixed(2)}
+                                </Text>
+                                {/* </CircularProgressLabel> */}
+                            </div>)
                         }
 
                         {/* <CircularProgress>

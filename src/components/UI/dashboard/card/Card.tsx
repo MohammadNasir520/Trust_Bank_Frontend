@@ -59,15 +59,15 @@ const data = [
 const Card = ({ item }: any) => {
 
   return (
-    <div className="max-w-80 border rounded-md p-4 h-32 font-sans ">
+    <div className="max-w-80 shadow rounded-md p-4 h-32 font-sans bg-white ">
       <div className="flex justify-between">
         <div className="flex flex-col">
-          <div className="flex gap-1">
-            <MdOutlineAccountBalance size={25} color="#872341"/>
-            <h1 className=" font-semibold text-sm">Total Balance</h1>
+          <div className="flex gap-1 ">
+            <MdOutlineAccountBalance size={25} color="#872341" />
+            <h1 className=" font-semibold text-sm">{item?.title}</h1>
           </div>
 
-          <h1 className="text-md font-bold ">$5000</h1>
+          <h1 className="text-md font-bold ">${item?.count}</h1>
         </div>
         <div className="-mt-[15px] -mr-[10px]  ">
           <LineChart
