@@ -113,7 +113,7 @@ div[role="progressbar"] svg circle.chakra-progress__track{
   }
   body {
     @apply bg-background text-foreground;
-    width: 1400px;
+    max-width: 1400px;
     margin: 0 auto;
   }
 }

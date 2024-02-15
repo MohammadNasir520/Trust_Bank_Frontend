@@ -1,4 +1,5 @@
-import InsuranceCard from "@/components/ui/insurance/InsuranceCard";
+
+import InsuranceCard from "@/components/UI/insurance/InsuranceCard";
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
 
