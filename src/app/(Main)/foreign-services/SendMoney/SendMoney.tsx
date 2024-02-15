@@ -2,9 +2,10 @@
 import React, { useState } from 'react';
 import Form from "@/components/Forms/Form/Form";
 import FormInput from "@/components/Forms/FormInput/FormInput";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/UI/Tabs";
 import Image from 'next/image';
-import CurrencyExchange from '@/components/UI/CurrencyExchange/CurrencyExchange';
+import { Tabs } from '@chakra-ui/react';
+import { TabsContent, TabsList, TabsTrigger } from '@/components/ui/Tabs';
+import CurrencyExchange from '@/components/ui/CurrencyExchange/CurrencyExchange';
 
 const DirectRemitPage = () => {
   const [activeTab, setActiveTab] = useState('exchange');

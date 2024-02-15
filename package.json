@@ -23,6 +23,7 @@
     "css-loader": "^6.9.1",
     "dayjs": "^1.11.10",
     "framer-motion": "^11.0.3",
+    "i": "^0.3.7",
     "jwt-decode": "3.1.2",
     "lucide-react": "^0.321.0",
     "next": "14.0.1",
