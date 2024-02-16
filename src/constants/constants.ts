@@ -333,6 +333,96 @@ export const newsData = [
   },
 ];
 
+export const fixedDepositData = [
+  {
+    years: "3 years",
+    nc_fd_rate: "2.8%",
+    sc_fd_rate: "3.8%",
+  },
+  {
+    years: "4 years",
+    nc_fd_rate: "2.8%",
+    sc_fd_rate: "3.8%",
+  },
+  {
+    years: "5 years",
+    nc_fd_rate: "2.8%",
+    sc_fd_rate: "3.8%",
+  },
+  {
+    years: "6 years",
+    nc_fd_rate: "2.8%",
+    sc_fd_rate: "3.8%",
+  },
+  {
+    years: "7 years",
+    nc_fd_rate: "2.8%",
+    sc_fd_rate: "3.8%",
+  },
+  {
+    years: "8 years",
+    nc_fd_rate: "2.8%",
+    sc_fd_rate: "4.8%",
+  },
+  {
+    years: "9 years",
+    nc_fd_rate: "2.8%",
+    sc_fd_rate: "4.8%",
+  },
+  {
+    years: "10 years",
+    nc_fd_rate: "2.8%",
+    sc_fd_rate: "4.8%",
+  },
+];
+
+export const FixedDepositYears = [
+  {
+    label: "1 year",
+    value: "1",
+  },
+  {
+    label: "2 years",
+    value: "2",
+  },
+  {
+    label: "3 years",
+    value: "3",
+  },
+  {
+    label: "4 years",
+    value: "4",
+  },
+  {
+    label: "5 years",
+    value: "5",
+  },
+  {
+    label: "6 years",
+    value: "6",
+  },
+  {
+    label: "7 years",
+    value: "7",
+  },
+  {
+    label: "8 years",
+    value: "8",
+  },
+  {
+    label: "9 years",
+    value: "9",
+  },
+  {
+    label: "10 years",
+    value: "10",
+  },
+];
+
+export const seniorCitizenField = [
+  { label: "Yes", value: "Yes" },
+  { label: "No", value: "No" },
+];
 // export const loanCalculate = (loanAmount, loanTerm, loanRate) => {
 //   const calculate = loanAmount * (loanRate / 100) * (loanTerm / 12);
 //   return calculate.toFixed(2);
