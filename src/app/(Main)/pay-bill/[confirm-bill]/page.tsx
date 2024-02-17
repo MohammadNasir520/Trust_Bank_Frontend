@@ -66,13 +66,11 @@ const Page = () => {
             <Form  submitHandler={onSubmit} className="m-10">
               <div className="sm:col-span-3">
                 <div className="mt-2">
-                  <FormInput
-                    className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                    id="grid-first-name"
-                    name="phoneNumber"
-                    type="string"
-                    label="Phone Number"
-                  />
+                  <h1 className="text-xl">Provider: 
+                  <span>
+                    {provider}
+                    </span>
+                    </h1>
                 </div>
               </div>
 
