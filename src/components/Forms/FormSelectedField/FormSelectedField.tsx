@@ -1,6 +1,6 @@
 "use client";
-import { getErrorMessageByPropertyName } from '@/utils/schema-validator';
-import { useFormContext, Controller } from 'react-hook-form';
+import { getErrorMessageByPropertyName } from "@/utils/schema-validator";
+import { useFormContext, Controller } from "react-hook-form";
 
 export type SelectOptions = {
   label: string;
@@ -14,31 +14,36 @@ interface IInput {
   label?: string;
   defaultValue?: SelectOptions;
   className?: string;
-  size?:any;
+  size?: any;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const FormSelectField = ({
   name,
   value,
   options,
-  size="large",
+  size = "large",
   label,
   defaultValue,
   className,
+  onChange,
 }: IInput) => {
-  const { control , formState: { errors }, } = useFormContext();
+  const {
+    control,
+    formState: { errors },
+  } = useFormContext();
 
   const errorMessage = getErrorMessageByPropertyName(errors, name);
   return (
-    <>
+    <div>
       {label && (
-  <label
-    htmlFor={name}
-    className="text-sm  text-black rounded-md p-2 block "
-  >
-    {label}
-  </label>
-)}
+        <label
+          htmlFor={name}
+          className="text-sm  text-black rounded-md p-2 block "
+        >
+          {label}
+        </label>
+      )}
       <Controller
         control={control}
         name={name}
@@ -60,17 +65,14 @@ const FormSelectField = ({
               >
                 {option.label}
               </option>
-              
             ))}
           </select>
-          
         )}
-        
       />
-       {errorMessage && (
+      {errorMessage && (
         <p className="text-red-500 mt-1 text-sm">{errorMessage}</p>
       )}
-    </>
+    </div>
   );
 };
 

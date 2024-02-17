@@ -1,7 +1,7 @@
 // CustomFileInput.tsx
-import React, { useState, ChangeEvent } from 'react';
-import { FaTrashAlt } from 'react-icons/fa';
-import { FaFileImage } from 'react-icons/fa';
+import React, { useState, ChangeEvent } from "react";
+import { FaTrashAlt } from "react-icons/fa";
+import { FaFileImage } from "react-icons/fa";
 
 interface CustomFileInputProps {
   label?: string;
@@ -65,7 +65,7 @@ const CustomFileInput: React.FC<CustomFileInputProps> = ({
             </div>
           ) : (
             <label
-              htmlFor={id || ''}
+              htmlFor={id || ""}
               className="cursor-pointer text-sm text-[#012169] font-semibold flex items-center space-x-1"
             >
               <FaFileImage className="text-[#012169]" />
