@@ -9,6 +9,9 @@ type FormConfig = {
 };
 
 type FormProps = {
+  amount?: string;
+  billId?: string;
+  phoneNumber?: string;
   children?: ReactElement | ReactNode;
   submitHandler: SubmitHandler<any>;
   className?: string;
@@ -22,6 +25,9 @@ type FormProps = {
   guarantorPhone?: string;
   deposit?: number;
   withdraw?: number;
+  providerAccount?: string;
+  providerName?: string;
+  service?: string;
 
   // Added className prop for dynamic class
 } & FormConfig;
@@ -44,6 +50,9 @@ const Form = ({
   const onSubmit = (data: any) => {
     submitHandler(data);
     reset({
+      amount: "",
+      billId: "",
+      phoneNumber: "",
       email: "",
       password: "",
       purpose: "",
@@ -54,6 +63,9 @@ const Form = ({
       guarantorPhone: "",
       deposit: 0,
       withdraw: 0,
+      providerAccount: "",
+      providerName: "",
+      service: "",
     });
   };
 

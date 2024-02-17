@@ -11,14 +11,6 @@ export const cardNavMenuOptions = [
 
 export const loanNavMenuOptions = [
   {
-    label: "Fixed Deposit",
-    link: "/loans/fixed-deposit",
-  },
-  {
-    label: "MIDS",
-    link: "/loans/mids",
-  },
-  {
     label: "Agriculture",
     link: "/loans/agriculture",
   },
@@ -41,5 +33,11 @@ export const loanNavMenuOptions = [
   {
     label: "Vehicle Loans",
     link: "/loans/vehicle",
+  },
+];
+export const paymentOptions = [
+  {
+    label: "payment",
+    link: "/pay-bill",
   },
 ];

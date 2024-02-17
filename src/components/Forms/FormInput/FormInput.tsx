@@ -13,7 +13,7 @@ interface FormInputProps {
   label?: string;
   className?: string;
   readOnly?: boolean;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void; 
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const FormInput: React.FC<FormInputProps> = ({
