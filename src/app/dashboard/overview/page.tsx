@@ -60,7 +60,7 @@ export default function page() {
               <BigChartBox />
             </div>
             <div className="h-[300px] my-2 overflow-x-hidden">
-              <TopBox deposit={depositData?.data} withdraw={withdrawData?.data} />
+              <TopBox deposit={depositData?.data?.slice(0, 10)} withdraw={withdrawData?.data?.slice(0, 10)} />
             </div>
             <div>
               <Loan />
