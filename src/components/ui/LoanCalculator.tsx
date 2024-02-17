@@ -28,12 +28,20 @@ const LoanCalculator = () => {
     
     setLoanTerm(term);
   };
-
   useEffect(() => {
-    const repayment = loanAmount * (6 / 100) * (loanTerm / 12);
-    setMonthlyRepayment(repayment);
-    
-  },[loanAmount, loanTerm]);
+    const interestRate = 0.045;
+
+    const loanTermYears = loanTerm / 12;
+
+const monthlyRepayment = Math.floor(
+  (loanAmount * interestRate * Math.pow(1 + interestRate, loanTermYears)) /
+    (Math.pow(1 + interestRate, loanTermYears) - 1)
+);
+
+    setMonthlyRepayment(monthlyRepayment);
+  }, [loanAmount, loanTerm]);
+
+
   
 
   return (

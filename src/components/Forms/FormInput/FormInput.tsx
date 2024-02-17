@@ -5,13 +5,15 @@ import { getErrorMessageByPropertyName } from "../../../utils/schema-validator";
 interface FormInputProps {
   name: string;
   type?: string;
-  size?: any; // Adjust the type based on your specific use case
+  size?: any;
   value?: string;
   id?: string;
   placeholder?: string;
-  validation?: any; // Adjust the type based on your validation requirements
+  validation?: any;
   label?: string;
   className?: string;
+  readOnly?: boolean;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const FormInput: React.FC<FormInputProps> = ({
@@ -24,6 +26,8 @@ const FormInput: React.FC<FormInputProps> = ({
   validation,
   label,
   className,
+  readOnly,
+  onChange,
 }) => {
   const {
     control,
@@ -33,15 +37,15 @@ const FormInput: React.FC<FormInputProps> = ({
   const errorMessage = getErrorMessageByPropertyName(errors, name);
 
   return (
-    <div >
-  {label && (
-  <label
-    htmlFor={name}
-    className="text-sm  text-black rounded-md p-2 block  "
-  >
-    {label}
-  </label>
-)}
+    <div>
+      {label && (
+        <label
+          htmlFor={name}
+          className="text-sm  text-black rounded-md p-2 block  "
+        >
+          {label}
+        </label>
+      )}
 
       <Controller
         control={control}
@@ -55,6 +59,8 @@ const FormInput: React.FC<FormInputProps> = ({
               {...field}
               value={value ? value : field.value}
               className={`${className}`}
+              readOnly={readOnly}
+              onChange={onChange} // Pass onChange to the input element
             />
             {errorMessage && (
               <p className="text-red-500 mt-1 text-sm">{errorMessage}</p>
