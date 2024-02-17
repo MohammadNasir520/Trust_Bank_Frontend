@@ -43,3 +43,9 @@ export const loanNavMenuOptions = [
         link: "/loans/vehicle",
     },
 ];
+export const paymentOptions = [
+    {
+        label: "payment",
+        link: "/pay-bill",
+    }
+];

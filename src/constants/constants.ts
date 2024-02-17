@@ -195,6 +195,34 @@ export const correctAnswerOptions = [
   },
 ];
 
+export const providerOptions = [
+  {
+    label: "Electricity",
+    value: "electricity",
+  },
+  {
+    label: "Internet",
+    value: "internet",
+  },
+
+  {
+    label: "Gas",
+    value: "gas",
+  },
+  {
+    label: "Water",
+    value: "water",
+  },
+  {
+    label: "Education",
+    value: "education",
+  },
+  {
+    label: "Restaurant",
+    value: "restaurant",
+  },
+];
+
 // export const loanCalculate = (loanAmount, loanTerm, loanRate) => {
 //   const calculate = loanAmount * (loanRate / 100) * (loanTerm / 12);
 //   return calculate.toFixed(2);
