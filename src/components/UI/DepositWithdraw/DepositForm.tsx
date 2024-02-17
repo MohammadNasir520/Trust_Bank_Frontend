@@ -3,6 +3,7 @@
 import Form from "@/components/Forms/Form/Form";
 import FormInput from "@/components/Forms/FormInput/FormInput";
 import FormSelectField from "@/components/Forms/FormSelectedField/FormSelectedField";
+import Balance from "@/components/dashboard/Balance/Balance";
 import { currencyOptions } from "@/constants/constants";
 import { useDepositMutation } from "@/redux/api/depositWithdraw";
 import React, { useState } from "react";
@@ -12,10 +13,12 @@ const DepositForm= () => {
     
     const [deposit] = useDepositMutation();
     const onSubmit = async (values: any) => {
+        console.log(values,'16');
         let obj = {...values}
          obj.balance =  parseInt(obj.balance);
         try {
-            console.log(obj);
+            
+            console.log(obj,'21');
             const res = await deposit(obj).unwrap()
             console.log(res);
             if(res){

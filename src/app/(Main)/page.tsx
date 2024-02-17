@@ -9,6 +9,7 @@ import TotalCount from "@/components/pages/home_page/TotalCount";
 
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
+import News from "./news/page";
 //@ts-ignore
 
 export default function page() {
@@ -49,6 +50,7 @@ export default function page() {
       <LoanCalculatorPage />
       <ForeignExchange />
       <TotalCount />
+      <News/>
       <FaqSection />
     </>
   );

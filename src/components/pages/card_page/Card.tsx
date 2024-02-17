@@ -53,7 +53,7 @@ const Card = ({ card, pathname }:{card:any, pathname:any}) => {
           </div>
           <hr className="h-[3px] bg-black my-2" />
           <div className="flex justify-between  items-center">
-            <Link href="/card/loan-apply">
+            <Link href={`/${card?.type}/${card.id}/credit-loan`}>
               <button className=" px-5 py-1">Apply Now</button>
             </Link>
             <Link href={`${pathname}/${card.id}`}>

@@ -29,24 +29,27 @@
 import React from "react";
 import loanImg from "@/assets/images/loan.png";
 import Image from "next/image";
+import { Link } from "@chakra-ui/react";
 
-const DebitCreditCard = () => {
+const DebitCreditCard = ({data}:any) => {
+  const {title,description,link} = data;
   return (
     <div className="flex justify-center items-center">
       <div className="h-[200px] w-[350px]  bg-gradient-to-r from-[#324e99] to-[#6588e9]  text-white rounded-xl pl-4 py-5">
-        <h4>Savings Account</h4>
+        <h4>{title}</h4>
         <div className="min-h-[100px] font-sans font-semibold flex justify-center items-center gap-2 text-xl">
-          <h1>ZERO charges on ATM transactions</h1>
+          <h1>{description}</h1>
           <div>
             <Image src={loanImg} width={100} height={100} alt="Loan SVG" />
           </div>
         </div>
         <div className="flex items-center gap-4 cursor-pointer">
-          <button
+         <Link href={`${link}`}> 
+         <button
             className="text-base border border-white hover:bg-white hover:text-blue-950 font-bold text-center uppercase rounded-full px-5 py-1"
           >
             Apply Now
-          </button>
+          </button></Link>
           <p className="underline">know more</p>
         </div>
       </div>

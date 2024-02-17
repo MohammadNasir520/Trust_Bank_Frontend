@@ -26,6 +26,24 @@ export const adminDashboardMenu: IDashboardMenuItem[] = [
     title: "Accounts",
     pathname: "/dashboard/account",
     icon: <FiUsers />,
+    children: [
+      {
+        title: "Current Account",
+        pathname: "/dashboard/accounts/current",
+      },
+      {
+        title: "Saving Account",
+        pathname: "/dashboard/accounts/saving",
+      },
+      {
+        title: "Merchant Account",
+        pathname: "/dashboard/accounts/merchant",
+      },
+      {
+        title: "Student Account",
+        pathname: "/dashboard/accounts/student",
+      },
+    ],
   },
   {
     title: "Loan",
