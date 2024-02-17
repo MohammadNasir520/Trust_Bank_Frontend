@@ -6,7 +6,7 @@ function SidebarLinkGroup({
 }: any) {
 
   const [open, setOpen] = useState(activecondition);
-
+  console.log({ activecondition })
   const handleClick = () => {
     setOpen(!open);
   }

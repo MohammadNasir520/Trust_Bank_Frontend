@@ -72,9 +72,6 @@ function Header({ sidebarOpen, setSidebarOpen }: any) {
 
             <ThemeToggle />
             <div className='flex items-center gap-1'>
-
-
-
               <Menu>
                 <MenuButton>
                   <img src="https://bit.ly/kent-c-dodds" className='w-8 h-8 rounded-full' alt="" />
