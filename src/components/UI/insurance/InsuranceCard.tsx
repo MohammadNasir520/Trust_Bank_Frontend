@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 
-const InsuranceCard = ({ data }) => {
+const InsuranceCard = ({ data }:any) => {
   return (
     <div>
       <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">

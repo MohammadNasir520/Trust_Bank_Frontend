@@ -14,7 +14,7 @@ import {
 import { GiTakeMyMoney } from "react-icons/gi";
 import { TiTickOutline } from "react-icons/ti";
 
-const page = ({ params }) => {
+const page = ({ params }:any) => {
   const onSubmit = async (values: any) => {
     try {
       console.log(values);

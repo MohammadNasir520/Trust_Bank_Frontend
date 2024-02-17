@@ -1,5 +1,6 @@
 "use client";
-import BillCard from "@/components/ui/payBill/BillCard";
+
+import BillCard from "@/components/UI/payBill/BillCard";
 import Image from "next/image";
 import { useState } from "react";
 import { TiTickOutline } from "react-icons/ti";

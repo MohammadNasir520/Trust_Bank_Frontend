@@ -1,6 +1,8 @@
 "use client";
 import Form from "@/components/Forms/Form/Form";
 import FormInput from "@/components/Forms/FormInput/FormInput";
+import FormRadioField from "@/components/Forms/FormRatioButton/FormRatioButton";
+import FormTextArea from "@/components/Forms/FormTextArea/FormTextArea";
 import LoanCalculatorPage from "@/components/pages/home_page/LoanCalculatorPage";
 
 const PersonalLoanApply = () => {
@@ -14,158 +16,165 @@ const PersonalLoanApply = () => {
 
   return (
     <div>
-      <div></div>
-      <div className="flex flex-col lg:flex-row justify-center items-center">
-        <div>
+      <div className="flex flex-col lg:flex-row justify-center items-center py-4">
+        <div className="shadow-sm p-4 rounded-lg border">
           <Form submitHandler={onSubmit} className="m-10">
-            <div className="space-y-12">
+            <div className="space-y-4">
               <div className="border-b border-gray-900/10 pb-12">
                 <h2 className="text-base font-semibold leading-7 text-gray-900">
-                  Personal Information
+                  Loan Apply Form
                 </h2>
-                <p className="mt-1 text-sm leading-6 text-gray-600">
-                  Use a permanent address where you can receive mail.
-                </p>
-                <div className="mt-10 grid grid-cols-1 gap-y-8 gap-x-6 sm:grid-cols-6">
+
+                <div className="mt-4 grid grid-cols-1 gap-y-8 gap-x-6 sm:grid-cols-9">
                   <div className="sm:col-span-3">
-                    <label
-                      htmlFor="loan-name"
-                      className="block text-sm font-medium leading-6 text-gray-900"
-                    >
-                      Loan name
-                    </label>
-                    <div className="mt-2">
-                      <FormInput
-                        type="text"
-                        name="loanName"
-                        className="block w-full px-2 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                        value="personal-loan-option-2"
-                      />
-                    </div>
-                  </div>
-                  <div className="sm:col-span-3">
-                    <label
-                      htmlFor="amount"
-                      className="block text-sm font-medium leading-6 text-gray-900"
-                    >
-                      Amount
-                    </label>
-                    <div className="mt-2">
-                      <FormInput
-                        type="text"
-                        name="amount"
-                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                        value=" 50000"
-                      />
-                    </div>
-                  </div>
-                  {/* <div className="sm:col-span-3">
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium leading-6 text-gray-900"
-                    >
-                      Email
-                    </label>
-                    <div className="mt-2">
-                      <FormInput                 
-                        name="email"
-                        type="email"
-                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                       
-                      />
-                    </div>
-                  </div> */}
-                  <div className="sm:col-span-3">
-                    <label
-                      htmlFor="purpose"
-                      className="block text-sm font-medium leading-6 text-gray-900"
-                    >
-                      Purpose
-                    </label>
-                    <div className="mt-2">
-                      <FormInput
-                        name="purpose"
-                        type="text"
-                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                      />
-                    </div>
+                    <FormInput
+                      name="currentOccupation"
+                      label="Current Occupation"
+                      placeholder="Current Occupation"
+                      className="w-[300px] h-[45px] text-sm px-2 py-3  focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"
+                    />
                   </div>
 
                   <div className="sm:col-span-3">
-                    <label
-                      htmlFor="employment"
-                      className="block text-sm font-medium leading-6 text-gray-900"
-                    >
-                      Employment
-                    </label>
-                    <div className="mt-2">
-                      <FormInput
-                        type="text"
-                        name="employment"
-                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                      />
-                    </div>
-                  </div>
-                  <div className="sm:col-span-3">
-                    <label
-                      htmlFor="income"
-                      className="block text-sm font-medium leading-6 text-gray-900"
-                    >
-                      income
-                    </label>
-                    <div className="mt-2">
-                      <FormInput
-                        type="number"
-                        name="income"
-                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                      />
-                    </div>
+                    <FormInput
+                      name="employmentStatus"
+                      label="Employment Status"
+                      placeholder="Employment Status"
+                      className="w-[300px] h-[45px] text-sm px-2 py-3  focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"
+                    />
                   </div>
 
-                  <div className="sm:col-span-2 sm:col-start-1">
-                    <label
-                      htmlFor="guarantorName"
-                      className="block text-sm font-medium leading-6 text-gray-900"
-                    >
-                      Guarantor Name
-                    </label>
-                    <div className="mt-2">
-                      <FormInput
-                        type="text"
-                        name="guarantorName"
-                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                      />
-                    </div>
+                  <div className="sm:col-span-3">
+                    <FormInput
+                      name="lengthofEmployment"
+                      label="Length of Employment"
+                      placeholder="Length of Employment"
+                      className="w-[300px] h-[45px] text-sm px-2 py-3  focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"
+                    />
                   </div>
-                  <div className="sm:col-span-2">
-                    <label
-                      htmlFor=" guarantorAddress"
-                      className="block text-sm font-medium leading-6 text-gray-900"
-                    >
-                      Guarantor Address
-                    </label>
-                    <div className="mt-2">
-                      <FormInput
-                        type="text"
-                        name="guarantorAddress"
-                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                      />
-                    </div>
+
+                  <div className="sm:col-span-3">
+                    <FormInput
+                      name="monthlyIncome"
+                      label="Monthly Income"
+                      placeholder="Monthly Income"
+                      className="w-[300px] h-[45px] text-sm px-2 py-3  focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"
+                    />
                   </div>
-                  <div className="sm:col-span-2">
-                    <label
-                      htmlFor=" guarantorPhone"
-                      className="block text-sm font-medium leading-6 text-gray-900"
-                    >
-                      Guarantor Phone
-                    </label>
-                    <div className="mt-2">
-                      <FormInput
-                        type="text"
-                        name="guarantorPhone"
-                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                      />
-                    </div>
+                  <div className="sm:col-span-3">
+                    <FormInput
+                      name="managerName"
+                      label="Supervisor/Manager Name"
+                      placeholder="Supervisor/Manager Name"
+                      className="w-[300px] h-[45px] text-sm px-2 py-3  focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"
+                    />
+                  </div>
+                  <div className="sm:col-span-3">
+                    <FormInput
+                      name="managerContactNumber"
+                      label="Supervisor/Manager Contact Number"
+                      placeholder="Supervisor/Manager Contact Number"
+                      className="w-[300px] h-[45px] text-sm px-2 py-3  focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"
+                    />
+                  </div>
+
+                  <div className="sm:col-span-3">
+                    <FormInput
+                      name="loanName"
+                      label="Loan Name"
+                      placeholder="Loan Name"
+                      className="w-[300px] h-[45px] text-sm px-2 py-3  focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"
+                    />
+                  </div>
+                  <div className="sm:col-span-3">
+                    <FormInput
+                      name="loanAmount"
+                      label="Loan Amount"
+                      placeholder="Loan Amount"
+                      className="w-[300px] h-[45px] text-sm px-2 py-3  focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"
+                    />
+                  </div>
+                  <div className="sm:col-span-3">
+                    <FormInput
+                      name="reference1Name"
+                      label="Reference 1 Name"
+                      placeholder="Reference 1 Name"
+                      className="w-[300px] h-[45px] text-sm px-2 py-3  focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"
+                    />
+                  </div>
+                  <div className="sm:col-span-3">
+                    <FormInput
+                      name="reference1Relationship"
+                      label="Relationship"
+                      placeholder="Relationship"
+                      className="w-[300px] h-[45px] text-sm px-2 py-3  focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"
+                    />
+                  </div>
+                  <div className="sm:col-span-3">
+                    <FormInput
+                      name="reference1NID"
+                      label="Reference 1 NID"
+                      placeholder="NID Number"
+                      className="w-[300px] h-[45px] text-sm px-2 py-3  focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"
+                    />
+                  </div>
+                  <div className="sm:col-span-3">
+                    <FormInput
+                      name="reference1Contact"
+                      label="Reference 1 Contact"
+                      placeholder="Contact Number"
+                      className="w-[300px] h-[45px] text-sm px-2 py-3  focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"
+                    />
+                  </div>
+
+                  <div className="sm:col-span-3">
+                    <FormInput
+                      name="reference2Name"
+                      label="Reference 2 Name"
+                      placeholder="Reference 1 Name"
+                      className="w-[300px] h-[45px] text-sm px-2 py-3  focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"
+                    />
+                  </div>
+                  <div className="sm:col-span-3">
+                    <FormInput
+                      name="reference2Relationship"
+                      label="Relationship"
+                      placeholder="Relationship"
+                      className="w-[300px] h-[45px] text-sm px-2 py-3  focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"
+                    />
+                  </div>
+                  <div className="sm:col-span-3">
+                    <FormInput
+                      name="reference2NID"
+                      label="Reference 2 NID"
+                      placeholder="NID Number"
+                      className="w-[300px] h-[45px] text-sm px-2 py-3  focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"
+                    />
+                  </div>
+                  <div className="sm:col-span-3">
+                    <FormInput
+                      name="reference2Contact"
+                      label="Reference 2 Contact"
+                      placeholder="Contact Number"
+                      className="w-[300px] h-[45px] text-sm px-2 py-3  focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"
+                    />
+                  </div>
+
+                  <div className="sm:col-span-3">
+                    <FormRadioField
+                      name="ExistingLoansStatus"
+                      label="Any Existing Loans"
+                      options={["Yes", "No"]}
+                    />
+                  </div>
+
+                  <div className="sm:col-span-3">
+                    <FormTextArea
+                      name="loanPurpose"
+                      label="Loan Purpose"
+                      placeholder="Loan Purpose"
+                      className="w-[300px]  text-sm px-2 py-3 focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"
+                    />
                   </div>
                 </div>
               </div>
@@ -186,7 +195,6 @@ const PersonalLoanApply = () => {
             </div>
           </Form>
         </div>
-        <div className="hidden lg:block h-1/2 w-[3px]  bg-black mx-2"> </div>
       </div>
       <div className=" mb-3">
         <LoanCalculatorPage />
