@@ -62,21 +62,20 @@ const page = () => {
         className={`flex flex-col lg:flex-row justify-center items-center showData`}
       >
         <Form submitHandler={onSubmit} className="m-10">
-          <div className="space-y-12">
+          <div className="shadow-sm p-4 rounded-lg border">
             <div className="border-b border-gray-900/10 pb-12">
               <h2 className="text-base font-semibold leading-7 text-gray-900">
-                Personal Information
+               Credit Card Apply Form
               </h2>
-              <p className="mt-1 text-sm leading-6 text-gray-600">
-                Use a permanent address where you can receive mail.
-              </p>
+           
               <div className="mt-10 grid grid-cols-1 gap-y-8 gap-x-6 sm:grid-cols-6">
            
                 <div className="sm:col-span-3">
                   <div className="mt-2">
                     <FormDatePicker
                        name="birthDate"
-                       label="Date Of Birth"          
+                       label="Date Of Birth"   
+                       className="w-[300px] h-[45px] text-sm px-2 py-3  focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"     
                     />
                   </div>
                 </div>
@@ -86,7 +85,8 @@ const page = () => {
                     <FormInput
                        name="ssn"
                        type="string" 
-                       label=" Social Security Number (SSN)"          
+                       label=" Social Security Number (SSN)"  
+                       className="w-[300px] h-[45px] text-sm px-2 py-3  focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"         
                     />
                   </div>
                 </div>
@@ -96,7 +96,8 @@ const page = () => {
                     <FormInput
                        name="annualIncome"
                        type="string" 
-                       label="Annual Income"          
+                       label="Annual Income"   
+                       className="w-[300px] h-[45px] text-sm px-2 py-3  focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"        
                     />
                   </div>
                 </div>
@@ -107,7 +108,8 @@ const page = () => {
                     <FormSelectField
                        name="country"
                        label="Country" 
-                       options={countryOptions}         
+                       options={countryOptions}   
+                       className="w-[300px] h-[45px] text-sm px-2 py-3  focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"       
                     />
                   </div>
                 </div>
@@ -118,7 +120,8 @@ const page = () => {
                     <FormInput
                        name="address"
                        type="string" 
-                       label=" Address"          
+                       label=" Address"   
+                       className="w-[300px] h-[45px] text-sm px-2 py-3  focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"        
                     />
                   </div>
                 </div>
@@ -128,7 +131,8 @@ const page = () => {
                     <FormSelectField
                        name="employmentStatus"
                        label=" Employment Status" 
-                       options={employementOptions}         
+                       options={employementOptions}    
+                       className="w-[300px] h-[45px] text-sm px-2 py-3  focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"      
                     />
                   </div>
                 </div>
@@ -140,7 +144,8 @@ const page = () => {
                     <FormInput
                        name="nidNumber"
                        type="string" 
-                       label=" NID Number"          
+                       label=" NID Number"    
+                       className="w-[300px] h-[45px] text-sm px-2 py-3  focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"       
                     />
                   </div>
                 </div>
@@ -150,7 +155,8 @@ const page = () => {
                     <FormInput
                        name="creditScore"
                        type="string" 
-                       label=" Credit Score"          
+                       label=" Credit Score"  
+                       className="w-[300px] h-[45px] text-sm px-2 py-3  focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"         
                     />
                   </div>
                 </div>
@@ -160,7 +166,8 @@ const page = () => {
                     <FormSelectField
                        name="maritalStatus"
                        label=" Marital Status" 
-                       options={maritailOptions}         
+                       options={maritailOptions}  
+                       className="w-[300px] h-[45px] text-sm px-2 py-3  focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"        
                     />
                   </div>
                 </div>
@@ -175,6 +182,7 @@ const page = () => {
                       max="50000"
                       className="my-2"
                       onChange={handleAmountChange}
+                      
                     />
                     <h1>
                       Current Loan: <span>$</span> {currentLoan}
@@ -183,10 +191,11 @@ const page = () => {
                 </div>
               </div>
             </div>
+            <div className="mt-6 flex items-center justify-end gap-x-6">
+            <input type="submit" className="rounded-md bg-[#012169] py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" />
           </div>
-          <div className="mt-6 flex items-center justify-end gap-x-6">
-            <input type="submit" />
           </div>
+        
         </Form>
       </div>
    

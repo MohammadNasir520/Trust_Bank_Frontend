@@ -11,14 +11,18 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import accountSchema from "@/schemas/account";
 import { useForm } from "react-hook-form";
 import FormTextArea from "@/components/Forms/FormTextArea/FormTextArea";
+import { useCurrentAccountMutation } from "@/redux/api/accountApi";
 
 const CurrentAccount = () => {
   
   const [currentStep, setCurrentStep] = useState(0);
+  const [currentAccount] = useCurrentAccountMutation()
 
   const onSubmit = async (values: any) => {
     console.log(values);
     try {
+      const res = await currentAccount(values).unwrap();
+      console.log(res);
     } catch (err) {
       console.log(err);
     }

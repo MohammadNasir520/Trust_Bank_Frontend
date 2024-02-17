@@ -6,6 +6,7 @@ import FormTextArea from "@/components/Forms/FormTextArea/FormTextArea";
 import LoanCalculatorPage from "@/components/pages/home_page/LoanCalculatorPage";
 
 
+
 const CorporateLoanApply = () => {
   const onSubmit = async (values: any) => {
     console.log(values);

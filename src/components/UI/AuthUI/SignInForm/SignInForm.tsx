@@ -19,11 +19,11 @@ const SignInForm = () => {
   };
   const [signin] = useSigninMutation();
   const onSubmit = async (values: any) => {
-  
+  console.log(values,'22');
     try {
       const res = await signin(values).unwrap()
       storeUserInfo({ accessToken: res?.data?.accessToken });
-      push("/")
+      // push("/")
     } catch (err) {
       console.log(err);
     }

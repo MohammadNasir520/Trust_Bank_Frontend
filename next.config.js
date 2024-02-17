@@ -26,7 +26,10 @@ const nextConfig = {
       "imgbox.com",
       "thumbs2.imgbox.com",
       "www.qib.com.qa",
-     "example.com"
+     "example.com",
+     "img.etimg.com",
+     "bsmedia.business-standard.com",
+     "images.moneycontrol.com"
     ],
   },
 };
