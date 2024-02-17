@@ -1,5 +1,5 @@
 // CustomFileInput.tsx
-import React, { useState, ChangeEvent } from "react";
+import React, { useState, ChangeEvent, Dispatch, SetStateAction } from "react";
 import { FaTrashAlt } from "react-icons/fa";
 import { FaFileImage } from "react-icons/fa";
 
@@ -8,6 +8,7 @@ interface CustomFileInputProps {
   onChange?: (file: File | null) => void;
   className?: string;
   id?: string;
+  setImageUrl?: Dispatch<SetStateAction<string | null>>;
 }
 
 const CustomFileInput: React.FC<CustomFileInputProps> = ({
@@ -15,12 +16,17 @@ const CustomFileInput: React.FC<CustomFileInputProps> = ({
   onChange,
   className,
   id,
+  setImageUrl,
 }) => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0] || null;
     setSelectedFile(file);
+
+    if (setImageUrl) {
+      setImageUrl(file?.name || null);
+    }
 
     // Pass the selected file to the parent component's onChange handler if provided
     if (onChange) {
@@ -51,7 +57,7 @@ const CustomFileInput: React.FC<CustomFileInputProps> = ({
           onChange={handleFileChange}
           id={id || ""}
         />
-        <div className="rounded-md border border-gray-300 p-3 flex items-center justify-between">
+        <div className="rounded-md border border-gray-300 p-3 flex items-center justify-between bg-white">
           {selectedFile ? (
             <div className="flex items-center space-x-2">
               <span className="truncate mr-2">{selectedFile.name}</span>

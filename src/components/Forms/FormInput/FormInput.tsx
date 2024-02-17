@@ -13,7 +13,7 @@ interface FormInputProps {
   label?: string;
   className?: string;
   readOnly?: boolean;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  // onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const FormInput: React.FC<FormInputProps> = ({
@@ -27,7 +27,7 @@ const FormInput: React.FC<FormInputProps> = ({
   label,
   className,
   readOnly,
-  onChange,
+  // onChange,
 }) => {
   const {
     control,
@@ -60,7 +60,7 @@ const FormInput: React.FC<FormInputProps> = ({
               value={value ? value : field.value}
               className={`${className}`}
               readOnly={readOnly}
-              onChange={onChange} // Pass onChange to the input element
+              // onChange={onChange} // Pass onChange to the input element
             />
             {errorMessage && (
               <p className="text-red-500 mt-1 text-sm">{errorMessage}</p>

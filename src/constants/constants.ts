@@ -426,28 +426,28 @@ export const seniorCitizenField = [
 export const providerOptions = [
   {
     label: "Electricity",
-    value: "electricity",
+    value: "Electricity",
   },
   {
     label: "Internet",
-    value: "internet",
+    value: "Internet",
   },
 
   {
     label: "Gas",
-    value: "gas",
+    value: "Gas",
   },
   {
     label: "Water",
-    value: "water",
+    value: "Water",
   },
   {
     label: "Education",
-    value: "education",
+    value: "Education",
   },
   {
     label: "Restaurant",
-    value: "restaurant",
+    value: "Restaurant",
   },
 ];
 

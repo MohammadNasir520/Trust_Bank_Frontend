@@ -5,7 +5,9 @@ export enum tagTypes {
   card = "card",
   currency = "currency",
   deposit = "deposit",
-  withdraw = "withdraw"
+  withdraw = "withdraw",
+  provider = "provider",
+  paybill = "paybill",
 }
 
 export const tagTypesList = [
@@ -16,4 +18,6 @@ export const tagTypesList = [
   tagTypes.currency,
   tagTypes.deposit,
   tagTypes.withdraw,
+  tagTypes.provider,
+  tagTypes.paybill,
 ];
