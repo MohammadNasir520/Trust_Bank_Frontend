@@ -11,10 +11,42 @@ const accountApi = baseApi.injectEndpoints({
             }),
             providesTags: [tagTypes.account]
         }),
+        currentAccount: build.mutation({
+            query: (data: any) => ({
+              url: '/current-accounts',
+              method: "POST",
+              data
+            }),
+            invalidatesTags: [tagTypes.current]
+          }),
+        savingAccount: build.mutation({
+            query: (data: any) => ({
+              url: '/current-accounts',
+              method: "POST",
+              data
+            }),
+            invalidatesTags: [tagTypes.saving]
+          }),
+        studentAccount: build.mutation({
+            query: (data: any) => ({
+              url: '/current-accounts',
+              method: "POST",
+              data
+            }),
+            invalidatesTags: [tagTypes.student]
+          }),
+        merchantAccount: build.mutation({
+            query: (data: any) => ({
+              url: '/current-accounts',
+              method: "POST",
+              data
+            }),
+            invalidatesTags: [tagTypes.merchant]
+          }),
 
-
+ 
     }),
     overrideExisting: false,
 })
 
-export const { useGetAllAccountsQuery } = accountApi;
+export const { useGetAllAccountsQuery,useCurrentAccountMutation,useMerchantAccountMutation,useSavingAccountMutation,useStudentAccountMutation } = accountApi;

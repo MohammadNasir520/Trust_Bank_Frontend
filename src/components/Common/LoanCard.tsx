@@ -23,7 +23,7 @@ const LoanCard = ({ demoData }: any) => {
             <Image
               src={card.image}
               alt="agri image"
-              width={500}
+              width={400}
               height={500}
               className="h-full overflow-hidden cursor-pointer hover:scale-110 transition-transform transform ease-out rounded-t-lg lg:rounded-t-none lg:rounded-l-lg"
             />

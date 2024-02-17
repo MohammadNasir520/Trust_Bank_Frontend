@@ -1,6 +1,7 @@
 import React from "react";
 import { useFormContext, Controller, FieldValues } from "react-hook-form";
 import { getErrorMessageByPropertyName } from "../../../utils/schema-validator";
+import { ClassNames } from "@emotion/react";
 
 interface FormTextAreaProps {
   name: string;
@@ -8,6 +9,7 @@ interface FormTextAreaProps {
   rows?: number;
   value?: string; // Ensure value is optional
   placeholder?: string;
+  className?:string;
 }
 
 const FormTextArea: React.FC<FormTextAreaProps> = ({
@@ -16,6 +18,7 @@ const FormTextArea: React.FC<FormTextAreaProps> = ({
   rows,
   value, // Ensure value is optional
   placeholder,
+  className
 }) => {
   const {
     control,
@@ -26,7 +29,14 @@ const FormTextArea: React.FC<FormTextAreaProps> = ({
 
   return (
     <>
-      {label && <label htmlFor={name}>{label}</label>}
+     {label && (
+  <label
+    htmlFor={name}
+    className="text-sm  text-black rounded-md p-2 block  "
+  >
+    {label}
+  </label>
+)}
       <Controller
         control={control}
         name={name}
@@ -35,15 +45,15 @@ const FormTextArea: React.FC<FormTextAreaProps> = ({
             id={name}
             rows={rows}
             placeholder={placeholder}
-            className="mt-1 p-2 w-full border rounded-md"
+            className={`${className}`}
             {...field}
-            value={value || ""}
+            value={value}
           />
         )}
       />
       {errorMessage && (
-        <small className="text-red-500 mt-1">{errorMessage}</small>
-      )}
+              <p className="text-red-500 mt-1 text-sm">{errorMessage}</p>
+            )}
     </>
   );
 };
