@@ -5,11 +5,39 @@ import EmptyTable from "@/components/dashboard/dashboard_ui/EmptyTable";
 import { useAgricultureLoansQuery, useUpdateAgricultureLoanMutation } from "@/redux/api/agricultureLoanApi";
 import toast from "react-hot-toast";
 
-export default function AgricultureLoan() {
+const loans = [
+    {
+      id: "1",
+      user: {
+        name: "John Doe",
+        email: "johndoe@example.com"
+      },
+      cropType: "Wheat",
+      amount: 50000, // Amount in Taka
+      landSize: "10 acres",
+      status: "pending"
+    },
+    {
+      id: "2",
+      user: {
+        name: "Jane Smith",
+        email: "janesmith@example.com"
+      },
+      cropType: "Rice",
+      amount: 70000, // Amount in Taka
+      landSize: "15 acres",
+      status: "accepted"
+    },
+    // Add more demo loan objects as needed
+  ];
 
-    const { data, isLoading } = useAgricultureLoansQuery(undefined);
+export default function PersonalLoan() {
+
+
+
+    // const { data, isLoading } = useAgricultureLoansQuery(undefined);
     const [updateLoan] = useUpdateAgricultureLoanMutation()
-    const loans = data?.data;
+    // const loans = data?.data;
 
     const handleUpdateLoan = async (id: string, status: string) => {
         try {
@@ -71,7 +99,7 @@ export default function AgricultureLoan() {
                     }
                 </TableBody>
             </Table>
-            {!isLoading && !loans?.length && <EmptyTable />}
+            {/* {!isLoading && !loans?.length && <EmptyTable />} */}
         </div>
     )
 }

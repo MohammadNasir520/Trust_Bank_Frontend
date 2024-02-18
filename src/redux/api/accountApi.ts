@@ -17,7 +17,7 @@ const accountApi = baseApi.injectEndpoints({
                 url: '/current-accounts',
                 method: "GET",
             }),
-            providesTags: [tagTypes.account]
+            providesTags: [tagTypes.current]
         }),
 
 

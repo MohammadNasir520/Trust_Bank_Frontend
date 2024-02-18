@@ -15,6 +15,7 @@ export default function Account() {
   const router = useRouter();
   const {data} = useCurrentAccountsQuery(undefined)
   const accounts = data?.data;
+  console.log(accounts,'18');
 
   return (
     <div>
@@ -37,7 +38,7 @@ export default function Account() {
           {accounts?.map((account: any) => (
             <TableRow key={account?.id}>
               <TableCell className="font-medium">
-                {account?.user?.name}
+                {account?.fname}
               </TableCell>
               <TableCell>{account?.accountType}</TableCell>
               <TableCell>{account?.contactNo}</TableCell>

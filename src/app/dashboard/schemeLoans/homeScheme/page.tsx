@@ -6,7 +6,7 @@ import { useGetLoanSchemeByCategoryQuery } from "@/redux/api/loanSchemeApi";
 import { tagTypes } from "@/redux/tag-types";
 import Link from "next/link";
 
-export default function AgricultureLoanScheme() {
+export default function HomeLoanScheme() {
     const { data } = useGetLoanSchemeByCategoryQuery("agriculture")
     return (
         <div className="m-4">

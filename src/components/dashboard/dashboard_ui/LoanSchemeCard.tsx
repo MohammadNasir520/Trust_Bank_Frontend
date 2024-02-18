@@ -1,5 +1,4 @@
 import LoanCard from "@/components/Common/LoanCard";
-import demoData from "@/components/pages/Agriculture/data";
 import Image from "next/image";
 import Link from "next/link";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";

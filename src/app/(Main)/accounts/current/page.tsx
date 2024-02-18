@@ -19,9 +19,10 @@ const CurrentAccount = () => {
   const [currentAccount] = useCurrentAccountMutation()
 
   const onSubmit = async (values: any) => {
-    console.log(values);
+    let obj = {...values}
+    obj.accountType = "Current"
     try {
-      const res = await currentAccount(values).unwrap();
+      const res = await currentAccount(obj).unwrap();
       console.log(res);
     } catch (err) {
       console.log(err);
