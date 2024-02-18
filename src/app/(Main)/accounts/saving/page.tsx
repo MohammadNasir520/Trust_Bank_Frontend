@@ -18,9 +18,10 @@ const SavingAccount = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [savingAccount] = useSavingAccountMutation()
   const onSubmit = async (values: any) => {
-    console.log(values);
+    let obj = {...values}
+    obj.accountType = "Saving"
     try {
-      const res = await savingAccount(values).unwrap();
+      const res = await savingAccount(obj).unwrap();
       
     } catch (err) {
       console.log(err);

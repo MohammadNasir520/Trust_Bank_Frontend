@@ -51,10 +51,7 @@ export const adminDashboardMenu: IDashboardMenuItem[] = [
     pathname: "/dashboard/loan",
     icon: <FaHandHoldingDollar className="text-lg" />,
     children: [
-      {
-        title: "Agriculture Loan",
-        pathname: "/dashboard/loan/agriculture",
-      },
+     
       {
         title: "Personal Loan",
         pathname: "/dashboard/loan/personal",
@@ -66,6 +63,10 @@ export const adminDashboardMenu: IDashboardMenuItem[] = [
       {
         title: "Education Loan",
         pathname: "/dashboard/loan/education",
+      },
+      {
+        title: "Home Loan",
+        pathname: "/dashboard/loan/home",
       },
     ],
   },

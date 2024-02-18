@@ -21,9 +21,10 @@ import { useMerchantAccountMutation } from "@/redux/api/accountApi";
 const MerchantAccount = () => {
   const [merchantAccount] = useMerchantAccountMutation();
   const onSubmit = async (values: any) => {
-    console.log(values);
+    let obj = {...values}
+    obj.accountType = "Merchant"
     try {
-      const res = await merchantAccount(values).unwrap();
+      const res = await merchantAccount(obj).unwrap();
     } catch (err) {
       console.log(err);
     }

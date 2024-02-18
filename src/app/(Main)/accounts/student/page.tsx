@@ -19,9 +19,10 @@ const StudentAccount = () => {
 
   const onSubmit = async (values: any) => {
     const [studentAccount] = useStudentAccountMutation()
-    console.log(values);
+    let obj = {...values}
+    obj.accountType = "Student"
     try {
-      const res = await studentAccount(values).unwrap();
+      const res = await studentAccount(obj).unwrap();
     } catch (err) {
       console.log(err);
     }

@@ -116,7 +116,7 @@ export default function Navbar() {
                   </div>
                   <div className="flex px-5 gap-5">
                     <p>Profile</p>
-                    <Link href="/account">
+                    <Link href="/accounts">
                       {" "}
                       <p>Open An Account</p>
                     </Link>
