@@ -60,6 +60,15 @@ const AddProvider = () => {
               className="w-full text-sm p-3 border bg-white focus:bg-white rounded-lg focus:outline-none focus:border-[#012169]"
               options={providerOptions}
             />
+            <div>
+              <FormInput
+                name="companyName"
+                label="Company Name"
+                placeholder="Company Name"
+                className="w-[300px] h-[45px] text-sm px-2 py-3 focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"
+              />
+              +
+            </div>
           </div>
 
           <div className="grid grid-cols-2 gap-4 mt-6">

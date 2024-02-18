@@ -18,10 +18,11 @@ const SignInForm = () => {
   };
   const [signin] = useSigninMutation();
   const onSubmit = async (values: any) => {
+  console.log(values,'22');
     try {
       const res = await signin(values).unwrap();
       storeUserInfo({ accessToken: res?.data?.accessToken });
-      push("/");
+      push("/")
     } catch (err) {
       console.log(err);
     }
@@ -53,11 +54,11 @@ const SignInForm = () => {
         </button>
       </div>
 
-      <div className="mt-2">
-        <Button disabled={isLoading} type="submit">
-          Sign In
-        </Button>
-      </div>
+      <div className="mt-4 flex justify-center"> 
+    <Button disabled={isLoading} type="submit">
+      Sign In
+    </Button>
+  </div>
     </Form>
   );
 };

@@ -8,7 +8,7 @@ import { getFromLocalStorage } from "@/utils/local-storage";
 export default function page() {
   const token = getFromLocalStorage(authKey) as string;
   const { userId }: any = decodedToken(token);
-  const { data } = useUserByIdQuery(userId);
+  const { data }: any = useUserByIdQuery(userId);
   return (
     <>
       <Profile profileData={data?.data} />

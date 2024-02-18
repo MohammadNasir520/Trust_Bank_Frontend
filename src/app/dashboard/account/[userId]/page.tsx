@@ -6,7 +6,7 @@ import { useParams } from "next/navigation"
 
 export default function page() {
     const { userId } = useParams()
-    const { data } = useUserByIdQuery(userId);
+    const { data }: any = useUserByIdQuery(userId);
 
     return (
         <><Profile profileData={data?.data} /></>

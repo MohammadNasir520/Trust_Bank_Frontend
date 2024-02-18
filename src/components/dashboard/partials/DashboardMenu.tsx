@@ -29,7 +29,7 @@ export default function DashboardMenu({
             router.push(pathname)
         }
     }
-
+    console.log({ pathname, currentPath })
     return (
         <SidebarLinkGroup activecondition={currentPath?.includes(pathname)}>
             {(handleClick: any, open: any) => {

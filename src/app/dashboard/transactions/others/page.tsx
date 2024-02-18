@@ -1,5 +1,6 @@
 'use client'
-import InvoiceModal from "@/components/ui/modal/InvoiceModal";
+
+import InvoiceModal from "@/components/UI/modal/InvoiceModal";
 import {
   Modal,
   ModalOverlay,

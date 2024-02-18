@@ -1,19 +1,19 @@
-"use client"
+"use client";
 import React from "react";
-
 import AgricultureBanner from "../../../../../../public/assets/images/agriculture.jpg";
-import AgricultureDetails from "@/components/pages/Agriculture/AgricultureDetails";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import HomeLoanDetails from "@/components/pages/Home/HomeLoanDetails";
+import { usePathname } from "next/navigation";
 
-
-const AgricultureDetailsPage = ({ params }: any) => {
-  const { title } = params;
+const HomeDetailsPage = (params: any) => {
+  const pathname = usePathname();
+  console.log(pathname);
   const router = useRouter();
 
   const loanTypes = [
     { label: "Agriculture", href: "/loans/agriculture" },
-    { label: "Personal/Individual", href: "/loans/personal" },
+    { label: "Home/Individual", href: "/loans/Home" },
     { label: "Corporate & Business", href: "/loans/corporate" },
     { label: "Education", href: "/loans/education" },
     { label: "Home Loans", href: "/loans/home" },
@@ -36,16 +36,13 @@ const AgricultureDetailsPage = ({ params }: any) => {
           ></Image>
 
           <h1 className="text-2xl text-[#012169] font-sans font-bold absolute left-36 top-1/2">
-            Agricultural Jewel Loan Scheme
+            Home Loan Scheme
           </h1>
         </div>
       </div>
 
-    
       <div className="w-full flex flex-col gap-1 items-center justify-center py-12 lg:py-16">
-       
         <div className="w-4/5 lg:w-5/6 flex flex-col lg:flex-row gap-6 lg:gap-10">
-         
           <div className="w-full lg:w-1/4 flex flex-col items-start gap-4">
             {loanTypes.map((loanType, index) => (
               <p
@@ -59,9 +56,7 @@ const AgricultureDetailsPage = ({ params }: any) => {
           </div>
 
           <div className="w-full lg:w-3/4">
-          
-            <AgricultureDetails />
-          
+            <HomeLoanDetails />
           </div>
         </div>
       </div>
@@ -69,4 +64,4 @@ const AgricultureDetailsPage = ({ params }: any) => {
   );
 };
 
-export default AgricultureDetailsPage;
+export default HomeDetailsPage;
