@@ -1,5 +1,5 @@
 'use client';
-import { useGetAllAccountsQuery } from "@/redux/api/accountApi";
+import { useCurrentAccountsQuery, useGetAllAccountsQuery, useMerchantAccountsQuery, useSavingAccountsQuery, useStudentAccountsQuery } from "@/redux/api/accountApi";
 import { totalAccountByRole } from "@/utils/accountCount";
 import React from "react";
 import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
@@ -8,18 +8,18 @@ import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
 
 const PieChartBox = () => {
 
-  const { data: accounts, isLoading } = useGetAllAccountsQuery(undefined)
-  const totalStudentAccount = totalAccountByRole('student', accounts?.data);
-  const totalMerchantAccount = totalAccountByRole('Marchent', accounts?.data);
-  const totalSavingsAccount = totalAccountByRole('savings', accounts?.data);
-  const totalGeneralAccount = totalAccountByRole('general', accounts?.data);
+
+  const { data: studentAccounts } = useStudentAccountsQuery(undefined);
+  const { data: merchantAccounts } = useMerchantAccountsQuery(undefined);
+  const { data: savingsAccounts } = useSavingAccountsQuery(undefined)
+  const { data: currentAccounts } = useCurrentAccountsQuery(undefined)
 
 
   const data = [
-    { name: "Merchant", value: totalMerchantAccount, color: "#0088FE" },
-    { name: "Saving", value: totalSavingsAccount, color: "#00C49F" },
-    { name: "General", value: totalGeneralAccount, color: "#FFBB28" },
-    { name: "Student", value: totalStudentAccount, color: "#FF8042" },
+    { name: "Merchant", value: merchantAccounts?.data?.length, color: "#0088FE" },
+    { name: "Savings", value: savingsAccounts?.data?.length, color: "#00C49F" },
+    { name: "Currents", value: currentAccounts?.data?.length, color: "#FFBB28" },
+    { name: "Student", value: studentAccounts?.data?.length, color: "#FF8042" },
   ];
 
 
