@@ -19,7 +19,7 @@ import {
 
 import { useEffect, useRef } from "react";
 
-import { cardNavMenuOptions, loanNavMenuOptions, paymentOptions } from "@/constants/navData";
+import { cardNavMenuOptions, loanNavMenuOptions } from "@/constants/navData";
 import NavMenu from "../UI/nav-menu/NavMenu";
 import ResponsiveNavMenu from "../UI/nav-menu/ResponsiveNavMenu";
 import Link from "next/link";
@@ -96,14 +96,22 @@ export default function Navbar() {
                 <div className="lg:flex hidden justify-between my-auto p-5 text-black h-1/2  w-full  ">
                   <div className="flex   gap-5">
                     <NavMenu items={loanNavMenuOptions} title="Loan" />
-                    <NavMenu items={loanNavMenuOptions} title="Investment" />
-                    <NavMenu items={loanNavMenuOptions} title="Insurance" />
+                  
+                   
                     <NavMenu items={cardNavMenuOptions} title="Card" />
-                    <NavMenu items={loanNavMenuOptions} title="Deposit" />
-                    <NavMenu items={paymentOptions} title="payment" />
+                  
 
+                    <Link href="/pay-bill">
+                      <p>Bill</p>
+                    </Link>
                     <Link href="/foreign-services">
                       <p>Foreign service</p>
+                    </Link>
+                    <Link href="/dps">
+                      <p>Dps</p>
+                    </Link>
+                    <Link href="/news">
+                      <p>News</p>
                     </Link>
                   </div>
                   <div className="flex px-5 gap-5">

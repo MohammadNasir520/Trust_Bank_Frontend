@@ -2,128 +2,111 @@
 
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import DebitCreditCard from "./DebitCreditCard";
-import { MdAccountBalance } from "react-icons/md";
 import { RiMoneyDollarBoxLine } from "react-icons/ri";
 import { FaRegCreditCard } from "react-icons/fa";
 import { MdOutlineCreditCardOff } from "react-icons/md";
-import { CiBank } from "react-icons/ci";
 import { MdSupervisorAccount } from "react-icons/md";
 
 import loanImg from "@/assets/images/loan.png";
 
 const DebitCreditCardTab = () => {
   const tabData = [
-    {
-      name: "popular",
-      icon: <CiBank size={20} />,
-      panelData: [
-        {
-          title: "Savings Account",
-          description: "ZERO charges on ATM transactions",
-          image: loanImg,
-        },
-        {
-          title: "Savings Account",
-          description: "ZERO charges on ATM transactions",
-          image: loanImg,
-        },
-        {
-          title: "Savings Account",
-          description: "ZERO charges on ATM transactions",
-          image: loanImg,
-        },
-        {
-          title: "Savings Account",
-          description: "ZERO charges on ATM transactions",
-          image: loanImg,
-        },
-        {
-          title: "Savings Account",
-          description: "ZERO charges on ATM transactions",
-          image: loanImg,
-        },
-        {
-          title: "Savings Account",
-          description: "ZERO charges on ATM transactions",
-          image: loanImg,
-        },
-      ],
-    },
+    
     {
       name: "Accounts",
       icon: <MdSupervisorAccount size={25} />,
       panelData: [
         {
-          title: "Savings Account",
-          description: "ZERO charges on ATM transactions",
+          title: "Current Account",
+          description: "Manage your everyday finances hassle-free",
           image: loanImg,
+          link: "/accounts/current"
         },
         {
-          title: "Savings Account",
-          description: "ZERO charges on ATM transactions",
+          title: "Saving Account",
+          description: "Start saving for your future goals with ease",
           image: loanImg,
+          link: "/accounts/saving"
         },
         {
-          title: "Savings Account",
-          description: "ZERO charges on ATM transactions",
+          title: "Student Account",
+          description: "Special benefits tailored for students like you",
           image: loanImg,
+          link: "/accounts/student"
         },
         {
-          title: "Savings Account",
-          description: "ZERO charges on ATM transactions",
+          title: "Merchant Account",
+          description: "Boost your business with our merchant solutions",
           image: loanImg,
+          link: "/accounts/merchant"
         },
       ],
     },
+    
     {
       name: "Loan",
       icon: <RiMoneyDollarBoxLine size={20} />,
       panelData: [
         {
-          title: "Savings Account",
-          description: "ZERO charges on ATM transactions",
+          title: "Personal Loan",
+          description: "Flexible repayment options available",
           image: loanImg,
+          link:"/loans/personal"
         },
         {
-          title: "Savings Account",
-          description: "ZERO charges on ATM transactions",
+          title: "Corporate / Business Loan",
+          description: "Low interest rates for startups",
           image: loanImg,
+          link:"/loans/corporate"
         },
         {
-          title: "Savings Account",
-          description: "ZERO charges on ATM transactions",
+          title: "Education Loan",
+          description: "Special discounts for academic achievers",
           image: loanImg,
+          link:"/loans/education"
+        },
+        {
+          title: "Home Loan",
+          description: "Easy approval process with minimal documentation",
+          image: loanImg,
+          link:"/loans/home"
         },
       ],
     },
+    
     {
-      name: "Credits",
+      name: "Credit",
       icon: <FaRegCreditCard size={20} />,
       panelData: [
         {
-          title: "Savings Account",
-          description: "ZERO charges on ATM transactions",
+          title: "Platinum Rewards Cardt",
+          description: "Earn rewards with every purchase",
           image: loanImg,
+          link:"/credit-card/1"
         },
         {
-          title: "Savings Account",
-          description: "ZERO charges on ATM transactions",
+          title: "Gold Cashback Card",
+          description: "Get cashback on every transaction",
           image: loanImg,
+          link:"/credit-card/2"
         },
         {
-          title: "Savings Account",
-          description: "ZERO charges on ATM transactions",
+          title: "Student Savings Card",
+          description: "Designed for students with exclusive perks",
           image: loanImg,
+          link:"/credit-card/3"
         },
         {
-          title: "Savings Account",
-          description: "ZERO charges on ATM transactions",
+          title: "Business Expense Card",
+          description: "Track and manage business expenses easily",
           image: loanImg,
+          link:"/credit-card/4"
         },
         {
-          title: "Savings Account",
-          description: "ZERO charges on ATM transactions",
+          title: "Travel Rewards Card",
+          description: "Earn rewards for your travel expenses",
           image: loanImg,
+          link:"/credit-card/5"
         },
       ],
     },
@@ -132,19 +115,34 @@ const DebitCreditCardTab = () => {
       icon: <MdOutlineCreditCardOff size={20} />,
       panelData: [
         {
-          title: "Savings Account",
-          description: "ZERO charges on ATM transactions",
+          title: "Basic Debit Card",
+          description: "Simple and convenient everyday banking",
           image: loanImg,
+          link:"/debit-card/1"
         },
         {
-          title: "Savings Account",
-          description: "ZERO charges on ATM transactions",
+          title: "Youth Savings Card",
+          description: "Start saving early with youth-focused benefits",
           image: loanImg,
+          link:"/debit-card/2"
         },
         {
-          title: "Savings Account",
-          description: "ZERO charges on ATM transactions",
+          title: "Student Debit Card",
+          description: "Banking tailored for students' needs",
           image: loanImg,
+          link:"/debit-card/3"
+        },
+        {
+          title: "Family Debit Card",
+          description: "Manage family finances with ease",
+          image: loanImg,
+          link:"/debit-card/4"
+        },
+        {
+          title: "Senior Debit Card",
+          description: "Banking solutions for retirees",
+          image: loanImg,
+          link:"/debit-card/5"
         },
       ],
     },
@@ -186,7 +184,7 @@ const DebitCreditCardTab = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 {tab?.panelData.map((data, dataIndex) => (
                   <div key={dataIndex}>
-                    <DebitCreditCard />
+                    <DebitCreditCard data={data} />
                   </div>
                 ))}
               </div>

@@ -9,13 +9,14 @@ import { Divider, Text } from "@chakra-ui/react";
 
 const AddProvider = () => {
   const onSubmit = async (values: any) => {
-    console.log("Values::", values);
-    // try {
-    //   console.log("Input values:::", values);
-    // } catch (error) {
-    //   console.log("Error::", error);
-    // }
+    console.log(values);
+    try {
+     
+    } catch (err) {
+      console.log(err);
+    }
   };
+
 
   return (
     <div className="mx-auto py-20 w-5/6">
@@ -58,6 +59,14 @@ const AddProvider = () => {
               className="w-full text-sm p-2 border bg-white focus:bg-white rounded-lg focus:outline-none focus:border-[#012169]"
               options={providerOptions}
             />
+              <div>
+                      <FormInput
+                        name="companyName"
+                        label="Company Name"
+                        placeholder="Company Name"
+                        className="w-[300px] h-[45px] text-sm px-2 py-3 focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-[#012169]"
+                      />
+                    +</div>
           </div>
 
           <Divider className="my-10 mx-auto max-w-[98%] h-[1px] bg-gray-500 opacity-20" />

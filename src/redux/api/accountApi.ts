@@ -11,6 +11,16 @@ const accountApi = baseApi.injectEndpoints({
             }),
             providesTags: [tagTypes.account]
         }),
+
+        currentAccounts: build.query({
+            query: () => ({
+                url: '/current-accounts',
+                method: "GET",
+            }),
+            providesTags: [tagTypes.account]
+        }),
+
+
         currentAccount: build.mutation({
             query: (data: any) => ({
               url: '/current-accounts',
@@ -19,25 +29,54 @@ const accountApi = baseApi.injectEndpoints({
             }),
             invalidatesTags: [tagTypes.current]
           }),
+
+          
+        savingAccounts: build.query({
+          query: () => ({
+              url: '/saving-accounts',
+              method: "GET",
+          }),
+          providesTags: [tagTypes.saving]
+      }),
+       
         savingAccount: build.mutation({
             query: (data: any) => ({
-              url: '/current-accounts',
+              url: '/saving-accounts',
               method: "POST",
               data
             }),
             invalidatesTags: [tagTypes.saving]
           }),
+
+        studentAccounts: build.query({
+            query: () => ({
+                url: "/student-accounts",
+                method: "GET",
+            }),
+            providesTags: [tagTypes.student]
+        }),
+
         studentAccount: build.mutation({
             query: (data: any) => ({
-              url: '/current-accounts',
+              url: '/student-accounts',
               method: "POST",
               data
             }),
             invalidatesTags: [tagTypes.student]
           }),
+          
+        
+        merchantAccounts: build.query({
+            query: () => ({
+                url: '/merchant-accounts',
+                method: "GET",
+            }),
+            providesTags: [tagTypes.merchant]
+        }),
+
         merchantAccount: build.mutation({
             query: (data: any) => ({
-              url: '/current-accounts',
+              url: '/merchant-accounts',
               method: "POST",
               data
             }),
@@ -49,4 +88,4 @@ const accountApi = baseApi.injectEndpoints({
     overrideExisting: false,
 })
 
-export const { useGetAllAccountsQuery,useCurrentAccountMutation,useMerchantAccountMutation,useSavingAccountMutation,useStudentAccountMutation } = accountApi;
+export const { useGetAllAccountsQuery,useCurrentAccountMutation,useMerchantAccountMutation,useSavingAccountMutation,useStudentAccountMutation,useCurrentAccountsQuery,useStudentAccountsQuery,useSavingAccountsQuery,useMerchantAccountsQuery } = accountApi;

@@ -29,20 +29,20 @@ export const adminDashboardMenu: IDashboardMenuItem[] = [
     icon: <FiUsers />,
     children: [
       {
-        title: "Current Accounts",
-        pathname: "/dashboard/schemeLoans/agricultureScheme",
+        title: "Current Account",
+        pathname: "/dashboard/accounts/current",
       },
       {
-        title: "Savings Accounts",
-        pathname: "/dashboard/schemeLoans/personalScheme",
+        title: "Saving Account",
+        pathname: "/dashboard/accounts/saving",
       },
       {
-        title: "Student Accounts",
-        pathname: "/dashboard/schemeLoans/corporateScheme",
+        title: "Merchant Account",
+        pathname: "/dashboard/accounts/merchant",
       },
       {
-        title: "Savings Accounts",
-        pathname: "/dashboard/schemeLoans/educationScheme",
+        title: "Student Account",
+        pathname: "/dashboard/accounts/student",
       },
     ],
   },

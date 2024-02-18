@@ -1,7 +1,8 @@
 "use client";
 
-import DepositForm from "@/components/ui/DepositWithdraw/DepositForm";
-import WithdrawForm from "@/components/ui/DepositWithdraw/WithdrawForm";
+import DepositForm from "@/components/UI/DepositWithdraw/DepositForm";
+import WithdrawForm from "@/components/UI/DepositWithdraw/WithdrawForm";
+
 
 
 
