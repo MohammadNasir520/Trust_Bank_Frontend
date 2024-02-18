@@ -71,14 +71,28 @@ export const adminDashboardMenu: IDashboardMenuItem[] = [
     ],
   },
   {
+    title: "Card",
+    pathname: "/dashboard/card",
+    icon: <FaHandHoldingDollar className="text-lg" />,
+    children: [
+     
+      {
+        title: "Debit Card",
+        pathname: "/dashboard/loan/personal",
+      },
+      {
+        title: "Credit Card",
+        pathname: "/dashboard/loan/corporate",
+      },
+    
+    ],
+  },
+  {
     title: "Loan Scheme",
     pathname: "/dashboard/schemeLoans",
     icon: <GoInfo className="text-lg" />,
     children: [
-      {
-        title: "Agriculture  Scheme",
-        pathname: "/dashboard/schemeLoans/agricultureScheme",
-      },
+     
       {
         title: "Personal Scheme",
         pathname: "/dashboard/schemeLoans/personalScheme",
@@ -90,6 +104,10 @@ export const adminDashboardMenu: IDashboardMenuItem[] = [
       {
         title: "Education  Scheme",
         pathname: "/dashboard/schemeLoans/educationScheme",
+      },
+      {
+        title: "Home Scheme",
+        pathname: "/dashboard/schemeLoans/homeScheme",
       },
     ],
   },
