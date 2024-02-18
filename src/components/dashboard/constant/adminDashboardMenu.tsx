@@ -1,6 +1,7 @@
 import { BsDash, BsPerson } from "react-icons/bs";
 import { FaHandHoldingDollar } from "react-icons/fa6";
 import { FiUsers } from "react-icons/fi";
+import { GoInfo } from "react-icons/go";
 import { GrTransaction } from "react-icons/gr";
 import { MdOutlineDashboard } from "react-icons/md";
 import { RiExchangeDollarLine } from "react-icons/ri";
@@ -65,6 +66,29 @@ export const adminDashboardMenu: IDashboardMenuItem[] = [
       {
         title: "Education Loan",
         pathname: "/dashboard/loan/education",
+      },
+    ],
+  },
+  {
+    title: "Loan Scheme",
+    pathname: "/dashboard/schemeLoans",
+    icon: <GoInfo className="text-lg" />,
+    children: [
+      {
+        title: "Agriculture  Scheme",
+        pathname: "/dashboard/schemeLoans/agricultureScheme",
+      },
+      {
+        title: "Personal Scheme",
+        pathname: "/dashboard/schemeLoans/personalScheme",
+      },
+      {
+        title: "Corporate  Scheme",
+        pathname: "/dashboard/schemeLoans/corporateScheme",
+      },
+      {
+        title: "Education  Scheme",
+        pathname: "/dashboard/schemeLoans/educationScheme",
       },
     ],
   },
