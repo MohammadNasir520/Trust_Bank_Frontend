@@ -14,7 +14,7 @@ function Dashboard({ children }: { children: React.ReactElement | React.ReactNod
             <div className="relative flex flex-col bg-[#f4f4f4]  flex-1 overflow-y-auto overflow-x-hidden">
                 <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
                 <main>
-                    <div className="px-4   sm:px-6 h-full  rounded   lg:px-4 py-4 w-full max-w-9xl ">
+                    <div className=" h-full  rounded m-4  w-full max-w-9xl ">
                         {children}
                     </div>
                 </main>

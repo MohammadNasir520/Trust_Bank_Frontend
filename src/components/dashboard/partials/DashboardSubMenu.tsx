@@ -16,7 +16,7 @@ export default function DashboardSubMenu({ pathname, title, sidebarExpanded }: I
                 text-sm font-medium 
                  ${sidebarExpanded ? 'lg:opacity-100' : 'lg:opacity-0'}  
 
-                 ${currentPath === pathname ? 'text-indigo-500' : 'text-slate-100'}  
+                 ${currentPath === pathname ? 'text-blue-800' : 'text-slate-100'}  
                  2xl:opacity-100 duration-20
                   `}>
                     {title}

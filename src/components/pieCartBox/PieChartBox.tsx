@@ -1,17 +1,30 @@
 'use client';
+import { useCurrentAccountsQuery, useGetAllAccountsQuery, useMerchantAccountsQuery, useSavingAccountsQuery, useStudentAccountsQuery } from "@/redux/api/accountApi";
+import { totalAccountByRole } from "@/utils/accountCount";
 import React from "react";
 import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
 
-const data = [
-  { name: "Merchant", value: 12, color: "#0088FE" },
-  { name: "Saving", value: 16, color: "#00C49F" },
-  { name: "General", value: 10, color: "#FFBB28" },
-  { name: "Student", value: 5, color: "#FF8042" },
-];
+
 
 const PieChartBox = () => {
+
+
+  const { data: studentAccounts } = useStudentAccountsQuery(undefined);
+  const { data: merchantAccounts } = useMerchantAccountsQuery(undefined);
+  const { data: savingsAccounts } = useSavingAccountsQuery(undefined)
+  const { data: currentAccounts } = useCurrentAccountsQuery(undefined)
+
+
+  const data = [
+    { name: "Merchant", value: merchantAccounts?.data?.length, color: "#0088FE" },
+    { name: "Savings", value: savingsAccounts?.data?.length, color: "#00C49F" },
+    { name: "Currents", value: currentAccounts?.data?.length, color: "#FFBB28" },
+    { name: "Student", value: studentAccounts?.data?.length, color: "#FF8042" },
+  ];
+
+
   return (
-    <div className="flex flex-col justify-between h-full">
+    <div className="flex flex-col justify-between h-full bg-white shadow px-4 py-2 rounded-lg ">
       <h1 className="text-xl">Bank Account</h1>
       <div className="flex items-center justify-center w-full h-full">
         <ResponsiveContainer width="99%" height={150}>

@@ -76,7 +76,7 @@ const SignUpForm = () => {
 
     
 
-      <div className="mt-2">
+      <div className="mt-4 flex justify-center">
         <Button disabled={isLoading} type="submit">
           Sign Up
         </Button>

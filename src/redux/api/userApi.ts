@@ -1,11 +1,11 @@
-import {  IMeta } from "@/types";
+import { IMeta } from "@/types";
 import { baseApi } from "./baseApi";
 import { tagTypes } from "../tag-types";
 
-const  USER_URL = "/users";
+const USER_URL = "/users";
 
 export const adminApi = baseApi.injectEndpoints({
-  endpoints: (build) => ({
+  endpoints: (build: any) => ({
 
     users: build.query({
       query: (arg: Record<string, any>) => {
@@ -35,34 +35,34 @@ export const adminApi = baseApi.injectEndpoints({
     }),
 
     userById: build.query({
-      query: (id) => ({
-        url : `${USER_URL}/${id}`,
+      query: (id: string) => ({
+        url: `${USER_URL}/${id}`,
         method: "GET"
-       
+
       }),
-      providesTags:[tagTypes.user]
+      providesTags: [tagTypes.user]
     }),
 
     updateUser: build.mutation({
-      query: (data) => ({
-        url : `${USER_URL}/${data.id}`,
+      query: (data: any) => ({
+        url: `${USER_URL}/${data.id}`,
         method: "PATCH",
-        data:data.body
+        data: data.body
       }),
-      invalidatesTags:[tagTypes.user]
+      invalidatesTags: [tagTypes.user]
     }),
 
-    
+
     deleteUser: build.mutation({
-      query: (id) => ({
-        url : `${USER_URL}/${id}`,
+      query: (id: string) => ({
+        url: `${USER_URL}/${id}`,
         method: "DELETE"
-       
+
       }),
-      invalidatesTags:[tagTypes.user]
+      invalidatesTags: [tagTypes.user]
     }),
 
   }),
 });
 
-export const { useUsersQuery,useUserByIdQuery,useUpdateUserMutation,useDeleteUserMutation,useLoggedUserQuery } = adminApi;
+export const { useUsersQuery, useUserByIdQuery, useUpdateUserMutation, useDeleteUserMutation, useLoggedUserQuery } = adminApi;

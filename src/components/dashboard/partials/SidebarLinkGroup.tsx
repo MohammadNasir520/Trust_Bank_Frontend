@@ -6,13 +6,13 @@ function SidebarLinkGroup({
 }: any) {
 
   const [open, setOpen] = useState(activecondition);
-
+  console.log({ activecondition })
   const handleClick = () => {
     setOpen(!open);
   }
 
   return (
-    <li className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${activecondition && 'bg-slate-900'}`}>
+    <li className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${activecondition && 'bg-sky-500 rounded-lg'}`}>
       {children(handleClick, open)}
     </li>
   );

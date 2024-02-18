@@ -10,6 +10,7 @@ import {
   TableRow,
 } from "@/components/UI/table";
 import { useRouter } from "next/navigation";
+import { IoPrintOutline } from "react-icons/io5";
 
 export default function Account() {
   const router = useRouter();
@@ -60,7 +61,7 @@ export default function Account() {
                   Details{" "}
                 </button>
                 <button className="bg-orange-100 px-2  rounded text-orange-500">
-                  Statement{" "}
+                  <IoPrintOutline />
                 </button>
               </TableCell>
             </TableRow>

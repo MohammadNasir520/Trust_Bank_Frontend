@@ -25,12 +25,14 @@ type FormProps = {
   guarantorPhone?: string;
   deposit?: number;
   withdraw?: number;
+  providerAccount?: string;
+  providerName?: string;
+  service?: string;
 
   // Added className prop for dynamic class
 } & FormConfig;
 
 const Form = ({
-
   children,
   submitHandler,
   defaultValues,
@@ -61,6 +63,9 @@ const Form = ({
       guarantorPhone: "",
       deposit: 0,
       withdraw: 0,
+      providerAccount: "",
+      providerName: "",
+      service: "",
     });
   };
 

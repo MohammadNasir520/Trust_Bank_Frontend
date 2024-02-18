@@ -18,16 +18,16 @@ const SignUpPage = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
   return (
-    <div className="w-full h-screen flex flex-col gap-1 items-center justify-center">
-      <div className="sm:w-1/2 md:w-1/3">
-        <div className="text-base lg:text-xl md:text-lg font-bold">
+    <div className="w-full flex flex-col gap-1 items-center justify-center py-6">
+      <div className="sm:w-1/2 md:w-1/3 shadow-sm p-8 rounded-lg border">
+        <div className="text-base lg:text-xl md:text-lg font-bold text-center">
          Create an account
         </div>
-        <div className="text-base my-2">     
-           <span className="text-sm"> Already have an account?</span>
+        <div className="text-base my-2 text-center">     
+           <span className="text-sm "> Already have an account?</span>
          <Link href="/auth/signin">
          <span
-            className="text-[#1F305E] font-semibold underline cursor-pointer text-sm"
+            className="text-[#1F305E] font-semibold underline cursor-pointer text-sm text-center"
           >
            Sign in
           </span>

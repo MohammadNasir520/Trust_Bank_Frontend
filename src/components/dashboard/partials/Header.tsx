@@ -1,9 +1,23 @@
-import React, { useState } from 'react';
+
+'use client'
+import React, { useEffect, useState } from 'react';
 import ThemeToggle from './ThemeToggle';
+import { useAppSelector } from '@/redux/hook';
+import { decodedToken } from '@/utils/jwt';
+import { authKey } from '@/constants/storageKey';
+import { getFromLocalStorage } from '@/utils/local-storage';
+import { useLoggedUserQuery } from '@/redux/api/userApi';
+import { IoIosArrowDown } from 'react-icons/io';
+import { Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
+import { PiGearSix, PiSignOutLight, PiSignOutThin, PiUserCircle, PiUserCircleLight } from 'react-icons/pi';
+import Link from 'next/link';
 
 function Header({ sidebarOpen, setSidebarOpen }: any) {
-  const [searchModalOpen, setSearchModalOpen] = useState(false);
 
+  const [searchModalOpen, setSearchModalOpen] = useState(false);
+  const { data: userData } = useLoggedUserQuery()
+  const user = userData?.data;
+  console.log({ user })
   return (
     <header className="sticky top-0 bg-white dark:bg-[#182235] border-b border-slate-200 dark:border-slate-700 z-30">
       <div className="px-4 sm:px-6 lg:px-8">
@@ -58,13 +72,30 @@ function Header({ sidebarOpen, setSidebarOpen }: any) {
 
             <ThemeToggle />
             <div className='flex items-center gap-1'>
-              <img src="https://bit.ly/kent-c-dodds" className='w-8 h-8 rounded-full' alt="" />
-              <p className='text-sm text-gray-700'>Admin</p>
+              <Menu>
+                <MenuButton>
+                  <img src="https://bit.ly/kent-c-dodds" className='w-8 h-8 rounded-full' alt="" />
+                </MenuButton>
+                <MenuList className='bg-white min-w-52 rounded px-3 py-2  shadow-xl'>
+                  <div className='flex flex-col justify-center items-center border-b pb-2'>
+                    <img src="https://bit.ly/kent-c-dodds" className='w-16 h-16 rounded-full' alt="" />
+                    <h1 className='capitalize'>{user?.name}</h1>
+                    <p className='text-xs'>{user?.email}</p>
+                  </div>
+                  <div className='flex flex-col   my-2'>
+                    <Link href={'/dashboard/profile/account'} className='flex gap-1 text-sm items-center hover:bg-blue-500 p-2 rounded hover:text-white'><PiUserCircle className='text-lg' />My Profile</Link>
+                    <p className='flex gap-1 cursor-pointer text-sm items-center hover:bg-blue-500 p-2 rounded hover:text-white'><PiGearSix className='text-lg' />Settings</p>
+                    <p className='flex gap-1 cursor-pointer text-sm items-center hover:bg-blue-500 p-2 rounded hover:text-white'><PiSignOutLight className='text-lg' />Sign out</p>
+                  </div>
+                </MenuList>
+              </Menu>
+
+
             </div>
           </div>
         </div>
       </div>
-    </header>
+    </header >
   );
 }
 

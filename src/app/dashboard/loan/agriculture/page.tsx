@@ -2,12 +2,12 @@
 
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/UI/table";
 import EmptyTable from "@/components/dashboard/dashboard_ui/EmptyTable";
-import { useAgricultureLoanQuery, useUpdateAgricultureLoanMutation } from "@/redux/api/agricultureLoanApi";
+import { useAgricultureLoansQuery, useUpdateAgricultureLoanMutation } from "@/redux/api/agricultureLoanApi";
 import toast from "react-hot-toast";
 
 export default function AgricultureLoan() {
 
-    const { data, isLoading } = useAgricultureLoanQuery(undefined);
+    const { data, isLoading } = useAgricultureLoansQuery(undefined);
     const [updateLoan] = useUpdateAgricultureLoanMutation()
     const loans = data?.data;
 
