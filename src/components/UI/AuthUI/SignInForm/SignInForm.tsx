@@ -20,9 +20,9 @@ const SignInForm = () => {
   const onSubmit = async (values: any) => {
   console.log(values,'22');
     try {
-      // const res = await signin(values).unwrap();
-      // storeUserInfo({ accessToken: res?.data?.accessToken });
-      // push("/")
+      const res = await signin(values).unwrap();
+      storeUserInfo({ accessToken: res?.data?.accessToken });
+      push("/")
     } catch (err) {
       console.log(err);
     }

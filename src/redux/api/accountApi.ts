@@ -14,7 +14,7 @@ const accountApi = baseApi.injectEndpoints({
 
         currentAccounts: build.query({
             query: () => ({
-                url: `${ACCOUNT_URL}`,
+                url: '/current-accounts',
                 method: "GET",
             }),
             providesTags: [tagTypes.account]
@@ -41,7 +41,7 @@ const accountApi = baseApi.injectEndpoints({
        
         savingAccount: build.mutation({
             query: (data: any) => ({
-              url: '/current-accounts',
+              url: '/saving-accounts',
               method: "POST",
               data
             }),
@@ -58,7 +58,7 @@ const accountApi = baseApi.injectEndpoints({
 
         studentAccount: build.mutation({
             query: (data: any) => ({
-              url: '/current-accounts',
+              url: '/student-accounts',
               method: "POST",
               data
             }),
@@ -68,7 +68,7 @@ const accountApi = baseApi.injectEndpoints({
         
         merchantAccounts: build.query({
             query: () => ({
-                url: `${ACCOUNT_URL}`,
+                url: '/merchant-accounts',
                 method: "GET",
             }),
             providesTags: [tagTypes.merchant]
@@ -76,7 +76,7 @@ const accountApi = baseApi.injectEndpoints({
 
         merchantAccount: build.mutation({
             query: (data: any) => ({
-              url: '/current-accounts',
+              url: '/merchant-accounts',
               method: "POST",
               data
             }),

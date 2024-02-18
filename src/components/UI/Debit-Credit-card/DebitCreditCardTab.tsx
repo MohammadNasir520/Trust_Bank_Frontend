@@ -2,11 +2,9 @@
 
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import DebitCreditCard from "./DebitCreditCard";
-import { MdAccountBalance } from "react-icons/md";
 import { RiMoneyDollarBoxLine } from "react-icons/ri";
 import { FaRegCreditCard } from "react-icons/fa";
 import { MdOutlineCreditCardOff } from "react-icons/md";
-import { CiBank } from "react-icons/ci";
 import { MdSupervisorAccount } from "react-icons/md";
 
 import loanImg from "@/assets/images/loan.png";
@@ -20,30 +18,31 @@ const DebitCreditCardTab = () => {
       panelData: [
         {
           title: "Current Account",
-          description: "ZERO charges on ATM transactions",
+          description: "Manage your everyday finances hassle-free",
           image: loanImg,
-          link:"/accounts/current"
+          link: "/accounts/current"
         },
         {
           title: "Saving Account",
-          description: "ZERO charges on ATM transactions",
+          description: "Start saving for your future goals with ease",
           image: loanImg,
-          link:"/accounts/saving"
+          link: "/accounts/saving"
         },
         {
           title: "Student Account",
-          description: "ZERO charges on ATM transactions",
+          description: "Special benefits tailored for students like you",
           image: loanImg,
-          link:"/accounts/student"
+          link: "/accounts/student"
         },
         {
           title: "Merchant Account",
-          description: "ZERO charges on ATM transactions",
+          description: "Boost your business with our merchant solutions",
           image: loanImg,
-          link:"/accounts/merchant"
+          link: "/accounts/merchant"
         },
       ],
     },
+    
     {
       name: "Loan",
       icon: <RiMoneyDollarBoxLine size={20} />,
