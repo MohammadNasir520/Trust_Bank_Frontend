@@ -12,8 +12,8 @@ interface FormInputProps {
   validation?: any;
   label?: string;
   className?: string;
-  readOnly?: boolean;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+
+  
 }
 
 const FormInput: React.FC<FormInputProps> = ({
@@ -26,8 +26,7 @@ const FormInput: React.FC<FormInputProps> = ({
   validation,
   label,
   className,
-  readOnly,
-  onChange,
+
 }) => {
   const {
     control,
@@ -58,9 +57,7 @@ const FormInput: React.FC<FormInputProps> = ({
               placeholder={placeholder}
               {...field}
               value={value ? value : field.value}
-              className={`${className}`}
-              readOnly={readOnly}
-              onChange={onChange} // Pass onChange to the input element
+              className={className}// Pass onChange to the input element
             />
             {errorMessage && (
               <p className="text-red-500 mt-1 text-sm">{errorMessage}</p>

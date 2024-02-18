@@ -10,10 +10,7 @@ export const cardNavMenuOptions = [
 ];
 
 export const loanNavMenuOptions = [
-  {
-    label: "Agriculture",
-    link: "/loans/agriculture",
-  },
+
   {
     label: "Personal",
     link: "/loans/personal",
@@ -30,14 +27,6 @@ export const loanNavMenuOptions = [
     label: "Home Loans",
     link: "/loans/home",
   },
-  {
-    label: "Vehicle Loans",
-    link: "/loans/vehicle",
-  },
+ 
 ];
-export const paymentOptions = [
-  {
-    label: "payment",
-    link: "/pay-bill",
-  },
-];
+
