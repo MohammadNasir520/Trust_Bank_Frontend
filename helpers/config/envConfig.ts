@@ -7,7 +7,7 @@ export const getBaseUrl = (): any => {
     // case "production":
     //   return "https://trust-bank-backend.vercel.app/api/v1"; // Replace with your production API URL
     default:
-      // return "192.168.1.6:5000/api/v1"; // Replace with a default API URL
-      return " http://localhost:5000/api/v1"; // Replace with a default API URL
+      return "http://192.168.1.6:5000/api/v1"; // Replace with a default API URL
+      // return "http://localhost:5000/api/v1"; // Replace with a default API URL
   }
 };
